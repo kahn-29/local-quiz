@@ -1078,6 +1078,8 @@
                                 <button id="restart-btn" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium text-sm shadow-md hover:bg-blue-700 transition-all">Restart Quiz</button>
                             </div>
                             
+                            <button id="edit-nav-btn" class="w-full px-4 py-2 bg-amber-600 text-white rounded-lg font-medium text-sm shadow-md hover:bg-amber-700 transition-all">Edit Quiz</button>
+                            
                             <div id="review-list" class="space-y-3 overflow-y-auto">
                                 ${this.renderReviewList('all')}
                             </div>
@@ -1311,11 +1313,16 @@
 
         document.getElementById('edit-nav-btn').addEventListener('click', () => {
             currentMode = 'create';
+            loadQuizForEditing(quiz.questions);
             ui.render();
             document.getElementById('progress-nav').classList.add('hidden');
+            document.getElementById('results-panel').classList.add('hidden');
         });
 
         document.getElementById('edit-quiz-btn').addEventListener('click', () => {
+            // Stop the timer while editing
+            quiz.stopTimer();
+            
             // Save current state
             previousMode = currentMode;
             previousQuizState = {
