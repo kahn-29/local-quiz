@@ -345,8 +345,10 @@
 
             render() {
                 if (currentMode === 'play') {
-                    // Hide results panel when starting/playing quiz
-                    document.getElementById('results-panel').classList.add('hidden');
+                    // Hide results panel when starting/playing quiz, but not if submitted
+                    if (!this.quiz.submitted) {
+                        document.getElementById('results-panel').classList.add('hidden');
+                    }
                     this.renderNav();
                     this.updateTimer();
                     if (this.quiz.isFinished()) {
