@@ -324,7 +324,7 @@
                 clearInterval(this.timerInterval);
                 alert('Time is up!');
                 this.quiz.submitQuiz();
-                this.renderResultsPanel();
+                this.renderResults();
             }
 
             stopTimer() {
@@ -409,7 +409,13 @@
                     btn.addEventListener('click', (e) => {
                         const index = parseInt(e.target.dataset.index);
                         this.quiz.goToQuestion(index);
-                        this.render();
+                        if (this.quiz.submitted) {
+                            this.renderQuestion();
+                            this.renderNav();
+                            document.getElementById('results-panel').classList.remove('hidden');
+                        } else {
+                            this.render();
+                        }
                     });
                 });
             }
@@ -606,7 +612,7 @@
                         submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
                     }
                     // Show results panel
-                    this.renderResultsPanel();
+                    this.renderResults();
                     // Re-render to show locked state
                     this.render();
                 } else {
@@ -1009,35 +1015,17 @@
                             </div>
                         </div>
                         
-                        <div class="max-w-2xl mx-auto">
-                            <div class="flex justify-center gap-3 mb-8">
-                                <button id="filter-all" class="px-6 py-3 bg-slate-600 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-700 transition-all active:scale-95">All Questions</button>
-                                <button id="filter-incorrect" class="px-6 py-3 bg-red-600 text-white rounded-2xl font-bold shadow-lg shadow-red-200 hover:bg-red-700 transition-all active:scale-95">Incorrect Only</button>
-                                <button id="filter-correct" class="px-6 py-3 bg-green-600 text-white rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all active:scale-95">Correct Only</button>
-                            </div>
-                            
-                            <div id="review-list" class="space-y-4 max-h-96 overflow-y-auto">
-                                ${this.renderReviewList('all')}
-                            </div>
-                        </div>
-                `;
-                
-                    html += `
                         <div class="flex justify-center pt-6">
                             <button id="restart-btn" class="flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">
                                 Restart Quiz
                             </button>
                         </div>
-                    `;
+                `;
                 
                 html += `</div>`;
 
-                this.container.innerHTML = html;
-
-                // Attach filter listeners
-                document.getElementById('filter-all').addEventListener('click', () => this.filterReview('all'));
-                document.getElementById('filter-incorrect').addEventListener('click', () => this.filterReview('incorrect'));
-                document.getElementById('filter-correct').addEventListener('click', () => this.filterReview('correct'));
+                document.getElementById('results-content').innerHTML = html;
+                document.getElementById('results-panel').classList.remove('hidden');
 
                 // Always attach restart listener
                 document.getElementById('restart-btn').addEventListener('click', () => {
