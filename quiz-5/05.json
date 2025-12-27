@@ -1,0 +1,601 @@
+[
+  {
+    "content": "A protocol is a fundamental component in network applications. A protocol defines...",
+    "question-type": "mcq",
+    "options": [
+      "The format and order of messages sent and received",
+      "The method of connection between data exchanging entities",
+      "Actions taken on the transmission and receipt of messages",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "content": "Which of the following can be considered a Peer-to-Peer (P2P) application?",
+    "question-type": "mcq",
+    "options": [
+      "HCMUT Website at http://hcmut.edu.vn",
+      "Skype",
+      "BitTorrent",
+      "Both B and C"
+    ],
+    "answer": "Both B and C"
+  },
+  {
+    "content": "The Wi-Fi connection is specified by which IEEE standard?",
+    "question-type": "mcq",
+    "options": [
+      "IEEE 802.3",
+      "IEEE 802.11",
+      "IEEE 802.15",
+      "IEEE 802.16"
+    ],
+    "answer": "IEEE 802.11"
+  },
+  {
+    "content": "Consider a network diagram with a source host connected to a destination host through two intermediate routers. There are 3 links in total. Assume the network uses packet switching and routers operate on a 'Store-and-Forward' mechanism. A packet has a size of L, and all links have a transmission rate of R. The total time to transfer this packet from the leftmost host to the rightmost host is:",
+    "question-type": "mcq",
+    "options": [
+      "L/R",
+      "2L/R",
+      "3L/R",
+      "3R/L"
+    ],
+    "answer": "3L/R"
+  },
+  {
+    "content": "The Traceroute program uses feedback provided by which protocol to determine the path and delay of packets in the network?",
+    "question-type": "mcq",
+    "options": [
+      "UDP",
+      "TCP",
+      "IP",
+      "ICMP"
+    ],
+    "answer": "ICMP"
+  },
+  {
+    "content": "When a protocol data unit is passed from a higher layer to a lower layer in the TCP/IP model:",
+    "question-type": "mcq",
+    "options": [
+      "The data packet will be encapsulated with a new header",
+      "The data packet remains unchanged",
+      "The data packet's header will be removed",
+      "All of the above"
+    ],
+    "answer": "The data packet will be encapsulated with a new header"
+  },
+  {
+    "content": "In an Ethernet network, what happens when two stations transmit simultaneously and a collision occurs?",
+    "question-type": "mcq",
+    "options": [
+      "The Switch automatically buffers the collided packets and retransmits them",
+      "The Router automatically buffers the collided packets and retransmits them",
+      "The data is automatically reconstructed at the receiver",
+      "The sending stations will retransmit the data after a waiting period"
+    ],
+    "answer": "The sending stations will retransmit the data after a waiting period"
+  },
+  {
+    "content": "In TCP, starting from the connection establishment phase, what is the minimum number of segments exchanged between the sender (client) and the receiver (server) before the sender can start sending data?",
+    "question-type": "text",
+    "answer": "2"
+  },
+  {
+    "content": "In computer networking, an application is considered to use the Client-Server model when:",
+    "question-type": "mcq",
+    "options": [
+      "The application has an always-on server, and clients must connect to this server to exchange data",
+      "All application components have equal roles; an always-on server is not required",
+      "The application has an always-on client, and servers must connect to the client",
+      "Clients can interact directly with each other without a central server"
+    ],
+    "answer": "The application has an always-on server, and clients must connect to this server to exchange data"
+  },
+  {
+    "content": "Public key cryptography is used to create digital signatures. In this process, which key is used to sign (create) the signature?",
+    "question-type": "mcq",
+    "options": [
+      "Public key",
+      "Private key",
+      "Both keys are used",
+      "Neither key is used"
+    ],
+    "answer": "Private key"
+  },
+  {
+    "content": "In which case is the SYN flag in a TCP segment used?",
+    "question-type": "mcq",
+    "options": [
+      "Connection establishment",
+      "Sending sequenced data",
+      "Connection teardown",
+      "Used in all three cases above"
+    ],
+    "answer": "Connection establishment"
+  },
+  {
+    "content": "Given a TCP segment and a UDP segment of the same total size, the amount of data (payload) carried by the UDP segment is at least how much more than the data in the TCP segment?",
+    "question-type": "mcq",
+    "options": [
+      "4 bytes",
+      "8 bytes",
+      "12 bytes",
+      "16 bytes"
+    ],
+    "answer": "12 bytes"
+  },
+  {
+    "content": "In the TCP protocol, the timeout value is typically chosen to be:",
+    "question-type": "mcq",
+    "options": [
+      "Smaller than the Round Trip Time (RTT)",
+      "Equal to the Round Trip Time (RTT)",
+      "Greater than the Round Trip Time (RTT)",
+      "Many times greater than the Round Trip Time (RTT)"
+    ],
+    "answer": "Greater than the Round Trip Time (RTT)"
+  },
+  {
+    "content": "Which address does a Switch use to determine the output port for a frame?",
+    "question-type": "mcq",
+    "options": [
+      "Source MAC address",
+      "Destination MAC address",
+      "Network address",
+      "Subnetwork address"
+    ],
+    "answer": "Destination MAC address"
+  },
+  {
+    "content": "Which LAN technology uses the CSMA/CD method?",
+    "question-type": "mcq",
+    "options": [
+      "Ethernet",
+      "Token Ring",
+      "ATM",
+      "MPLS"
+    ],
+    "answer": "Ethernet"
+  },
+  {
+    "content": "Which Multiple Access Control protocol requires time synchronization between stations?",
+    "question-type": "mcq",
+    "options": [
+      "CSMA/CD",
+      "Token Ring",
+      "Slotted ALOHA",
+      "MPLS"
+    ],
+    "answer": "Slotted ALOHA"
+  },
+  {
+    "content": "What happens when Host A sends a broadcast ARP request to find the MAC address of Host B on the same LAN?",
+    "question-type": "mcq",
+    "options": [
+      "The DNS server will reply to A with B's MAC address",
+      "All computers on the network receive the request and all reply to A with B's MAC address",
+      "All computers on the network receive the request, but only B replies to A with its MAC address",
+      "The nearest Router receives the request and replies to A with B's MAC address or forwards it"
+    ],
+    "answer": "All computers on the network receive the request, but only B replies to A with its MAC address"
+  },
+  {
+    "content": "Host A and Host Z are on two different subnets. What happens if Host A sends a broadcast ARP request seeking the MAC address of Host Z?",
+    "question-type": "mcq",
+    "options": [
+      "No response",
+      "The Router will reply with Z's MAC address",
+      "The Router will reply with its own MAC address",
+      "The Router forwards the ARP request to Z's subnet"
+    ],
+    "answer": "No response"
+  },
+  {
+    "content": "Choose the best description of how the Ethernet protocol manages the use of the physical transmission channel.",
+    "question-type": "mcq",
+    "options": [
+      "Time Division Multiplexing",
+      "Frequency Division Multiplexing",
+      "Detects channel contention; if contention occurs, it delays transmission and retries after a period",
+      "Detects channel contention and reorders the sending nodes"
+    ],
+    "answer": "Detects channel contention; if contention occurs, it delays transmission and retries after a period"
+  },
+  {
+    "content": "Which of the following fields does NOT exist in an IEEE 802.3 Ethernet frame header?",
+    "question-type": "mcq",
+    "options": [
+      "Preamble",
+      "Destination MAC address",
+      "Frame Sequence Number",
+      "Frame Type"
+    ],
+    "answer": "Frame Sequence Number"
+  },
+  {
+    "content": "When a frame is delivered to a LAN switch and the destination address is not in the MAC address table, what will the switch do?",
+    "question-type": "mcq",
+    "options": [
+      "Forward the frame to the first available port",
+      "Flood the frame to all ports except the incoming port",
+      "Send a message back to the source to ask for the destination address",
+      "Drop the frame"
+    ],
+    "answer": "Flood the frame to all ports except the incoming port"
+  },
+  {
+    "content": "Which characteristic INCORRECTLY describes a connection in a wireless network?",
+    "question-type": "mcq",
+    "options": [
+      "Signal strength decreases as it moves away from the source",
+      "The data transmission rate is a constant and does not depend on the distance between sender and receiver",
+      "Signals from the source can reach the destination via multiple paths",
+      "Signal quality depends heavily on the surrounding environment"
+    ],
+    "answer": "The data transmission rate is a constant and does not depend on the distance between sender and receiver"
+  },
+  {
+    "content": "Refer to the network diagram: A Router (R) connects two subnets. Subnet 1 (left) contains Host A (IP 111.111.111.111, MAC 74-29-9C-E8-FF-55) and another host (IP 111.111.111.112). Subnet 2 (right) contains Host B (IP 222.222.222.222, MAC 49-BD-D2-C7-56-2A) and another host (IP 222.222.222.221). Router R has two interfaces: Interface 1 (left) with IP 111.111.111.110 and MAC E6-E9-00-17-BB-4B; Interface 2 (right) with IP 222.222.222.220 and MAC 1A-23-F9-CD-06-9B. How many ARP tables exist in Router R?",
+    "question-type": "mcq",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "1"
+  },
+  {
+    "content": "What is the purpose of using Multi-Threading in the client-server programming model?",
+    "question-type": "mcq",
+    "options": [
+      "So a client can be served by multiple servers simultaneously",
+      "So a client can be served by multiple servers",
+      "So a server can run multiple network applications",
+      "So a server can serve multiple clients simultaneously"
+    ],
+    "answer": "So a server can serve multiple clients simultaneously"
+  },
+  {
+    "content": "How does a router using Distance Vector (DV) routing differ from one using Link State (LS) routing?",
+    "question-type": "mcq",
+    "options": [
+      "A DV router has a global view of the entire network topology",
+      "A DV router calculates the best route from LS routers",
+      "The best path in DV is calculated based on paths sent by neighboring routers",
+      "It uses the Shortest Path First (Dijkstra's) algorithm to determine the optimal path"
+    ],
+    "answer": "The best path in DV is calculated based on paths sent by neighboring routers"
+  },
+  {
+    "content": "Choose the CORRECT statement about NAT (Network Address Translation).",
+    "question-type": "mcq",
+    "options": [
+      "NAT is used to prevent any computer from the Internet from connecting to a local network",
+      "NAT only uses the IP header for its operation",
+      "The function of NAT is identical to a firewall",
+      "After being processed by NAT, certain fields in the data packet header will be modified"
+    ],
+    "answer": "After being processed by NAT, certain fields in the data packet header will be modified"
+  },
+  {
+    "content": "What is the primary goal of a firewall?",
+    "question-type": "mcq",
+    "options": [
+      "Protect a computer network from external security threats",
+      "Prevent all data from leaving the network",
+      "Monitor network traffic",
+      "User authentication"
+    ],
+    "answer": "Protect a computer network from external security threats"
+  },
+  {
+    "content": "How many subnets are in the following network diagram? The diagram shows 3 routers connected in a triangle. Each router is also connected to a LAN with multiple hosts. There are 3 LAN subnets and 3 point-to-point subnets between the routers.",
+    "question-type": "mcq",
+    "options": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "answer": "6"
+  },
+  {
+    "content": "An ISP provides 4 organizations with the following address ranges: Org 1: 200.23.16.0/23, Org 2: 200.23.18.0/23, Org 3: 200.23.20.0/23, Org 4: 200.23.22.0/23. The provider uses route aggregation to shorten its routing table. Choose the correct aggregated route address:",
+    "question-type": "mcq",
+    "options": [
+      "200.23.16.0/20",
+      "200.23.16.0/21",
+      "200.23.18.0/23",
+      "200.23.22.0/20"
+    ],
+    "answer": "200.23.16.0/21"
+  },
+  {
+    "content": "Why is an ARP (Address Resolution Protocol) query sent in a broadcast frame?",
+    "question-type": "mcq",
+    "options": [
+      "Because ARP queries are always sent in broadcast frames by default",
+      "Because the host sending the query does not know the MAC address corresponding to the destination IP",
+      "Because ARP queries are always sent from a server",
+      "Because ARP queries are always sent from a router"
+    ],
+    "answer": "Because the host sending the query does not know the MAC address corresponding to the destination IP"
+  },
+  {
+    "content": "In network infrastructure, one benefit of using layering is:",
+    "question-type": "mcq",
+    "options": [
+      "Helps increase data transmission speed over the network",
+      "System structure becomes clear, making it easier to solve problems related to complex systems",
+      "Increases the security of the computer when connecting to the network",
+      "Data transmission efficiency of the network system is higher"
+    ],
+    "answer": "System structure becomes clear, making it easier to solve problems related to complex systems"
+  },
+  {
+    "content": "Consider a network diagram with three nodes X, Y, and Z connected in a triangle. Distance Vector routing is used. Currently, X's distance vector is (0, 2, 7), which are also the costs to neighbors Y and Z respectively. X receives two vectors: from Y (2, 0, 1) and from Z (7, 1, 0). What is X's distance vector after the update? type answer in format (a,b,c).",
+    "question-type": "text",
+    "answer": "(0,2,3)"
+  },
+  {
+    "content": "Choose the correct statement regarding the hash function h = H(x):",
+    "question-type": "mcq",
+    "options": [
+      "Strings x with different lengths will produce hash values h with different lengths",
+      "From the hash value h, the original value x can be easily calculated",
+      "Hash functions can be used to verify message integrity",
+      "All of the above are false"
+    ],
+    "answer": "Hash functions can be used to verify message integrity"
+  },
+  {
+    "content": "Using the provided CIDR routing table: 196.80.0.0/12 (Port D), 196.94.16.0/20 (Port C), 196.96.0.0/12 (Port B), 196.104.0.0/14 (Port A). Which output port will be selected if the destination IP address is 196.109.49.46?",
+    "question-type": "mcq",
+    "options": [
+      "Port A",
+      "Port B",
+      "Port C",
+      "Port D"
+    ],
+    "answer": "Port A"
+  },
+  {
+    "content": "Given a forwarding table using Longest Prefix Matching: 11001000 00010111 00010 (Port 0), 11001000 00010111 00011000 (Port 1), 11001000 00010111 00011 (Port 2), Otherwise (Port 3). At which port will a packet with destination address '11001000 00010111 00010110 10100001' exit?",
+    "question-type": "mcq",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "0"
+  },
+  {
+    "content": "What is the maximum number of addresses in the IPv6 address space?",
+    "question-type": "mcq",
+    "options": [
+      "2^32 addresses",
+      "2^128 addresses",
+      "2^48 addresses",
+      "Indeterminate"
+    ],
+    "answer": "2^128 addresses"
+  },
+  {
+    "content": "WPA2 is used for security in:",
+    "question-type": "mcq",
+    "options": [
+      "Ethernet",
+      "Bluetooth",
+      "Wireless LAN",
+      "Mobile phone systems"
+    ],
+    "answer": "Wireless LAN"
+  },
+  {
+    "content": "In HTTP/1.1, the Head-Of-Line (HOL) blocking problem occurs when a large object (e.g., video) takes a long time to transmit and blocks smaller objects behind it. How does HTTP/2 attempt to solve this?",
+    "question-type": "mcq",
+    "options": [
+      "By creating different queues for different file sizes",
+      "By dividing each message into small frames and interleaving request and response messages",
+      "By prioritizing different requests in order",
+      "By sending smaller files before larger ones"
+    ],
+    "answer": "By dividing each message into small frames and interleaving request and response messages"
+  },
+  {
+    "content": "Which port does SSL/TLS use to carry HTTPS traffic?",
+    "question-type": "text",
+    "answer": "443"
+  },
+  {
+    "content": "Which three fields in the IP header cannot be 'matched' in OpenFlow?",
+    "question-type": "mcq",
+    "options": [
+      "TTL, datagram length, and header checksum",
+      "IP source address, TCP source port, and source MAC address",
+      "TCP source port, source MAC address, and destination MAC address",
+      "TCP source port, source MAC address, and protocol type"
+    ],
+    "answer": "TTL, datagram length, and header checksum"
+  },
+  {
+    "content": "Which field in a TCP segment is used to control data flow between the sender and receiver?",
+    "question-type": "mcq",
+    "options": [
+      "Sequence Number",
+      "Acknowledgement Number",
+      "Checksum",
+      "Receive Window"
+    ],
+    "answer": "Receive Window"
+  },
+  {
+    "content": "Refer to the network diagram: Host A (IP-A, MAC-A) sends a datagram to Host B (IP-B, MAC-B) across Router 1 (MAC-1) and Router 2 (MAC-2). What are the Source MAC, Source IP, Destination MAC, Destination IP addresses encapsulated in the frame as it travels from A to the left interface of Router 1? Type answer seperate by comma, e.g. MAC-1,IP-A,MAC-B,IP-B",
+    "question-type": "text",
+    "answer": "MAC-A,IP-A,MAC-2,IP-B"
+  },
+  {
+    "content": "A model consists of 6 hosts (A, B, C, D, E, F) connected to a switch S. Host A sends a frame to C, C replies to A; Host A sends a frame to B, B replies to A. How many MAC addresses will switch S have learned in its table if it was initially empty?",
+    "question-type": "text",
+    "answer": "3"
+  },
+  {
+    "content": "To increase security when accessing websites with sensitive information, HTTPS is often used. This protocol:",
+    "question-type": "mcq",
+    "options": [
+      "Combines HTTP with SSL",
+      "Combines HTTP with IPsec",
+      "Requires the use of digital signatures",
+      "Requires the user to provide a Private key"
+    ],
+    "answer": "Combines HTTP with SSL"
+  },
+  {
+    "content": "To deliver a packet to the correct application running on a computer, which address must be examined?",
+    "question-type": "mcq",
+    "options": [
+      "MAC address",
+      "IP address",
+      "Port address",
+      "All of the above are incorrect"
+    ],
+    "answer": "Port address"
+  },
+  {
+    "content": "Suppose a network layer packet of 3000 bytes is transferred to a network with an Maximum Transmission Unit of 1500 bytes. How many smaller packets (fragments) will it be divided into?",
+    "question-type": "text",
+    "answer": "3"
+  },
+  {
+    "content": "Given Laptop 1 (192.168.1.10/16) and Laptop 2 (192.168.2.20/16) on Switch 0, and Laptop 3 (192.168.1.30/16) and Laptop 4 (192.168.2.40/16) on Switch 1. Both switches are connected, and all ports are in Access mode on VLAN 1. Choose the CORRECT statement:",
+    "question-type": "mcq",
+    "options": [
+      "Laptop 1 and 3 cannot 'ping' each other",
+      "Laptop 3 and 4 'ping' each other",
+      "Laptop 1 and 4 cannot 'ping' each other",
+      "There are 2 separate LANs in this diagram"
+    ],
+    "answer": "Laptop 3 and 4 'ping' each other"
+  },
+  {
+    "content": "A type of connection that allows sending and receiving information, but cannot do so simultaneously in both directions, is called:",
+    "question-type": "mcq",
+    "options": [
+      "Half-duplex",
+      "Full-duplex",
+      "Simplex",
+      "All of the above are incorrect"
+    ],
+    "answer": "Half-duplex"
+  },
+  {
+    "content": "In a public-key algorithm, Bob wants to send a secret message that only Alice can receive. To do this, Bob must use:",
+    "question-type": "mcq",
+    "options": [
+      "Alice's Public-key",
+      "Alice's Private-key",
+      "Bob's Public-key",
+      "Bob's Private-key"
+    ],
+    "answer": "Alice's Public-key"
+  },
+  {
+    "content": "Based on a Wireshark packet capture: IPv4 Src 172.28.13.99, Dst 74.125.128.83; TCP Src Port 3847, Dst Port 443; Seq 216, Ack 2861. Choose the CORRECT statement:",
+    "question-type": "mcq",
+    "options": [
+      "The receiver's IP is 172.28.13.99, the sender's IP is 74.125.128.83",
+      "The packet is sent on port 443 of the machine with IP 172.28.13.99",
+      "The sender uses TCP, the receiver uses UDP",
+      "The machine with IP 172.28.13.99 has received byte number 2860 from the machine with IP 74.125.128.83"
+    ],
+    "answer": "The machine with IP 172.28.13.99 has received byte number 2860 from the machine with IP 74.125.128.83"
+  },
+  {
+    "content": "The one-to-many transmission mechanism between one source and a specific group is called:",
+    "question-type": "mcq",
+    "options": [
+      "Unicast",
+      "Multicast",
+      "Broadcast",
+      "Anycast"
+    ],
+    "answer": "Multicast"
+  },
+  {
+    "content": "Which command displays the physical address (MAC) of the network card (NIC) in MS Windows? (start with ipconfig)",
+    "question-type": "text",
+    "answer": "ipconfig /all"
+  },
+  {
+    "content": "Which of the following services can a link layer protocol provide?",
+    "question-type": "mcq",
+    "options": [
+      "Framing",
+      "Link access",
+      "Error detection",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "content": "Which service is present in the link layer and also in the network and transport layers?",
+    "question-type": "mcq",
+    "options": [
+      "Reliable data transfer",
+      "Connection-oriented",
+      "Collision control",
+      "Error detection and correction"
+    ],
+    "answer": "Error detection and correction"
+  },
+  {
+    "content": "When a user types 'http://www.test.com:8080' into a web browser, the number 8080 indicates:",
+    "question-type": "mcq",
+    "options": [
+      "The port address to connect to on the server is 8080",
+      "The client's port address is 8080",
+      "The server's port address is 80, the client's port address is 80",
+      "The maximum port address used for the connection is 8080"
+    ],
+    "answer": "The port address to connect to on the server is 8080"
+  },
+  {
+    "content": "ICMP messages are sent within the packets of which protocol?",
+    "question-type": "mcq",
+    "options": [
+      "TCP",
+      "UDP",
+      "IP",
+      "FTP"
+    ],
+    "answer": "IP"
+  },
+  {
+    "content": "In the DNS database system, which type of resource record (RR) helps resolve a hostname to an IP address?",
+    "question-type": "mcq",
+    "options": [
+      "A",
+      "NS",
+      "CNAME",
+      "MX"
+    ],
+    "answer": "A"
+  },
+  {
+    "content": "Which Transport layer protocol does SMTP use to transmit emails?",
+    "question-type": "text",
+    "answer": "TCP"
+  },
+  {
+    "content": "Consider the command: DatagramSocket xsocket = new DatagramSocket(9876). When executed, this command will creata a __ socket on port __. Type answer seperate by comma.",
+    "answer": "UDP,9876"
+  },
+  {
+    "content": "Which of these queuing disciplines: FIFO, Priority, Round Robin, and Weighted Fair Queueing, guarantees that all packets are sent in the order they arrived? Type the first letter of selected discipline.",
+    "question-type": "text",
+    "answer": "F"
+  }
+]

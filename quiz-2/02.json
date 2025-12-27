@@ -1,0 +1,593 @@
+[
+  {
+    "content": "Suppose Host A wants to send a large file to Host B. The path from Host A to Host B has three links with rates R1 = 500 Kbps, R2 = 100 Kbps, and R3 = 1 Mbps. Assuming no other traffic in the network and the file size is 4 million bytes, approximately how long will it take to transfer the entire file to Host B?",
+    "question-type": "text",
+    "answer": "320"
+  },
+  {
+    "content": "Regarding the SMTP protocol:",
+    "question-type": "mcq",
+    "options": [
+      "SMTP does not encrypt data",
+      "Encrypts data using RSA",
+      "Encrypts data using SSL",
+      "Encrypts data using DEC"
+    ],
+    "answer": "SMTP does not encrypt data"
+  },
+  {
+    "content": "A person wants to build an information exchange application between a controller and a drone. They are choosing a suitable Transport layer service. Which of the following service requirements are acceptable?",
+    "question-type": "mcq",
+    "options": [
+      "No data loss, fixed throughput",
+      "Elastic throughput, no time sensitivity",
+      "No data loss, requires time sensitivity",
+      "Loss-tolerant, requires time sensitivity"
+    ],
+    "answer": "Loss-tolerant, requires time sensitivity"
+  },
+  {
+    "content": "Web Cookies are stored at:",
+    "question-type": "mcq",
+    "options": [
+      "Cache server",
+      "Proxy server",
+      "Web server",
+      "Web browser"
+    ],
+    "answer": "Web browser"
+  },
+  {
+    "content": "Consider a network connecting n nodes that always have packets available to transmit. The protocol used is slotted ALOHA with a retransmission probability p = 0.5. The probability that a node successfully transmits in the next slot if the previous slot had a collision is:",
+    "question-type": "mcq",
+    "options": [
+      "n * 0.5^(n-1)",
+      "n * 0.5^(n-1)",
+      "0.5^n",
+      "n * 0.5^n"
+    ],
+    "answer": "0.5^n"
+  },
+  {
+    "content": "What is the difference between flow control and congestion control in TCP?",
+    "question-type": "mcq",
+    "options": [
+      "Flow control regulates the upper layer and lower service, while congestion control regulates the sender and receiver",
+      "Flow control establishes connection between sender and receiver, while congestion control ensures reliability",
+      "Flow control regulates data flow from end-to-end to the router, while congestion control regulates data out to the physical link",
+      "Flow control regulates the sender and receiver processes, while congestion control regulates the subnet/network capacity"
+    ],
+    "answer": "Flow control regulates the sender and receiver processes, while congestion control regulates the subnet/network capacity"
+  },
+  {
+    "content": "A network administrator uses a computer as a network router. Based on switching architecture, which category does this router fall into?",
+    "question-type": "mcq",
+    "options": [
+      "Switching via interconnect network",
+      "Switching via memory",
+      "Combination of all 3 types",
+      "Switching via shared bus"
+    ],
+    "answer": "Switching via memory"
+  },
+  {
+    "content": "Which protocol fully describes the routing mechanism between Autonomous Systems (AS)?",
+    "question-type": "mcq",
+    "options": [
+      "eBGP",
+      "OSPF",
+      "BGP",
+      "Hierarchical OSPF"
+    ],
+    "answer": "BGP"
+  },
+  {
+    "content": "The identifier for a process in the application layer of a computer network consists of:",
+    "question-type": "mcq",
+    "options": [
+      "IP address and port number",
+      "IP address and process ID",
+      "IP address, process ID and port number",
+      "Port number and process ID"
+    ],
+    "answer": "IP address and port number"
+  },
+  {
+    "content": "Consider sending a large file of F bits from Host A to Host B. There are three links (and two switches) between A and B, and these links are not congested. Host A segments the file into segments of S bits and adds an 80-bit header to each, creating packets of L = 80 + S bits. Each link has a transmission rate of R bps. Find the value of S that minimizes the delay, ignoring propagation delay.",
+    "question-type": "mcq",
+    "options": [
+      "S = sqrt(40F)",
+      "S = 40F",
+      "S = 80F/R",
+      "S = 80F"
+    ],
+    "answer": "S = sqrt(40F)"
+  },
+  {
+    "content": "Assume the average size of Web objects is 120K bits and the request rate from browsers inside a school network to external web servers is 20 requests/sec. What must the web cache hit rate be to ensure the access link utilization is below 52%? Assume an access link capacity of 4.6 Mbps",
+    "question-type": "mcq",
+    "options": [
+      "hit rate > 0.56",
+      "hit rate > 0.53",
+      "hit rate < 0.53",
+      "hit rate > 0.44"
+    ],
+    "answer": "hit rate > 0.53"
+  },
+  {
+    "content": "Consider a single TCP Reno connection using a 10 Mbps link with no buffering. This is the only bottleneck link. The sender has a large file, and the receiver's receive buffer is much larger than the congestion window. TCP segment size is 1500 bytes, two-way propagation delay (RTT) is 150 msec, and the connection is always in the congestion avoidance phase (ignoring slow start). What is the maximum window size (in segments) this connection can reach?",
+    "question-type": "mcq",
+    "options": [
+      "150 segments",
+      "120 segments",
+      "200 segments",
+      "125 segments"
+    ],
+    "answer": "125 segments"
+  },
+  {
+    "content": "How does the SMTP protocol authenticate the sender?",
+    "question-type": "mcq",
+    "options": [
+      "Account name and password",
+      "SMTP does not authenticate the sender",
+      "Email and password",
+      "Username and password"
+    ],
+    "answer": "SMTP does not authenticate the sender"
+  },
+  {
+    "content": "A router is connected to a LAN. If the Ethernet port of this router is assigned the IP address 172.16.112.1/25, what will be the network address (subnet) for the computers in this LAN?",
+    "question-type": "mcq",
+    "options": [
+      "172.16.255.0/24",
+      "172.16.0.0/16",
+      "172.16.96.0/25",
+      "172.16.112.0/25"
+    ],
+    "answer": "172.16.112.0/25"
+  },
+  {
+    "content": "Consider the following HTTP GET message recorded by Wireshark: \nGET /cs453/index.html HTTP/1.1\nHost: gaia.cs.umass.edu\nUser-Agent: Mozilla/5.0...\nKeep-Alive: 300\nConnection: keep-alive\nSelect the INCORRECT statement:",
+    "question-type": "mcq",
+    "options": [
+      "The URL of the requested document is http://gaia.cs.umass.edu/cs453/index.html",
+      "The browser is running on a host with the domain name gaia.cs.umass.edu",
+      "The browser is requesting a persistent connection",
+      "The browser is running HTTP version 1.1"
+    ],
+    "answer": "The browser is running on a host with the domain name gaia.cs.umass.edu"
+  },
+  {
+    "content": "For a network with a subnet mask of 255.255.255.224, what is the maximum number of assignable IP addresses for computers in that network?",
+    "question-type": "text",
+    "answer": "30"
+  },
+  {
+    "content": "When a host receives an IP datagram containing a TCP segment, how does the network layer know to pass the payload to TCP rather than UDP?",
+    "question-type": "mcq",
+    "options": [
+      "TCP is the default transport protocol",
+      "The transport layer itself determines which protocol receives the segment",
+      "Information within the payload indicates the protocol",
+      "The 8-bit protocol field in the IP header"
+    ],
+    "answer": "The 8-bit protocol field in the IP header"
+  },
+  {
+    "content": "Suppose 3 users share a 2 Mbps link and each user transmits at 1 Mbps when active, but each user only transmits 20% of the time. What is the probability that all 3 users are transmitting simultaneously?",
+    "question-type": "mcq",
+    "options": [
+      "0.1",
+      "0.008",
+      "0.8",
+      "0.6"
+    ],
+    "answer": "0.008"
+  },
+  {
+    "content": "Choose the correct description of CDMA (Code Division Multiple Access):",
+    "question-type": "mcq",
+    "options": [
+      "CDMA is a specific solution of FDMA",
+      "In CDMA, all users share the same frequency band and can send data simultaneously",
+      "CDMA is a specific solution of TDMA",
+      "CDMA is the standard used for Ethernet LAN"
+    ],
+    "answer": "In CDMA, all users share the same frequency band and can send data simultaneously"
+  },
+  {
+    "content": "What feature of CDMA in wireless networks helps avoid mutual interference between multiple senders?",
+    "question-type": "mcq",
+    "options": [
+      "The chipping sequences of different senders are orthogonal to each other",
+      "Nodes transmit on different time frames",
+      "Each node has its own code (chipping sequence)",
+      "Nodes operate on different frequency bands"
+    ],
+    "answer": "The chipping sequences of different senders are orthogonal to each other"
+  },
+  {
+    "content": "Which of the following statements is true for Software Defined Networking (SDN)?",
+    "question-type": "mcq",
+    "options": [
+      "Routers can run proprietary routing algorithms from vendors",
+      "Routers calculate their routing tables independently",
+      "Flexible and highly adaptive in routing data flows across the network",
+      "The path for a packet corresponding to a source-destination address pair is unique"
+    ],
+    "answer": "Flexible and highly adaptive in routing data flows across the network"
+  },
+  {
+    "content": "In SSL, data from the server to the client is encrypted using:",
+    "question-type": "mcq",
+    "options": [
+      "Symmetric Key Encryption Algorithm",
+      "RSA",
+      "MDS",
+      "Public Key Encryption Algorithm"
+    ],
+    "answer": "Symmetric Key Encryption Algorithm"
+  },
+  {
+    "content": "What is an advantage of a circuit-switched network compared to a packet-switched network?",
+    "question-type": "mcq",
+    "options": [
+      "These two types of networks only operate on different topologies.",
+      "Circuit-switched networks can guarantee a certain amount of end-to-end bandwidth for the duration of a call.",
+      "Different packets can be routed over different paths to the destination.",
+      "There is no difference between circuit-switched and packet-switched networks except for packet size."
+    ],
+    "answer": "Circuit-switched networks can guarantee a certain amount of end-to-end bandwidth for the duration of a call."
+  },
+  {
+    "content": "What is the primary function of the ICMP protocol?",
+    "question-type": "mcq",
+    "options": [
+      "Error correction",
+      "Delay calculation",
+      "Error checking and diagnostics",
+      "Packet routing"
+    ],
+    "answer": "Error checking and diagnostics"
+  },
+  {
+    "content": "Computer A is in a local network connected to the Internet via Gateway G. Computer B is on the Internet. During data transmission from A to B, the Ethernet frame originating from A will have which destination?",
+    "question-type": "mcq",
+    "options": [
+      "MAC address of Default Gateway G",
+      "MAC address of Computer B",
+      "IP address of Default Gateway G",
+      "IP address of Computer B"
+    ],
+    "answer": "MAC address of Default Gateway G"
+  },
+  {
+    "content": "Consider sending real-time voice from Host A to Host B over a packet-switched network (VoIP). Host A converts analog voice into a 64 kbps digital bit stream on the fly. Host A then groups the bits into 56-byte packets. There is a single link between Host A and Host B with a transmission rate of 10 Mbps and a propagation delay of 10 msec. As soon as Host A gathers a packet, it sends it to Host B. As soon as Host B receives the entire packet, it converts the packet's bits into an analog signal. How much time elapses in ms, from the time a bit is created (from the original analog signal at Host A) until the bit is decoded (as part of the analog signal at Host B)? Round to the nearest integer.",
+    "question-type": "text",
+    "answer": "17"
+  },
+  {
+    "content": "Choose the CORRECT statement regarding HTTP and TCP connections:",
+    "question-type": "mcq",
+    "options": [
+      "With non-persistent connections between a browser and a server, a single TCP segment can carry two separate HTTP request messages.",
+      "The Date: header in an HTTP response message indicates the time the object in the response was last modified.",
+      "A user requests a web page consisting of some text and three images. For this page, the client will send one request message and receive four response messages.",
+      "Two separate web pages (e.g., www.mit.edu/research.html and www.mit.edu/students.html) can be sent over the same persistent connection."
+    ],
+    "answer": "Two separate web pages (e.g., www.mit.edu/research.html and www.mit.edu/students.html) can be sent over the same persistent connection."
+  },
+  {
+    "content": "Suppose a process on Host C has a UDP socket with port 6789. If both Host A and Host B send a UDP segment to Host C with destination port 6789, will both segments be directed to the same socket? If so, how does the process at Host C distinguish between them?",
+    "question-type": "mcq",
+    "options": [ 
+      "Yes. For each received segment, the OS provides the process with IP addresses to identify the source.",
+      "No. They are directed to different sockets on Host C.",
+      "Yes. Each received segment has a different source port.",
+      "No. Received segments are always directed to a newly created socket."
+    ],
+    "answer": "Yes. Each received segment has a different source port." 
+  },
+  {
+    "content": "Which of the following mechanisms can be used to maintain state between a browser and a web server in the case of multi-step exchanges?",
+    "question-type": "mcq",
+    "options": [
+      "Nothing further is needed because HTTP is a stateful protocol.",
+      "HTTP 2.0",
+      "Cookies",
+      "Persistent HTTP 1.1"
+    ],
+    "answer": "Cookies"
+  },
+  {
+    "content": "Consider a DASH system with N video versions and N audio versions. If the server sends separate audio and video streams and requires the client to synchronize them, how many files does the server need to store?",
+    "question-type": "mcq",
+    "options": [
+      "N",
+      "2N",
+      "N*N",
+      "4N"
+    ],
+    "answer": "2N"
+  },
+  {
+    "content": "Alice uses a web-based email (like Gmail) to send a message to Bob, who accesses his mail server using IMAP. List the series of application layer protocols used to move the mail from Alice's machine to Bob's.",
+    "question-type": "mcq",
+    "options": [
+      "SMTP-SMTP-SMTP",
+      "SMTP-SMTP-SMTP-POP3",
+      "HTTP-SMTP-SMTP-IMAP",
+      "SMTP-SMTP-HTTP"
+    ],
+    "answer": "HTTP-SMTP-SMTP-IMAP"
+  },
+  {
+    "content": "In a P2P file-sharing application, do you agree with the statement 'There is no concept of client and server side in a communication session'? Why or why not?",
+    "question-type": "mcq",
+    "options": [
+      "No. There is always a server managing data exchange.",
+      "Yes. File chunks move between peers until everyone has the file.",
+      "No. The application receiving the file is usually the client, and the sender is the server.",
+      "Yes. There is no difference between peers regarding communication services."
+    ],
+    "answer": "No. The application receiving the file is usually the client, and the sender is the server."
+  },
+  {
+      "content": "Routing information for a (group of) destination addresses outside an AS is stored on:",
+      "question-type": "mcq",
+      "options": [
+        "Gateway routers and all routers inside the AS. The reason is that routers need this to calculate the best forwarding table.",
+        "Gateway routers and all routers inside the AS. The reason is that internal routers need to know which gateway router corresponds to the destination (group) address to forward packets to.",
+        "Statements in the other choices are all wrong.",
+        "The gateway routers of the AS. The reason is that the internal router only needs to forward the packet to the gateway router, and the gateway router handles the rest."
+      ],
+      "answer": "Gateway routers and all routers inside the AS. The reason is that routers need this to calculate the best forwarding table."
+  },
+  {
+    "content": "Identify the source machine that generated the following spam email based on the header info: \nReceived: from barmail.cs.umass.edu ([128.119.240.3]) by cs.umass.edu...\nReceived: from asusus-4b96 (localhost [127.0.0.1]) by barmail.cs.umass.edu...\nReceived: from asusus-4b96 ([58.88.21.177]) by barmail.cs.umass.edu...",
+    "question-type": "mcq",
+    "options": [
+      "barmail.cs.umass.edu",
+      "asusus-4b96 (58.88.21.177)",
+      "cs.umass.edu",
+      "Inbnd55.exchangeddd.com"
+    ],
+    "answer": "asusus-4b96 (58.88.21.177)"
+  },
+  {
+    "content": "Consider distributing a file of F bits to N clients using a client-server architecture. Assume a flexible model where the server can transmit to multiple clients simultaneously at different rates, as long as the combined rate does not exceed Us. If Us/N <= dmin, what is the distribution time for this scheme?",
+    "question-type": "mcq",
+    "options": [
+      "NF/dmin",
+      "F/(N*Us)",
+      "F/dmin",
+      "NF/Us"
+    ],
+    "answer": "F/dmin"
+  },
+  {
+    "content": "Suppose Host A wants to send a large file to Host B. The path from A to B has three links with rates R1 = 500 Kbps, R2 = 100 Kbps, and R3 = 1 Mbps. Assuming no other traffic, what is the throughput for this file transfer?",
+    "question-type": "mcq",
+    "options": [
+      "1.6 Mbps",
+      "100 Kbps",
+      "500 Kbps",
+      "1 Mbps"
+    ],
+    "answer": "100 Kbps"
+  },
+  {
+    "content": "Which protocol is used to assign an IP address to a new computer joining a network?",
+    "question-type": "mcq",
+    "options": [
+      "DHCP",
+      "RSVP",
+      "RPC",
+      "IP"
+    ],
+    "answer": "DHCP"
+  },
+  {
+    "content": "Consider a new peer Alice joining a BitTorrent network without owning any chunks. Since she has nothing to upload, she cannot become a top-four uploader for any other peer. How will Alice obtain her first chunk?",
+    "question-type": "mcq",
+    "options": [
+      "Each peer checks if its neighborhood is empty and unchokes them.",
+      "A central server provides the first chunk to any new peer joining the network.",
+      "Alice will directly ask one of her neighbors for the first chunk.",
+      "In BitTorrent, a peer will randomly select another peer and unchoke them for a short period (optimistic unchoking)."
+    ],
+    "answer": "In BitTorrent, a peer will randomly select another peer and unchoke them for a short period (optimistic unchoking)."
+  },
+  {
+    "content": "Should a packet with a private network address appear in the public Internet? Why?",
+    "question-type": "mcq",
+    "options": [
+      "Yes. It can be used in the source IP field.",
+      "No. Because private addresses are only used in wireless networks.",
+      "Yes. It can be used in the destination IP field.",
+      "No. Because private network addresses can be reused by many different devices in different private networks."
+    ],
+    "answer": "No. Because private network addresses can be reused by many different devices in different private networks."
+  },
+  {
+    "content": "Which of the following statements is NOT true regarding generalized forwarding?",
+    "question-type": "mcq",
+    "options": [
+      "OpenFlow is a standard that embodies the idea of generalized forwarding.",
+      "It allows implementing multiple features, including firewalls and NAT.",
+      "It is implemented in both input port and output port blocks.",
+      "Matching is performed on all fields of the packet header."
+    ],
+    "answer": "Matching is performed on all fields of the packet header."
+  },
+  {
+    "content": "How long does it take in ms, for a 1000-byte packet to transmit over a 2500 km link with a propagation speed of 2.5e8 m/s and a transmission rate of 2 Mbps?",
+    "question-type": "text",
+    "answer": "14"
+  },
+  {
+    "content": "When moving a computer from LAN A to LAN B, which belong to two different subnets:",
+    "question-type": "mcq",
+    "options": [
+      "MAC address will change",
+      "Both MAC and IP addresses will change",
+      "Only the IP address will change",
+      "Neither MAC nor IP address will change"
+    ],
+    "answer": "Only the IP address will change"
+  },
+  {
+    "content": "Select the CORRECT statement regarding TCP congestion control:",
+    "question-type": "mcq",
+    "options": [
+      "When a timer expires at the sender, the ssthresh value is set to half of its previous value.",
+      "The TCP segment has a field in its header for rwnd (receive window).",
+      "If Host A sends a segment with sequence number 38 and 4 bytes of data, the acknowledgment number must be 42.",
+      "If the last SampleRTT is 1 second, the current TimeoutInterval must be >= 1 second."
+    ],
+    "answer": "The TCP segment has a field in its header for rwnd (receive window)."
+  },
+  {
+    "content": "Which of the following queuing rules: FIFO, Priority, Round-Robin (RR), and Weighted Fair Queueing (WFQ), ensures that all packets are sent in the order they arrived?",
+    "question-type": "mcq",
+    "options": [
+      "Priority",
+      "Weighted Fair Queueing (WFQ)",
+      "Round-Robin (RR)",
+      "FIFO"
+    ],
+    "answer": "FIFO"
+  },
+  {
+    "content": "Consider transferring a large file of L bytes from Host A to Host B. Assume MSS is 536 bytes. What is the maximum value of L such that TCP sequence numbers are not exhausted (using 32-bit sequence numbers)?",
+    "question-type": "mcq",
+    "options": [
+      "536 bytes",
+      "2^16 bytes",
+      "16 bytes",
+      "2^32 bytes"
+    ],
+    "answer": "2^32 bytes"
+  },
+  {
+    "content": "Given SampleRTT values in ms: 106, 120, 140, 90, 115, and α=0.125, β=0.25, initial EstimatedRTT = 100 ms, initial DevRTT = 5 ms. Calculate the TCP TimeoutInterval after the 115ms sample in ms. Round to nearest integer.",
+    "question-type": "text",
+    "answer": "165"
+  },
+  {
+    "content": "In HFC (Hybrid Fiber-Coax) systems, which of the following statements is INCORRECT?",
+    "question-type": "mcq",
+    "options": [
+      "Fiber optics connect head ends, from which coaxial cable is used to reach individual homes.",
+      "On the downstream channel, all packets are sent from a single source, the head end.",
+      "HFC bandwidth is shared among users.",
+      "There are collisions on the downstream channel."
+    ],
+    "answer": "There are collisions on the downstream channel."
+  },
+  {
+    "content": "Suppose an arriving packet matches two or more entries in the forwarding table of a router using traditional destination-based IP forwarding. Which rule does the router apply to determine the output port?",
+    "question-type": "mcq",
+    "options": [
+      "First entry in the forwarding table",
+      "Shortest prefix matching",
+      "Longest prefix matching",
+      "Default output port"
+    ],
+    "answer": "Longest prefix matching"
+  },
+  {
+    "content": "An HTTP client wants to retrieve a web document at a certain URL. The IP address of the HTTP server is initially unknown. Which application and transport layer protocols besides HTTP are needed?",
+    "question-type": "mcq",
+    "options": [
+      "TCP/IP and IP/ARP",
+      "HTTP/TCP and IP/TCP",
+      "DNS/TCP and HTTP/TCP",
+      "DNS/UDP and HTTP/TCP"
+    ],
+    "answer": "DNS/UDP and HTTP/TCP"
+  },
+  {
+    "content": "Select the CORRECT statement:",
+    "question-type": "mcq",
+    "options": [
+      "If Host B has no data to send to A, it will not send acknowledgments because it cannot piggyback.",
+      "The size of TCP rwnd never changes during the connection.",
+      "The number of unacknowledged bytes sent by A must not exceed the receiver's buffer size.",
+      "TCP sequence numbers only increment when data is lost."
+    ],
+    "answer": "The number of unacknowledged bytes sent by A must not exceed the receiver's buffer size."
+  },
+  {
+    "content": "What is the advantage of Public-key algorithms compared to Symmetric-key algorithms?",
+    "question-type": "mcq",
+    "options": [
+      "Faster processing time",
+      "Easier to use and manage (key distribution)",
+      "Higher security level",
+      "Key length is always larger"
+    ],
+    "answer": "Easier to use and manage (key distribution)"
+  },
+  {
+    "content": "In HTTP/1.1, the Head of Line (HOL) blocking problem occurs when a large file in a web page (e.g., a video clip) takes a long time to traverse a slow link, thereby blocking other small objects behind it. How does HTTP/2 attempt to solve this?",
+    "question-type": "mcq",
+    "options": [
+      "By dividing each message into small frames and interleaving request and response messages",
+      "By sending small messages before larger messages",
+      "By classifying different requests based on priority order",
+      "By creating different queues for different message sizes"
+    ],
+    "answer": "By dividing each message into small frames and interleaving request and response messages"
+  },
+  {
+    "content": "In traditional link-state routing algorithms, how do routers know the state of the entire network?",
+    "question-type": "mcq",
+    "options": [
+      "Routers share state information by broadcasting (flooding) their state to all other routers.",
+      "Routers update network information gradually and calculate the forwarding table locally.",
+      "Routers assume the link state of non-directly connected routers.",
+      "Routers listen to packets passing through to capture network state."
+    ],
+    "answer": "Routers share state information by broadcasting (flooding) their state to all other routers."
+  },
+  {
+    "content": "Suppose you want to perform a transaction from a remote client to a server as quickly as possible. Would you use UDP or TCP? Why?",
+    "question-type": "mcq",
+    "options": [
+      "TCP. Only one round trip time (RTT) is needed.",
+      "TCP. Transport layer applications using TCP are always faster.",
+      "UDP. Transaction data can be routed on a specific path if routers detect UDP.",
+      "UDP. The transaction can be completed in one round trip time (RTT) without connection setup."
+    ],
+    "answer": "UDP. The transaction can be completed in one round trip time (RTT) without connection setup."
+  },
+  {
+    "content": "Two devices are considered to be on a computer network when:",
+    "question-type": "mcq",
+    "options": [
+      "There is a process running on both devices.",
+      "There is a cable connecting the two devices.",
+      "A process on one device can exchange data with a process on the other device.",
+      "There are two processes running on the devices using the same PID."
+    ],
+    "answer": "A process on one device can exchange data with a process on the other device."
+  },
+  {
+    "content": "In RSA encryption, if P = 7 and Q = 11, what is the value of Z?",
+    "question-type": "text",
+    "answer": "60"
+  },
+  {
+    "content": "Which standard has resolved the Head-of-Line (HOL) blocking issue in HTTP?",
+    "question-type": "mcq",
+    "options": [
+      "Pipelined HTTP/1.1",
+      "HTTP/3",
+      "HTTP/2",
+      "HTTP/1.0"
+    ],
+    "answer": "HTTP/2"
+  }
+]

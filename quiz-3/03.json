@@ -1,0 +1,584 @@
+[
+  {
+    "content": "A collection of various interconnected computers that seems a single coherent system to its client is considered as?",
+    "question-type": "mcq",
+    "options": [
+      "computer network",
+      "distributed system",
+      "networking system",
+      "mail system"
+    ],
+    "answer": "distributed system"
+  },
+  {
+    "content": "Which is a device that forwards packets between networks by processing the routing information included in the packet?",
+    "question-type": "mcq",
+    "options": ["bridge", "firewall", "router", "hub"],
+    "answer": "router"
+  },
+  {
+    "content": "What is the function of DSLAM?",
+    "question-type": "mcq",
+    "options": [
+      "Convert analog signals into digital signals",
+      "Convert digital signals into analog signals",
+      "Amplify digital signals",
+      "De-amplify digital signals"
+    ],
+    "answer": "Convert analog signals into digital signals"
+  },
+  {
+    "content": "Which of the following is the multiple access protocol for channel access control?",
+    "question-type": "mcq",
+    "options": ["CSMA/CD", "CSMA/CA", "Both CSMA/CD & CSMA/CA", "HDLC"],
+    "answer": "Both CSMA/CD & CSMA/CA"
+  },
+  {
+    "content": "Choose the correct statement about Transmission Control Protocol (TCP):",
+    "question-type": "mcq",
+    "options": [
+      "is a connection-oriented protocol",
+      "uses a three-way handshake to establish a connection",
+      "receives data from application as a single stream",
+      "all of the mentioned"
+    ],
+    "answer": "all of the mentioned"
+  },
+  {
+    "content": "If a link transmits 4000 frames per second, and each slot has 8 bits, the transmission rate of this TDM circuit is? in kbps",
+    "question-type": "text",
+    "answer": "32"
+  },
+  {
+    "content": "Which of the following delay is faced by the packet in travelling from one end system to another?",
+    "question-type": "mcq",
+    "options": [
+      "Propagation delay",
+      "Queuing delay",
+      "Transmission delay",
+      "All of the mentioned"
+    ],
+    "answer": "All of the mentioned"
+  },
+  {
+    "content": "For a 10Mbps Ethernet link, if the length of the packet is 32 bits, the transmission delay (in microseconds) is:",
+    "question-type": "text",
+    "answer": "3.2"
+  },
+  {
+    "content": "Given L = number of bits in the packet, a = average rate, and R = transmission rate. The Traffic intensity in the network is given by:",
+    "question-type": "mcq",
+    "options": ["La/R", "LR/a", "R/La", "Ra/L"],
+    "answer": "La/R"
+  },
+  {
+    "content": "If end-to-end delay is given by d_end-end = N * (d_proc + d_trans + d_prop) on a non-congested network, the number of routers between source and destination is:",
+    "question-type": "mcq",
+    "options": ["N/2", "N", "N-1", "2N"],
+    "answer": "N-1"
+  },
+  {
+    "content": "In a network, if P is the only packet being transmitted and there was no earlier transmission, which of the following delays could be zero?",
+    "question-type": "mcq",
+    "options": [
+      "Propagation delay",
+      "Queuing delay",
+      "Transmission delay",
+      "Processing delay"
+    ],
+    "answer": "Queuing delay"
+  },
+  {
+    "content": "Which one of the following is an application architecture paradigm?",
+    "question-type": "mcq",
+    "options": [
+      "Peer to peer",
+      "Client-server",
+      "HTTP",
+      "Both Peer-to-Peer & Client-Server"
+    ],
+    "answer": "Both Peer-to-Peer & Client-Server"
+  },
+  {
+    "content": "Application developer has permission to decide which of the following on the transport layer side?",
+    "question-type": "mcq",
+    "options": [
+      "Transport layer protocol",
+      "Maximum buffer size",
+      "Both Transport layer protocol and Maximum buffer size",
+      "None of the mentioned"
+    ],
+    "answer": "Both Transport layer protocol and Maximum buffer size"
+  },
+  {
+    "content": "Which is a time-sensitive service?",
+    "question-type": "mcq",
+    "options": [
+      "File transfer",
+      "File download",
+      "E-mail",
+      "Internet telephony"
+    ],
+    "answer": "Internet telephony"
+  },
+  {
+    "content": "Which one of the following protocols delivers/stores mail to the receiver server?",
+    "question-type": "mcq",
+    "options": [
+      "simple mail transfer protocol",
+      "post office protocol",
+      "internet mail access protocol",
+      "hypertext transfer protocol"
+    ],
+    "answer": "simple mail transfer protocol"
+  },
+  {
+    "content": "In the process of fetching a web page from a server, the persistent HTTP request/response takes how many RTTs?",
+    "question-type": "text",
+    "answer": "1"
+  },
+  {
+    "content": "Which of the following is NOT correct about Web cache?",
+    "question-type": "mcq",
+    "options": [
+      "Web cache doesn't have its own disk space",
+      "Web cache can act both like server and client",
+      "Web cache might reduce the response time",
+      "Web cache contains copies of recently requested objects"
+    ],
+    "answer": "Web cache doesn't have its own disk space"
+  },
+  {
+    "content": "If you have to send multimedia data over SMTP, it has to be encoded into which format?",
+    "question-type": "mcq",
+    "options": ["Binary", "Signal", "ASCII", "Hash"],
+    "answer": "ASCII"
+  },
+  {
+    "content": "When the sender and the receiver of an email are on different systems, what do we need?",
+    "question-type": "mcq",
+    "options": [
+      "One MTA",
+      "Two UAs",
+      "Two UAs and one MTA",
+      "Two UAs and two MTAs"
+    ],
+    "answer": "Two UAs and two MTAs"
+  },
+  {
+    "content": "Choose the statement which is wrong in case of SMTP:",
+    "question-type": "mcq",
+    "options": [
+      "It requires message to be in 7-bit ASCII format",
+      "It is a pull protocol",
+      "It transfers files from one mail server to another mail server",
+      "SMTP is responsible for the transmission of the mail through the internet"
+    ],
+    "answer": "It is a pull protocol"
+  },
+  {
+    "content": "What happens if a server has no clue about where to find the address for a hostname?",
+    "question-type": "mcq",
+    "options": [
+      "server asks the root server",
+      "server asks its adjacent server",
+      "request is not processed",
+      "none of the mentioned"
+    ],
+    "answer": "server asks the root server"
+  },
+  {
+    "content": "Which one of the following is not true regarding hostnames and IP addresses?",
+    "question-type": "mcq",
+    "options": [
+      "multiple hostnames may correspond to a single IP address",
+      "a single hostname may correspond to many IP addresses",
+      "a single hostname may correspond to a single IP address",
+      "none of the mentioned"
+    ],
+    "answer": "none of the mentioned"
+  },
+  {
+    "content": "IP assigned for a client by a DHCP server is:",
+    "question-type": "mcq",
+    "options": [
+      "for a limited period",
+      "for an unlimited period",
+      "not time dependent",
+      "none of the mentioned"
+    ],
+    "answer": "for a limited period"
+  },
+  {
+    "content": "When a host acquires multiple offers of IP addresses from different DHCP servers, the host will broadcast a DHCP request identifying the server whose offer has been accepted. The DHCP server can provide the ____ of the IP addresses.",
+    "question-type": "mcq",
+    "options": [
+      "dynamic allocation",
+      "automatic allocation",
+      "static allocation",
+      "all of the mentioned"
+    ],
+    "answer": "dynamic allocation"
+  },
+  {
+    "content": "In TCP, sending and receiving data is done in which format?",
+    "question-type": "mcq",
+    "options": [
+      "Stream of bytes",
+      "Sequence of characters",
+      "Lines of data",
+      "Packets"
+    ],
+    "answer": "Stream of bytes"
+  },
+  {
+    "content": "TCP processes may not write and read data at the same speed. So, what do we need for storage?",
+    "question-type": "mcq",
+    "options": ["Packets", "Buffers", "Segments", "Stacks"],
+    "answer": "Buffers"
+  },
+  {
+    "content": "To achieve reliable transport in TCP, which mechanism is used to check the safe and sound arrival of data?",
+    "question-type": "mcq",
+    "options": ["Packet", "Buffer", "Segment", "Acknowledgment"],
+    "answer": "Acknowledgment"
+  },
+  {
+    "content": "Suppose a TCP connection is transferring a file of 1000 bytes. The first byte is numbered 10001. What is the sequence number of the segment if all data is sent in only one segment?",
+    "question-type": "text",
+    "answer": "10001"
+  },
+  {
+    "content": "The mechanism where the receiver of the data controls the amount of data that are to be sent by the sender is referred to as:",
+    "question-type": "mcq",
+    "options": [
+      "Flow control",
+      "Error control",
+      "Congestion control",
+      "Error detection"
+    ],
+    "answer": "Flow control"
+  },
+  {
+    "content": "Which field allows TCP to detect lost segments and in turn recover from that loss?",
+    "question-type": "mcq",
+    "options": [
+      "Sequence number",
+      "Acknowledgment number",
+      "Checksum",
+      "Both Sequence & Acknowledgment number"
+    ],
+    "answer": "Both Sequence & Acknowledgment number"
+  },
+  {
+    "content": "What is the main advantage of UDP?",
+    "question-type": "mcq",
+    "options": ["More overload", "Reliable", "Low overhead", "Fast connection"],
+    "answer": "Low overhead"
+  },
+  {
+    "content": "Which is the correct expression for the length of a UDP datagram?",
+    "question-type": "mcq",
+    "options": [
+      "UDP length = IP length - IP header's length",
+      "UDP length = UDP length - UDP header's length",
+      "UDP length = IP length + IP header's length",
+      "UDP length = UDP length + UDP header's length"
+    ],
+    "answer": "UDP length = IP length - IP header's length"
+  },
+  {
+    "content": "In Go-Back-N window, when the timer of the packet times out, several packets have to be resent. Whereas in Selective Repeat window, the sender resends which packets?",
+    "question-type": "mcq",
+    "options": [
+      "Packets which are not lost",
+      "Only those packets which are lost or corrupted",
+      "Packets from starting",
+      "All the packets"
+    ],
+    "answer": "Only those packets which are lost or corrupted"
+  },
+  {
+    "content": "In the slow-start algorithm, the size of the congestion window increases until it reaches a threshold. How does it increase?",
+    "question-type": "mcq",
+    "options": ["exponentially", "additively", "multiplicatively", "suddenly"],
+    "answer": "exponentially"
+  },
+  {
+    "content": "A web cookie is a small piece of data that is:",
+    "question-type": "mcq",
+    "options": [
+      "sent from a website and stored in user's web browser while a user is browsing a website",
+      "sent from user and stored in the server while a user is browsing a website",
+      "sent from root server to all servers",
+      "sent from the root server to other root servers"
+    ],
+    "answer": "sent from a website and stored in user's web browser while a user is browsing a website"
+  },
+  {
+    "content": "Which of the following is not applicable for the single Internet Protocol (IP)?",
+    "question-type": "mcq",
+    "options": [
+      "Error reporting",
+      "Handle addressing conventions",
+      "Datagram format",
+      "Packet handling conventions"
+    ],
+    "answer": "Error reporting"
+  },
+  {
+    "content": "Which field helps to check rearrangement of the fragments for an IP packet?",
+    "question-type": "mcq",
+    "options": ["offset", "flag", "TTL", "identifier"],
+    "answer": "offset"
+  },
+  {
+    "content": "Suppose two IPv6 nodes want to interoperate using IPv6 datagrams, but they are connected to each other by intervening IPv4 routers. What is the best solution used?",
+    "question-type": "mcq",
+    "options": [
+      "Use dual-stack approach",
+      "Tunneling",
+      "No solution",
+      "Replace the system"
+    ],
+    "answer": "Tunneling"
+  },
+  {
+    "content": "Which of the following is false with respect to Connectionless service of a layer protocol?",
+    "question-type": "mcq",
+    "options": [
+      "Packets are not numbered",
+      "Packets are not delayed",
+      "No acknowledgement",
+      "Packet may arrive out of sequence"
+    ],
+    "answer": "Packets are not delayed"
+  },
+  {
+    "content": "Internet Control Message Protocol (ICMP) has been designed to compensate for what from Internet Protocol (IP)?",
+    "question-type": "mcq",
+    "options": [
+      "Error-reporting",
+      "Error-correction",
+      "Host and management queries",
+      "All of the mentioned"
+    ],
+    "answer": "All of the mentioned"
+  },
+  {
+    "content": "The Time-to-Live (TTL) field in an IP header has a value of 10. How many routers (max) can process this datagram?",
+    "question-type": "mcq",
+    "options": ["11", "5", "10", "9"],
+    "answer": "10"
+  },
+  {
+    "content": "IPv6 does not use which type of address?",
+    "question-type": "mcq",
+    "options": ["Broadcast", "Multicast", "Any cast", "Unicast"],
+    "answer": "Broadcast"
+  },
+  {
+    "content": "You have an IP address of 172.16.13.5 with a 255.255.255.128 subnet mask. What is your class of address, subnet address, and broadcast address?",
+    "question-type": "mcq",
+    "options": [
+      "Class A, Subnet 172.16.13.0, Broadcast 172.16.13.127",
+      "Class B, Subnet 172.16.13.0, Broadcast 172.16.13.127",
+      "Class B, Subnet 172.16.13.0, Broadcast 172.16.13.255",
+      "Class B, Subnet 172.16.0.0, Broadcast 172.16.255.255"
+    ],
+    "answer": "Class B, Subnet 172.16.13.0, Broadcast 172.16.13.127"
+  },
+  {
+    "content": "If you wanted to have 12 subnets with a Class C network ID, which subnet mask would you use?",
+    "question-type": "mcq",
+    "options": [
+      "255.255.255.252",
+      "255.255.255.255",
+      "255.255.255.240",
+      "255.255.255.248"
+    ],
+    "answer": "255.255.255.240"
+  },
+  {
+    "content": "Your router has the IP address 172.16.2.1/23 on Ethernet0. Which of the following can be valid host IDs on the LAN interface attached to the router? (i. 172.16.1.100, ii. 172.16.1.198, iii. 172.16.2.255, iv. 172.16.3.0)",
+    "question-type": "mcq",
+    "options": ["i only", "ii and iii only", "iii and iv only", "ii only"],
+    "answer": "ii and iii only"
+  },
+  {
+    "content": "What is the maximum number of IP addresses that can be assigned to hosts on a local subnet that uses the 255.255.255.224 subnet mask?",
+    "question-type": "text",
+    "answer": "30"
+  },
+  {
+    "content": "You have an interface on a router with the IP address of 192.168.192.10/29. Including the router interface, how many hosts can have IP addresses on the LAN attached to the router interface?",
+    "question-type": "text",
+    "answer": "6"
+  },
+  {
+    "content": "Where should we use default routing?",
+    "question-type": "mcq",
+    "options": [
+      "On stub networks - which have only one exit path out of the network",
+      "Which have more than one exit path out of the network",
+      "Minimum five exit paths out of the network",
+      "Maximum five exit paths out of the network"
+    ],
+    "answer": "On stub networks - which have only one exit path out of the network"
+  },
+  {
+    "content": "What is route poisoning?",
+    "question-type": "mcq",
+    "options": [
+      "It sends back the protocol received from a router as a poison pill",
+      "It is information received from a router that can't be sent back to the originating router",
+      "It prevents regular update messages from reinstating a route that has just come up",
+      "It describes when a router sets the metric for a downed link to infinity"
+    ],
+    "answer": "It describes when a router sets the metric for a downed link to infinity"
+  },
+  {
+    "content": "Which methods are commonly used in the ServerSocket class?",
+    "question-type": "mcq",
+    "options": [
+      "Public OutputStream getOutputStream()",
+      "Public Socket accept()",
+      "Public synchronized void close()",
+      "Public void connect()"
+    ],
+    "answer": "Public Socket accept()"
+  },
+  {
+    "content": "Which constructor of the DatagramSocket class is used to create a datagram socket and bind it with the given Port Number?",
+    "question-type": "mcq",
+    "options": [
+      "DatagramSocket(int port)",
+      "DatagramSocket(int port, IntAddress address)",
+      "DatagramSocket()",
+      "DatagramSocket(int address)"
+    ],
+    "answer": "DatagramSocket(int port)"
+  },
+  {
+    "content": "What must the client in socket programming know?",
+    "question-type": "mcq",
+    "options": [
+      "IP address of Server",
+      "Port number",
+      "Both IP address of Server & Port number",
+      "Only its own IP address"
+    ],
+    "answer": "Both IP address of Server & Port number"
+  },
+  {
+    "content": "Cookies were originally designed for:",
+    "question-type": "mcq",
+    "options": [
+      "Client-side programming",
+      "Server-side programming",
+      "Both Client-side programming and Server-side programming",
+      "Socket programming"
+    ],
+    "answer": "Server-side programming"
+  },
+  {
+    "content": "The computation of the shortest path in OSPF is usually done by which algorithm?",
+    "question-type": "mcq",
+    "options": [
+      "Bellman-ford algorithm",
+      "Routing information protocol",
+      "Dijkstra's algorithm",
+      "Distance vector routing"
+    ],
+    "answer": "Dijkstra's algorithm"
+  },
+  {
+    "content": "In OSPF, which protocol is used to discover neighbor routers automatically?",
+    "question-type": "mcq",
+    "options": [
+      "Link state protocol",
+      "Error-correction protocol",
+      "Routing information protocol",
+      "Hello protocol"
+    ],
+    "answer": "Hello protocol"
+  },
+  {
+    "content": "An OSPF router receives an LSA, the router checks its sequence number, and this number matches the sequence number of the LSA that the receiving router already has. What does the receiving router do with the LSA?",
+    "question-type": "mcq",
+    "options": [
+      "Ignores the LSA",
+      "Adds it to the database",
+      "Sends newer LSU update to source router",
+      "Floods the LSA to the other routers"
+    ],
+    "answer": "Ignores the LSA"
+  },
+  {
+    "content": "The outcome of Dijkstra's calculation is used to populate which table?",
+    "question-type": "mcq",
+    "options": [
+      "Topology table",
+      "Routing table",
+      "Neighbor table",
+      "Adjacency table"
+    ],
+    "answer": "Routing table"
+  },
+  {
+    "content": "MIB is a collection of groups of objects that can be managed by which protocol?",
+    "question-type": "mcq",
+    "options": ["SMTP", "UDP", "SNMP", "TCP/IP"],
+    "answer": "SNMP"
+  },
+  {
+    "content": "ICMP is used in which application?",
+    "question-type": "mcq",
+    "options": ["Ping", "Traceroute", "Ifconfig", "Both Ping & Traceroute"],
+    "answer": "Both Ping & Traceroute"
+  },
+  {
+    "content": "ISPs exchange internet traffic between their networks by:",
+    "question-type": "mcq",
+    "options": [
+      "internet exchange point",
+      "subscriber end point",
+      "ISP end point",
+      "internet end point"
+    ],
+    "answer": "internet exchange point"
+  },
+  {
+    "content": "[Context: A diagram shows HostA connected to RouterA via interface Fa0/0. RouterA connects to an HTTPS Server via interface Fa0/1.] Host A wants to send a request to a Web server HTTPS. Which of the following could be the source address when the Server receives the data frame?",
+    "question-type": "mcq",
+    "options": [
+      "MAC address of the switch connected to host A",
+      "MAC address of the switch connected to Server",
+      "MAC address of the router A at interface Fa0/0",
+      "MAC address of the router A at interface Fa0/1"
+    ],
+    "answer": "MAC address of the router A at interface Fa0/1"
+  },
+  {
+    "content": "[Context: The diagram shows three TCP connections: 1. Host C (source port 7532) to Server B (dest port 80). 2. Host C (source port 26145) to Server B (dest port 80). 3. Host A (source port 26145) to Server B (dest port 80).] What are the source/destination port values and the source/destination IP addresses in the network-layer datagrams flowing from the server back to client A's process?",
+    "question-type": "mcq",
+    "options": [
+      "Source port: 80, IP Source: B; Destination port: 26145, Destination IP: A",
+      "Source port: 26145, IP Source: A; Destination port: 80, Destination IP: B",
+      "Source port 80, IP Source: A; Destination port: 26145, Destination IP: B",
+      "Source port 80, IP source C; Destination port: 7532, Destination IP: B"
+    ],
+    "answer": "Source port: 80, IP Source: B; Destination port: 26145, Destination IP: A"
+  },
+  {
+    "content": "[Context: A network graph shows nodes z, x, y, v, w, u, t with the following link costs: z-x=8, z-y=12, x-y=6, x-v=3, x-w=6, y-v=8, y-t=7, v-t=4, v-w=4, v-u=3, w-u=3, t-u=2.] What is the shortest path from z to u using Dijkstra's algorithm? Type answer seperate by comma.",
+    "question-type": "text",
+    "answer": "z,x,v,u"
+  },
+  {
+    "content": "[Context: The diagram shows 4 Autonomous Systems (AS1-AS4). Router 4a in AS4 is connected to prefix x. AS4 is connected to AS3 (router 4c to 3c) and AS2. AS3 (router 3a) is connected to AS1. AS1 is connected to AS2.] Router 3c learns about prefix x from which routing protocol?",
+    "question-type": "mcq",
+    "options": ["OSPF", "eBGP", "iBGP", "RIP"],
+    "answer": "eBGP"
+  }
+]

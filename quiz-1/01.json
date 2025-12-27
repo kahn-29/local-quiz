@@ -1,0 +1,200 @@
+[
+  {
+    "content": "In an Email system, transfer agents send emails to each other using which protocol?",
+    "question-type": "mcq",
+    "options": ["POP3", "IMAP", "HTTP", "SMTP"],
+    "answer": "SMTP"
+  },
+  {
+    "content": "Why are applications using HTTP, POP3, and SMTP at the Application layer more suitable for TCP at the Transport layer compared to UDP?",
+    "question-type": "mcq",
+    "options": [
+      "Data for all the above applications must be encrypted",
+      "The above applications can tolerate a certain percentage of data loss",
+      "All the above applications are created by programmers",
+      "All the above applications require data to be delivered in order and without packet loss"
+    ],
+    "answer": "All the above applications require data to be delivered in order and without packet loss"
+  },
+  {
+    "content": "DNS service is used when you first access a URL via a Web browser. Suppose n DNS servers are queried before receiving the IP address with query times RTT1, RTT2,...RTTn, and RTT0 is the Round Trip Time between the browser and the Web server. How long will it take to get the content if the page only contains a small text of 20 characters?",
+    "question-type": "mcq",
+    "options": [
+      "RTT0 + RTT1 + ...+ RTTn",
+      "2RTT0 + RTT1 + .. RTTn",
+      "RTT1 + RTT2 + ...+ RTTn",
+      "2(RTT1 + RTT2 + ...+ RTTn)"
+    ],
+    "answer": "2RTT0 + RTT1 + .. RTTn"
+  },
+  {
+    "content": "An logs into the university email via a Web browser to send a message to Binh. Binh usually reads mail on a phone app using POP3 to connect to the mail server. Which Transport layer protocol is used in this situation?",
+    "question-type": "mcq",
+    "options": ["RTCP", "POP3", "UDP", "TCP"],
+    "answer": "TCP"
+  },
+  {
+    "content": "Choose the correct statement:",
+    "question-type": "mcq",
+    "options": [
+      "The response content in an HTTP response message will always have a body (data).",
+      "Two different objects of a Web page can be sent from the Web server to the browser over the same TCP connection.",
+      "When using a browser to access a page with text and 4 images, the browser sends only one request and receives 5 responses.",
+      "None of the statements are correct."
+    ],
+    "answer": "Two different objects of a Web page can be sent from the Web server to the browser over the same TCP connection."
+  },
+  {
+    "content": "DASH is a protocol for video streaming based on which protocol?",
+    "question-type": "mcq",
+    "options": ["DNS", "FTP", "SMTP", "HTTP"],
+    "answer": "HTTP"
+  },
+  {
+    "content": "Which of the following can be considered a client-server model application?",
+    "question-type": "mcq",
+    "options": ["HCMUT Website at http://hcmut.edu.vn", "BitTorrent", "Skype"],
+    "answer": "HCMUT Website at http://hcmut.edu.vn"
+  },
+  {
+    "content": "On each host, what is the maximum number of applications that can be assigned a network address (port)?",
+    "question-type": "mcq",
+    "options": ["1", "16", "2^16", "2^8"],
+    "answer": "2^16"
+  },
+  {
+    "content": "What is the advantage of IMAP compared to POP3?",
+    "question-type": "mcq",
+    "options": [
+      "Suitable for users who move frequently and use multiple devices",
+      "Requires less connection time",
+      "Easier to implement",
+      "Email content can be read even when the computer is offline"
+    ],
+    "answer": "Suitable for users who move frequently and use multiple devices"
+  },
+  {
+    "content": "BitTorrent is an application built on which model?",
+    "question-type": "mcq",
+    "options": ["Peer-to-Peer", "Client-Server"],
+    "answer": "Peer-to-Peer"
+  },
+  {
+    "content": "Which of the following commands are used when interacting with a POP3 Server?",
+    "question-type": "mcq",
+    "options": [
+      "USERNAME, PASS, LIST, RETR, QUIT",
+      "USER, PASS, LIST, RETR, QUIT",
+      "USER, PASSWORD, LIST, RETR, QUIT",
+      "USERNAME, PASSWORD, LIST, QUIT"
+    ],
+    "answer": "USER, PASS, LIST, RETR, QUIT"
+  },
+{
+    "content": "What is the advantage of the client-server architecture for network applications?",
+    "question-type": "mcq",
+    "options": [
+      "Simple and easy to manage/develop",
+      "No single point of failure",
+      "Self-scalability (capacity increases with users)",
+      "Does not require a high-performance server"
+    ],
+    "answer": "Simple and easy to manage/develop"
+  },
+  {
+    "content": "What is the prominent advantage of Peer-to-Peer (P2P) architecture?",
+    "question-type": "mcq",
+    "options": [
+      "Simple and easy to develop",
+      "Centralized control",
+      "High scalability (Self-scalability) with abundant resources as users increase",
+      "Always reliable and secure"
+    ],
+    "answer": "High scalability (Self-scalability) with abundant resources as users increase"
+  },
+  {
+    "content": "Identify the query type used with DNS when the local Name Server must send queries to each different Name Server (Root, Remote, etc.) upon receiving a user request.",
+    "question-type": "mcq",
+    "options": ["Simple query", "Iterative query", "Recursive query"],
+    "answer": "Iterative query"
+  },
+  {
+    "content": "In HTTP 1.1, when a Web Server returns a Response Message with a status code signaling success, what range does this status code fall into?",
+    "question-type": "mcq",
+    "options": ["400 – 499", "500 – 599", "200 – 299", "300 – 399"],
+    "answer": "200 – 299"
+  },
+  {
+    "content": "Choose the correct statement about HTTP GET and POST methods:",
+    "question-type": "mcq",
+    "options": [
+      "GET requests cannot be cached",
+      "A POST request has a length limit",
+      "The GET method should be used when sending passwords to a Web Server",
+      "GET requests can be bookmarked"
+    ],
+    "answer": "GET requests can be bookmarked"
+  },
+  {
+    "content": "How many sockets does a TCP server need to simultaneously support N connections from N different clients?",
+    "question-type": "mcq",
+    "options": ["N", "N-1", "2N", "N+1"],
+    "answer": "N+1"
+  },
+  {
+    "content": "What is the default port used for the HTTP protocol?",
+    "question-type": "mcq",
+    "options": ["8080", "20", "25", "80"],
+    "answer": "80"
+  },
+  {
+    "content": "What is the default port index for the SMTP service?",
+    "question-type": "mcq",
+    "options": ["25", "21", "110", "20"],
+    "answer": "25"
+  },
+  {
+    "content": "What is a basic characteristic of Peer-to-Peer architecture?",
+    "question-type": "mcq",
+    "options": [
+      "Many clients exist in the P2P network",
+      "Simple and easy to develop",
+      "Every peer in the network has the same role",
+      "Many servers exist in the P2P network"
+    ],
+    "answer": "Every peer in the network has the same role"
+  },
+  {
+    "content": "When executing the command 'nslookup www.vnn.vn', the returned result is:",
+    "question-type": "mcq",
+    "options": [
+      "The address of the Name server managing vnn.com domain",
+      "The Mail eXchange IP address of www.vnn.vn",
+      "The IP address of the Local Domain Name Server",
+      "The IP address of the domain name www.vnn.vn"
+    ],
+    "answer": "The IP address of the domain name www.vnn.vn"
+  },
+  {
+    "content": "Suppose a Web server using HTTP is running on a machine with the domain mydomain.web at port 8080. To access this server, which URL can be used?",
+    "question-type": "mcq",
+    "options": [
+      "http://8080:mydomain.web",
+      "http://mydomain.web:8080",
+      "http://mydomain.web",
+      "http://mydomain.web/8080"
+    ],
+    "answer": "http://mydomain.web:8080"
+  },
+  {
+    "content": "Characteristic of the DASH protocol in video streaming:",
+    "question-type": "mcq",
+    "options": [
+      "Image quality depends on the minimum bandwidth between client-server during the streaming process",
+      "Has a fixed data transfer rate during streaming",
+      "Image quality does not change during streaming",
+      "Image quality depends on the currently available bandwidth between client-server during the streaming process"
+    ],
+    "answer": "Image quality depends on the currently available bandwidth between client-server during the streaming process"
+  }
+]

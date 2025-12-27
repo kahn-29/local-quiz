@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahn Quiz - Local First</title>
+    <style>
+        body { font-family: system-ui, sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .option-card:hover { border-color: #3b82f6; background-color: #eff6ff; }
+        .option-card.selected { border-color: #3b82f6; background-color: #dbeafe; ring: 2px; ring-color: #3b82f6; }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        /* Tailwind CSS */
+        .bg-slate-50 { background-color: #f8fafc; }
+        .text-slate-900 { color: #0f172a; }
+        .min-h-screen { min-height: 100vh; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .p-6 { padding: 1.5rem; }
+        .max-w-md { max-width: 28rem; }
+        .w-full { width: 100%; }
+        .text-center { text-align: center; }
+        .space-y-8 > * + * { margin-top: 2rem; }
+        .space-y-2 > * + * { margin-top: 0.5rem; }
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .font-extrabold { font-weight: 800; }
+        .tracking-tight { letter-spacing: -0.025em; }
+        .text-blue-600 { color: #2563eb; }
+        .text-slate-500 { color: #64748b; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .gap-4 { gap: 1rem; }
+        .bg-blue-600 { background-color: #2563eb; }
+        .text-white { color: #ffffff; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .font-bold { font-weight: 700; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+        .shadow-blue-200 { --tw-shadow-color: #bfdbfe; --tw-shadow: var(--tw-shadow-colored); }
+        .hover\:bg-blue-700:hover { background-color: #1d4ed8; }
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .active\:scale-95:active { transform: scale(0.95); }
+        .bg-white { background-color: #ffffff; }
+        .text-slate-700 { color: #374151; }
+        .border-2 { border-width: 2px; }
+        .border-slate-200 { --tw-border-opacity: 1; border-color: rgb(203 213 225 / var(--tw-border-opacity)); }
+        .hover\:bg-slate-50:hover { background-color: #f8fafc; }
+        .fixed { position: fixed; }
+        .inset-0 { top: 0px; right: 0px; bottom: 0px; left: 0px; }
+        .z-50 { z-index: 50; }
+        .hidden { display: none; }
+        .bg-slate-900\/50 { background-color: rgb(15 23 42 / 0.5); }
+        .backdrop-blur-sm { backdrop-filter: blur(4px); }
+        .rounded-3xl { border-radius: 1.5rem; }
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+        .max-w-lg { max-width: 32rem; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+        .transform { transform: var(--tw-transform); }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-slate-800 { color: #1e293b; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-slate-600 { color: #475569; }
+        .bg-blue-50 { background-color: #eff6ff; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .border { border-width: 1px; }
+        .border-blue-100 { --tw-border-opacity: 1; border-color: rgb(219 234 254 / var(--tw-border-opacity)); }
+        .block { display: block; }
+        .font-semibold { font-weight: 600; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .text-slate-500 { color: #64748b; }
+        .file\:mr-4::file-selector-button { margin-right: 1rem; }
+        .file\:py-2::file-selector-button { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .file\:px-4::file-selector-button { padding-left: 1rem; padding-right: 1rem; }
+        .file\:rounded-full::file-selector-button { border-radius: 9999px; }
+        .file\:border-0::file-selector-button { border-width: 0px; }
+        .file\:text-sm::file-selector-button { font-size: 0.875rem; line-height: 1.25rem; }
+        .file\:font-semibold::file-selector-button { font-weight: 600; }
+        .file\:bg-blue-600::file-selector-button { background-color: #2563eb; }
+        .file\:text-white::file-selector-button { color: #ffffff; }
+        .hover\:file\:bg-blue-700:hover::file-selector-button { background-color: #1d4ed8; }
+        .cursor-pointer { cursor: pointer; }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .p-3 { padding: 0.75rem; }
+        .w-4 { width: 1rem; }
+        .h-4 { height: 1rem; }
+        .rounded { border-radius: 0.25rem; }
+        .ml-3 { margin-left: 0.75rem; }
+        .font-medium { font-weight: 500; }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .bg-slate-50 { background-color: #f8fafc; }
+        .focus\:ring-2:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
+        .focus\:ring-blue-500:focus { --tw-ring-opacity: 1; --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity)); }
+        .outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+        .gap-3 { gap: 0.75rem; }
+        .pt-4 { padding-top: 1rem; }
+        .flex-1 { flex: 1 1 0%; }
+        .shadow-blue-100 { --tw-shadow-color: #dbeafe; --tw-shadow: var(--tw-shadow-colored); }
+        .bg-slate-100 { background-color: #f1f5f9; }
+        .hover\:bg-slate-200:hover { background-color: #e2e8f0; }
+        .lg\:flex-row { flex-direction: row; }
+        .lg\:w-80 { width: 20rem; }
+        .border-r { border-right-width: 1px; }
+        .justify-between { justify-content: space-between; }
+        .mb-8 { margin-bottom: 2rem; }
+        .text-slate-400 { color: #94a3b8; }
+        .uppercase { text-transform: uppercase; }
+        .tracking-widest { letter-spacing: 0.25em; }
+        .text-xs { font-size: 0.75rem; line-height: 1rem; }
+        .bg-red-50 { background-color: #fef2f2; }
+        .text-red-600 { color: #dc2626; }
+        .rounded-full { border-radius: 9999px; }
+        .font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Inconsolata, "Roboto Mono", "Liberation Mono", Menlo, Consolas, "Courier New", monospace; }
+        .grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        .overflow-y-auto { overflow-y: auto; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mt-auto { margin-top: auto; }
+        .space-y-3 > * + * { margin-top: 0.75rem; }
+        .bg-slate-900 { background-color: #0f172a; }
+        .hover\:bg-slate-800:hover { background-color: #1e293b; }
+        .text-slate-500 { color: #64748b; }
+        .hover\:bg-slate-100:hover { background-color: #f1f5f9; }
+        .italic { font-style: italic; }
+        .md\:p-8 { padding: 2rem; }
+        .lg\:p-12 { padding: 3rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .w-12 { width: 3rem; }
+        .h-12 { height: 3rem; }
+        .hover\:scale-105:hover { transform: scale(1.05); }
+        .animate-in { animation: in 0.5s ease-in-out; }
+        .fade-in { opacity: 1; }
+        .duration-500 { transition-duration: 500ms; }
+        .inline-flex { display: inline-flex; }
+        .leading-tight { line-height: 1.25; }
+        .max-w-2xl { max-width: 42rem; }
+        .flex-shrink-0 { flex-shrink: 0; }
+        .disabled\:opacity-30:disabled { opacity: 0.3; }
+        .disabled\:grayscale:disabled { filter: grayscale(100%); }
+        .bg-slate-800 { background-color: #1e293b; }
+        .hover\:bg-slate-700:hover { background-color: #334155; }
+        .shadow-slate-200 { --tw-shadow-color: #e2e8f0; --tw-shadow: var(--tw-shadow-colored); }
+        .text-green-600 { color: #16a34a; }
+        .shadow-green-200 { --tw-shadow-color: #bbf7d0; --tw-shadow: var(--tw-shadow-colored); }
+        .hover\:bg-green-700:hover { background-color: #15803d; }
+        .flex-start { align-items: flex-start; }
+        .bg-red-100 { background-color: #fee2e2; }
+        .text-red-700 { color: #b91c1c; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .hover\:bg-red-200:hover { background-color: #fecaca; }
+        .focus\:border-blue-500:focus { --tw-border-opacity: 1; border-color: rgb(59 130 246 / var(--tw-border-opacity)); }
+        .focus\:ring-4:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
+        .focus\:ring-blue-100:focus { --tw-ring-opacity: 1; --tw-ring-color: rgb(219 234 254 / var(--tw-ring-opacity)); }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .bg-green-100 { background-color: #dcfce7; }
+        .text-green-800 { color: #166534; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .text-6xl { font-size: 3.75rem; line-height: 1; }
+        .bg-slate-600 { background-color: #475569; }
+        .hover\:bg-slate-700:hover { background-color: #334155; }
+        .bg-red-600 { background-color: #dc2626; }
+        .hover\:bg-red-700:hover { background-color: #b91c1c; }
+        .bg-green-600 { background-color: #16a34a; }
+        .hover\:bg-green-700:hover { background-color: #15803d; }
+        .max-h-96 { max-height: 24rem; }
+        .pt-6 { padding-top: 1.5rem; }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+        .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .p-4 { padding: 1rem; }
+        .bg-amber-100 { background-color: #fef3c7; }
+        .border-amber-300 { --tw-border-opacity: 1; border-color: rgb(252 211 77 / var(--tw-border-opacity)); }
+        .text-amber-800 { color: #92400e; }
+        .bg-green-100 { background-color: #dcfce7; }
+        .border-green-300 { --tw-border-opacity: 1; border-color: rgb(74 222 128 / var(--tw-border-opacity)); }
+        .text-green-800 { color: #166534; }
+        .bg-red-100 { background-color: #fee2e2; }
+        .border-red-300 { --tw-border-opacity: 1; border-color: rgb(252 165 165 / var(--tw-border-opacity)); }
+        .text-red-800 { color: #991b1b; }
+        .ring-2 { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
+        .ring-blue-500 { --tw-ring-opacity: 1; --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity)); }
+        .ring-offset-2 { --tw-ring-offset-width: 2px; }
+        .option-card { }
+        .cursor-pointer { cursor: pointer; }
+        .hover\:scale-\[102\%\]:hover { transform: scale(1.02); }
+        .border-green-500 { --tw-border-opacity: 1; border-color: rgb(34 197 94 / var(--tw-border-opacity)); }
+        .bg-green-50 { background-color: #f0fdf4; }
+        .text-green-800 { color: #166534; }
+        .border-red-500 { --tw-border-opacity: 1; border-color: rgb(239 68 68 / var(--tw-border-opacity)); }
+        .bg-red-50 { background-color: #fef2f2; }
+        .text-red-800 { color: #991b1b; }
+        .opacity-60 { opacity: 0.6; }
+        .border-blue-500 { --tw-border-opacity: 1; border-color: rgb(59 130 246 / var(--tw-border-opacity)); }
+        .sticky { position: sticky; }
+        .bottom-0 { bottom: 0; }
+        .-mx-4 { margin-left: -1rem; margin-right: -1rem; }
+        .fixed { position: fixed; }
+        .left-0 { left: 0; }
+        .right-0 { right: 0; }
+        .z-10 { z-index: 10; }
+        .pb-24 { padding-bottom: 6rem; }
+        .m-0 { margin: 0; }
+        .bg-blue-50 { background-color: #eff6ff; }
+        .text-blue-800 { color: #1f2937; }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        .hover\:border-slate-300:hover { --tw-border-opacity: 1; border-color: rgb(203 213 225 / var(--tw-border-opacity)); }
+        .cursor-not-allowed { cursor: not-allowed; }
+        .pointer-events-none { pointer-events: none; }
+        .border-green-200 { --tw-border-opacity: 1; border-color: rgb(187 247 208 / var(--tw-border-opacity)); }
+        .border-red-200 { --tw-border-opacity: 1; border-color: rgb(254 202 202 / var(--tw-border-opacity)); }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+
+    <div id="start-page" class="flex flex-col items-center justify-center min-h-screen p-6">
+        <div class="max-w-md w-full text-center space-y-8">
+            <div class="space-y-2">
+                <h1 class="text-5xl font-extrabold tracking-tight text-blue-600">Kahn Quiz</h1>
+                <p class="text-slate-500 text-lg">Local-first, No Internet, Private.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-4">
+                <button id="play-btn" class="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">
+                    <span>🚀</span> Play Quiz
+                </button>
+                <button id="create-btn" class="flex items-center justify-center gap-2 bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold text-xl hover:bg-slate-50 transition-all active:scale-95">
+                    <span>➕</span> Create New Quiz
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="play-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden p-4 bg-slate-900/50 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 space-y-6 transform transition-all">
+            <h2 class="text-2xl font-bold text-slate-800">Quiz Configuration</h2>
+            
+            <div class="space-y-4 text-sm text-slate-600">
+                <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                    <label class="block font-semibold mb-2">Upload Quiz Files (.json + images)</label>
+                    <input type="file" id="quiz-file" accept=".json,image/*" multiple class="block w-full text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
+                    <p class="text-xs text-slate-500 mt-1">Select the .json quiz file and any associated images</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="flex items-center p-3 border rounded-xl cursor-pointer hover:bg-slate-50">
+                        <input type="checkbox" id="shuffle-questions" class="w-4 h-4 text-blue-600 rounded">
+                        <span class="ml-3">Shuffle Questions</span>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-xl cursor-pointer hover:bg-slate-50">
+                        <input type="checkbox" id="shuffle-answers" class="w-4 h-4 text-blue-600 rounded">
+                        <span class="ml-3">Shuffle Answers</span>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-xl cursor-pointer hover:bg-slate-50">
+                        <input type="checkbox" id="allow-check" class="w-4 h-4 text-blue-600 rounded">
+                        <span class="ml-3">Allow Check</span>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-xl cursor-pointer hover:bg-slate-50">
+                        <input type="checkbox" id="allow-redo" class="w-4 h-4 text-blue-600 rounded" disabled>
+                        <span class="ml-3">Allow Re-select</span>
+                    </label>
+                </div>
+
+                <div>
+                    <label class="block font-medium mb-1">Time Limit (minutes)</label>
+                    <input type="number" id="time-limit" placeholder="Leave empty for no limit" class="w-full p-3 bg-slate-50 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+            </div>
+
+            <div class="flex gap-3 pt-4">
+                <button id="start-play-btn" class="flex-1 bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-100">Start Quiz</button>
+                <button id="cancel-play-btn" class="flex-1 bg-slate-100 text-slate-600 py-3 rounded-xl font-bold hover:bg-slate-200">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz-app" class="hidden min-h-screen flex flex-col lg:flex-row">
+        <aside id="progress-nav" class="lg:w-80 bg-white border-r border-slate-200 p-6 flex flex-col hidden">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="font-bold text-slate-400 uppercase tracking-widest text-xs">Questions</h3>
+                <span id="timer" class="px-3 py-1 bg-red-50 text-red-600 rounded-full font-mono text-sm font-bold border border-red-100">00:00</span>
+            </div>
+            
+            <div id="question-list" class="grid grid-cols-5 gap-2 overflow-y-auto mb-6">
+                </div>
+
+            <div class="mt-auto space-y-3">
+                <button id="edit-quiz-btn" class="w-full bg-amber-600 text-white py-3 rounded-xl font-semibold hover:bg-amber-700 transition-all">Edit Quiz</button>
+                <button id="submit-early-btn" class="w-full bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-slate-800 transition-all">Submit Quiz</button>
+                <button id="back-btn" class="w-full bg-slate-50 text-slate-500 py-3 rounded-xl font-semibold hover:bg-slate-100 transition-all text-sm italic">Exit Session</button>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-4 md:p-8 lg:p-12 overflow-y-auto">
+            <div id="quiz-container" class="max-w-3xl mx-auto">
+                </div>
+        </main>
+
+        <aside id="results-panel" class="lg:w-80 bg-white border-l border-slate-200 p-6 flex flex-col hidden">
+            <div id="results-content"></div>
+        </aside>
+    </div>
+
+    <script>
+        // Core Data Structures
+        class Question {
+            constructor(content, questionType, options, correctAnswer, imagePath = null) {
+                this.content = content;
+                this.type = questionType === 'mcq' ? 'multiple-choice' : 'text-input';
+                this.options = options; // Array of strings for multiple-choice
+                this.answer = correctAnswer;
+                this.imagePath = imagePath; // Placeholder for future image support
+            }
+        }
+
+        class Quiz {
+            constructor(questions, options = {}) {
+                    // 1. Xáo trộn thứ tự câu hỏi nếu có option shuffle
+                    this.questions = options.shuffle ? this.shuffle(questions.slice()) : questions;
+                    
+                    // 2. Xáo trộn thứ tự các lựa chọn (A, B, C, D)
+                    if (options.shuffleAnswers) {
+                        this.questions = this.questions.map(q => {
+                            if (q.type === 'multiple-choice' && q.options) {
+                                // Chỉ cần xáo trộn mảng options. 
+                                // Đáp án đúng (q.answer) vẫn giữ nguyên giá trị văn bản để so sánh sau này.
+                                q.options = this.shuffle(q.options.slice());
+                            }
+                            return q;
+                        });
+                    }
+                    
+                    this.currentQuestionIndex = 0;
+                    this.score = 0;
+                    this.questionStatuses = this.questions.map(() => ({ 
+                        userAnswer: '', 
+                        isAnswered: false, 
+                        firstCheckResult: null, 
+                        latestCheckResult: null, 
+                        isLocked: false 
+                    }));
+                    this.options = options;
+                    this.timeLeft = options.timeLimit ? options.timeLimit * 60 : null;
+                    this.timer = null;
+            }
+
+            shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            startTimer(callback) {
+                if (this.timeLeft) {
+                    this.timer = setInterval(() => {
+                        this.timeLeft--;
+                        if (this.timeLeft <= 0) {
+                            clearInterval(this.timer);
+                            callback();
+                        }
+                    }, 1000);
+                }
+            }
+
+            stopTimer() {
+                if (this.timer) {
+                    clearInterval(this.timer);
+                }
+            }
+
+            getCurrentQuestion() {
+                return this.questions[this.currentQuestionIndex];
+            }
+
+            nextQuestion() {
+                this.currentQuestionIndex++;
+            }
+
+            previousQuestion() {
+                this.currentQuestionIndex--;
+            }
+
+            goToQuestion(index) {
+                this.currentQuestionIndex = index;
+            }
+
+            isFinished() {
+                return this.currentQuestionIndex >= this.questions.length;
+            }
+
+            checkAnswer(userAnswer) {
+                const currentQuestion = this.getCurrentQuestion();
+                let isCorrect = false;
+                if (currentQuestion.type === 'multiple-choice') {
+                    isCorrect = userAnswer === currentQuestion.answer;
+                } else if (currentQuestion.type === 'text-input') {
+                    isCorrect = userAnswer.toLowerCase().trim() === currentQuestion.answer.toLowerCase().trim();
+                }
+                const status = this.questionStatuses[this.currentQuestionIndex];
+                status.latestCheckResult = isCorrect;
+                if (status.firstCheckResult === null) {
+                    status.firstCheckResult = isCorrect;
+                }
+                status.isLocked = !this.options.allowRedo || isCorrect;
+                return isCorrect;
+            }
+
+            submitQuiz() {
+                // Stop the timer
+                this.stopTimer();
+                // Calculate score based on firstCheckResult
+                this.score = 0;
+                this.questionStatuses.forEach((status, index) => {
+                    if (status.firstCheckResult !== null && status.firstCheckResult) {
+                        this.score++;
+                    }
+                    // Lock all questions after submit
+                    status.isLocked = true;
+                });
+            }
+
+            getQuestionStatus(index) {
+                return this.questionStatuses[index];
+            }
+        }
+
+        // Hardcoded Quiz Data
+        const defaultQuizData = [
+          {
+            "content": "What is the capital of France?",
+            "question-type": "mcq",
+            "options": ["London", "Berlin", "Paris", "Madrid"],
+            "answer": "Paris"
+          },
+          {
+            "content": "What is 2 + 2?",
+            "question-type": "text",
+            "answer": "4"
+          },
+          {
+            "content": "Which planet is known as the Red Planet?",
+            "question-type": "mcq",
+            "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+            "answer": "Mars"
+          },
+          {
+            "content": "What is the largest mammal?",
+            "question-type": "text",
+            "answer": "blue whale"
+          }
+        ];
+
+        // LocalStorage helpers
+        function saveQuizToStorage(quizData) {
+            localStorage.setItem('quizData', JSON.stringify(quizData));
+        }
+
+        function loadQuizFromStorage() {
+            const data = localStorage.getItem('quizData');
+            if (data) {
+                const parsed = JSON.parse(data);
+                return parsed.questions || parsed; // backward compatibility
+            }
+            return null;
+        }
+
+        // Load quiz data for editing
+        function loadQuizForEditing(questions) {
+            quizData = questions.map(q => ({
+                content: q.content,
+                "question-type": q.type === 'multiple-choice' ? 'mcq' : 'text',
+                options: q.options || [],
+                answer: q.answer
+            }));
+        }
+
+        // Mode
+        let currentMode = 'play';
+        let quizData = loadQuizFromStorage() || defaultQuizData;
+        quizData = quizData.map(q => new Question(q.content, q['question-type'], q.options || [], q.answer));
+
+        // Global image map for Blob URLs
+        let localImageMap = {};
+
+        // Cleanup function for Blob URLs
+        function cleanupImageBlobs() {
+            Object.values(localImageMap).forEach(url => URL.revokeObjectURL(url));
+            localImageMap = {};
+        }
+
+        // UI Rendering and Logic
+        class QuizUI {
+            constructor(quiz, container, navContainer) {
+                this.quiz = quiz;
+                this.container = container;
+                this.navContainer = navContainer;
+                if (currentMode === 'play' && quiz) {
+                    this.quiz.startTimer(() => this.handleTimeUp());
+                    this.timerInterval = setInterval(() => this.updateTimer(), 1000);
+                }
+                this.render();
+            }
+
+            handleTimeUp() {
+                clearInterval(this.timerInterval);
+                alert('Time is up!');
+                this.quiz.submitQuiz();
+                this.renderResults();
+            }
+
+            stopTimer() {
+                if (this.quiz.timer) {
+                    clearInterval(this.quiz.timer);
+                }
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                }
+            }
+
+            render() {
+                if (currentMode === 'play') {
+                    this.renderNav();
+                    this.updateTimer();
+                    if (this.quiz.isFinished()) {
+                        this.renderResults();
+                    } else {
+                        this.renderQuestion();
+                    }
+                } else if (currentMode === 'create') {
+                    this.renderCreator();
+                }
+            }
+
+            updateTimer() {
+                const timerEl = document.getElementById('timer');
+                if (this.quiz.timeLeft !== null && this.quiz.timeLeft >= 0) {
+                    const minutes = Math.floor(this.quiz.timeLeft / 60);
+                    const seconds = this.quiz.timeLeft % 60;
+                    const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    // Change color based on time remaining
+                    let timerClass = 'px-3 py-1 rounded-full font-mono text-sm font-bold ';
+                    if (this.quiz.timeLeft < 60) { // Less than 1 minute
+                        timerClass += 'bg-red-100 text-red-700 border border-red-200';
+                    } else if (this.quiz.timeLeft < 300) { // Less than 5 minutes
+                        timerClass += 'bg-amber-100 text-amber-700 border border-amber-200';
+                    } else {
+                        timerClass += 'bg-slate-100 text-slate-700 border border-slate-200';
+                    }
+                    
+                    timerEl.className = timerClass;
+                    timerEl.textContent = timeString;
+                    timerEl.classList.remove('hidden');
+                } else {
+                    timerEl.classList.add('hidden');
+                }
+            }
+
+            renderNav() {
+                let html = '';
+                this.quiz.questions.forEach((q, index) => {
+                    const status = this.quiz.getQuestionStatus(index);
+                    let bgColor = 'bg-white border-slate-200 text-slate-400';
+                    let textColor = 'text-slate-400';
+                    
+                    if (status.isAnswered && status.latestCheckResult === null) {
+                        bgColor = 'bg-amber-100 border-amber-300';
+                        textColor = 'text-amber-800';
+                    } else if (status.latestCheckResult !== null) {
+                        if (status.latestCheckResult) {
+                            bgColor = 'bg-green-100 border-green-300';
+                            textColor = 'text-green-800';
+                        } else {
+                            bgColor = 'bg-red-100 border-red-300';
+                            textColor = 'text-red-800';
+                        }
+                    }
+                    
+                    const isCurrent = index === this.quiz.currentQuestionIndex;
+                    const currentClass = isCurrent ? 'ring-2 ring-blue-500 ring-offset-2' : '';
+                    
+                    html += `<button class="question-btn w-12 h-12 rounded-xl border-2 font-bold text-sm transition-all hover:scale-105 ${bgColor} ${textColor} ${currentClass}" data-index="${index}">${index + 1}</button>`;
+                });
+                this.navContainer.innerHTML = html;
+
+                // Attach event listeners
+                document.querySelectorAll('.question-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const index = parseInt(e.target.dataset.index);
+                        this.quiz.goToQuestion(index);
+                        this.render();
+                    });
+                });
+            }
+
+            renderQuestion() {
+                const question = this.quiz.getCurrentQuestion();
+                const status = this.quiz.getQuestionStatus(this.quiz.currentQuestionIndex);
+                const isLast = this.quiz.currentQuestionIndex === this.quiz.questions.length - 1;
+                const nextText = isLast ? 'Submit Quiz' : 'Next Question';
+
+                let html = `
+                    <div class="space-y-8 animate-in fade-in duration-500">
+                        <div class="text-center">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-600 mb-6">
+                                <span>Question ${this.quiz.currentQuestionIndex + 1} of ${this.quiz.questions.length}</span>
+                            </div>
+                            ${question.imagePath && localImageMap[question.imagePath] ? `<img src="${localImageMap[question.imagePath]}" alt="Question image" class="max-h-80 object-contain mx-auto mb-6 rounded-lg shadow-md">` : ''}
+                            <h1 class="text-3xl font-bold text-slate-800 leading-tight">${question.content}</h1>
+                        </div>
+                `;
+
+                // RENDER MCQ
+                if (question.type === 'multiple-choice') {
+                    html += `<div class="grid gap-4 max-w-2xl mx-auto">`;
+                    question.options.forEach((option, index) => {
+                        const isSelected = status.userAnswer === option;
+                        const isCorrectOption = option === question.answer;
+                        const isLocked = status.isLocked;
+                        
+                        let cardClass = "option-card p-6 rounded-2xl border-2 cursor-pointer transition-all hover:scale-[102%] active:scale-95 ";
+                        
+                        // Logic hiển thị màu sắc dựa trên Allow Re-select
+                        if (status.latestCheckResult !== null) {
+                            if (this.quiz.options.allowRedo) {
+                                // Chế độ Re-select: Chỉ hiện đúng/sai cho option đang chọn, không reveal đáp án đúng của hệ thống
+                                if (isSelected) {
+                                    cardClass += status.latestCheckResult ? "border-green-500 bg-green-50 text-green-800" : "border-red-500 bg-red-50 text-red-800";
+                                } else {
+                                    cardClass += "border-slate-200 bg-white text-slate-700";
+                                }
+                            } else {
+                                // Chế độ Normal Check: Hiện đáp án đúng và khóa luôn
+                                if (isCorrectOption) cardClass += "border-green-500 bg-green-50 text-green-800";
+                                else if (isSelected) cardClass += "border-red-500 bg-red-50 text-red-800";
+                                else cardClass += "border-slate-200 bg-white text-slate-700 opacity-60";
+                            }
+                        } else {
+                            cardClass += isSelected ? "border-blue-500 bg-blue-50 text-blue-800 shadow-md" : "border-slate-200 bg-white text-slate-700 hover:border-slate-300";
+                        }
+
+                        if (isLocked) cardClass += " cursor-not-allowed pointer-events-none";
+
+                        html += `
+                            <div class="${cardClass}" data-option="${option.replace(/"/g, '&quot;')}">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-semibold text-slate-600">
+                                        ${String.fromCharCode(65 + index)}
+                                    </div>
+                                    <span class="text-lg font-medium">${option}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+                } 
+                // RENDER TEXT INPUT
+                else {
+                    const val = status.userAnswer || '';
+                    let inputClass = "w-full p-4 border-2 rounded-2xl text-lg font-medium transition-all outline-none ";
+                    if (status.latestCheckResult !== null) {
+                        inputClass += status.latestCheckResult ? "border-green-500 bg-green-50 text-green-800" : "border-red-500 bg-red-50 text-red-800";
+                    } else {
+                        inputClass += "border-slate-200 bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100";
+                    }
+                    
+                    html += `
+                        <div class="max-w-2xl mx-auto">
+                            <input type="text" id="text-answer" class="${inputClass}" placeholder="Type answer here..." value="${val}" ${status.isLocked ? 'readonly' : ''}>
+                        </div>
+                    `;
+                }
+
+                // BUTTONS LOGIC
+                const canCheck = status.isAnswered && !status.isLocked;
+                const allLocked = this.quiz.questionStatuses.every(s => s.isLocked);
+                
+                html += `<div class="flex justify-center gap-4 pt-8">`;
+                if (this.quiz.options.allowCheck && !allLocked) {
+                    html += `<button id="check-btn" class="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95 disabled:opacity-30 disabled:grayscale" ${!canCheck ? 'disabled' : ''}>Check Answer</button>`;
+                }
+                if (!allLocked) {
+                    html += `<button id="next-btn" class="px-8 py-4 bg-slate-800 text-white rounded-2xl font-bold text-lg shadow-lg shadow-slate-200 hover:bg-slate-700 transition-all active:scale-95">${nextText}</button>`;
+                }
+                html += `</div></div>`;
+
+                this.container.innerHTML = html;
+                this.attachEventListeners(status);
+            }
+
+            attachEventListeners(status) {
+                // MCQ Click
+                document.querySelectorAll('.option-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        if (status.isLocked) return;
+                        this.saveAnswer(card.dataset.option);
+                        this.render(); // Re-render để nút Check sáng lên ngay lập tức
+                    });
+                });
+
+                // Text Input
+                const input = document.getElementById('text-answer');
+                if (input) {
+                    input.addEventListener('input', (e) => {
+                        status.isAnswered = e.target.value.trim().length > 0;
+                        status.userAnswer = e.target.value;
+                        // Ở đây không render lại liên tục để tránh mất focus, chỉ update data
+                        const checkBtn = document.getElementById('check-btn');
+                        if (checkBtn) checkBtn.disabled = !status.isAnswered;
+                    });
+                }
+
+                // Buttons
+                const checkBtn = document.getElementById('check-btn');
+                if (checkBtn) checkBtn.addEventListener('click', () => this.checkAnswer());
+                
+                const nextBtn = document.getElementById('next-btn');
+                if (nextBtn) nextBtn.addEventListener('click', () => this.nextQuestion());
+            }
+
+            saveAnswer(userAnswer) {
+                const status = this.quiz.questionStatuses[this.quiz.currentQuestionIndex];
+                status.isAnswered = true;
+                status.userAnswer = userAnswer;
+                status.latestCheckResult = null; 
+
+                this.renderNav(); // Cập nhật màu xám trên thanh điều hướng
+            }
+
+            checkAnswer() {
+                const question = this.quiz.getCurrentQuestion();
+                const status = this.quiz.questionStatuses[this.quiz.currentQuestionIndex];
+                let userAnswer = '';
+
+                if (question.type === 'multiple-choice') {
+                    // Tìm thẻ đang được chọn (có class border-blue-500)
+                    const selectedCard = document.querySelector('.option-card.border-blue-500');
+                    if (selectedCard) {
+                        userAnswer = selectedCard.dataset.option;
+                    } else {
+                        // Trường hợp người dùng bấm Check lại trên chính đáp án vừa báo Sai
+                        userAnswer = status.userAnswer;
+                    }
+                } else if (question.type === 'text-input') {
+                    userAnswer = document.getElementById('text-answer').value;
+                }
+
+                if (!userAnswer) {
+                    alert('Please select or enter an answer.');
+                    return;
+                }
+
+                // Thực hiện kiểm tra
+                const isCorrect = this.quiz.checkAnswer(userAnswer);
+
+                // Re-render để cập nhật màu sắc mới (Xanh lá/Đỏ) và trạng thái nút
+                this.render();
+                this.renderNav();
+            }
+
+            nextQuestion() {
+                if (this.quiz.currentQuestionIndex === this.quiz.questions.length - 1) {
+                    // Before submitting, check unanswered questions if allowCheck is false
+                    if (!this.quiz.options.allowCheck) {
+                        this.quiz.questionStatuses.forEach((status, index) => {
+                            if (status.isAnswered && status.firstCheckResult === null) {
+                                const question = this.quiz.questions[index];
+                                let isCorrect = false;
+                                if (question.type === 'multiple-choice') {
+                                    isCorrect = status.userAnswer === question.answer;
+                                } else if (question.type === 'text-input') {
+                                    isCorrect = status.userAnswer.toLowerCase().trim() === question.answer.toLowerCase().trim();
+                                }
+                                status.firstCheckResult = isCorrect;
+                                status.latestCheckResult = isCorrect;
+                            }
+                        });
+                    }
+                    this.quiz.submitQuiz();
+                    // Disable submit button in progress nav if it exists
+                    const submitBtn = document.getElementById('submit-early-btn');
+                    if (submitBtn) {
+                        submitBtn.textContent = 'Quiz Submitted';
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    }
+                    // Show results panel
+                    this.renderResultsPanel();
+                    // Re-render to show locked state
+                    this.render();
+                } else {
+                    this.quiz.nextQuestion();
+                    this.render();
+                }
+            }
+
+            downloadJSON() {
+                const dataStr = JSON.stringify(quizData, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                const exportFileDefaultName = 'quiz.json';
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            }
+
+            renderCreator() {
+                const isEditing = previousMode !== null;
+                const title = isEditing ? 'Edit Quiz' : 'Create New Quiz';
+                const subtitle = isEditing ? 'Modify your quiz questions and answers' : 'Build your quiz with multiple choice and text input questions';
+                
+                this.container.innerHTML = `
+                    <div class="space-y-8">
+                        <div class="text-center">
+                            <h1 class="text-3xl font-bold text-slate-800 mb-2">${title}</h1>
+                            <p class="text-slate-600">${subtitle}</p>
+                        </div>
+                        </div>
+                        
+                        <form id="create-form" class="space-y-6 pb-24">
+                            <div id="questions-list" class="space-y-6"></div>
+                        </form>
+                        
+                        <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-4 shadow-lg z-10">
+                            <div class="flex justify-center gap-4">
+                                ${!isEditing ? `
+                                <label for="load-quiz-file" class="flex items-center gap-2 px-6 py-3 bg-slate-600 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-700 transition-all active:scale-95 cursor-pointer">
+                                    <span>📁</span> Load Quiz
+                                    <input type="file" id="load-quiz-file" accept=".json" class="hidden">
+                                </label>
+                                ` : ''}
+                                <button type="button" id="add-question-btn" class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-2xl font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">
+                                    <span>➕</span> Add Question
+                                </button>
+                                ${isEditing ? `
+                                <button type="button" id="cancel-edit-btn" class="flex items-center gap-2 px-6 py-3 bg-slate-600 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-700 transition-all active:scale-95">
+                                    <span>❌</span> Cancel
+                                </button>
+                                <button type="submit" class="flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all active:scale-95">
+                                    <span>💾</span> Save & Download
+                                </button>
+                                ` : `
+                                <button type="button" id="cancel-create-btn" class="flex items-center gap-2 px-6 py-3 bg-slate-600 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-700 transition-all active:scale-95">
+                                    <span>❌</span> Cancel
+                                </button>
+                                <button type="submit" class="flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all active:scale-95">
+                                    <span>💾</span> Save & Download Quiz
+                                </button>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Load existing questions
+                this.renderCreatorQuestions();
+
+                document.getElementById('add-question-btn').addEventListener('click', () => this.addQuestion());
+                document.getElementById('create-form').addEventListener('submit', (e) => this.saveQuiz(e));
+                
+                if (isEditing) {
+                    document.getElementById('cancel-edit-btn').addEventListener('click', () => this.cancelEdit());
+                } else {
+                    document.getElementById('cancel-create-btn').addEventListener('click', () => this.cancelCreate());
+                    // File loading for new quizzes
+                    document.getElementById('load-quiz-file').addEventListener('change', (e) => this.loadQuizFromFile(e));
+                }
+            }
+
+            renderCreatorQuestions() {
+                const list = document.getElementById('questions-list');
+                list.innerHTML = '';
+                quizData.forEach((q, index) => {
+                    const content = (q.content || '').replace(/"/g, '&quot;');
+                    const type = q['question-type'] || 'mcq';
+                    const options = q.options || ['Option 1', 'Option 2'];
+                    const correctAnswer = (q.answer || '').replace(/"/g, '&quot;');
+                    
+                    const div = document.createElement('div');
+                    div.className = 'p-6 bg-white rounded-2xl border-2 border-slate-200 shadow-sm';
+                    
+                    // Use a template literal to only include the "options" HTML if type is mcq
+                    let html = `
+                        <div class="flex items-start justify-between mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 m-0">Question ${index + 1}</h3>
+                            <button type="button" class="remove-btn flex items-center justify-center w-6 h-6 bg-red-100 text-red-700 rounded-full hover:bg-red-200 transition-all text-xs font-bold shadow-sm">
+                                ✕
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Question Content</label>
+                                <input type="text" placeholder="Question content" class="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all" value="${content}">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Question Image (Optional)</label>
+                                <input type="file" accept="image/*" class="question-image-input block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer" data-index="${index}">
+                                ${q.imagePath && localImageMap[q.imagePath] ? `<div class="mt-2"><img src="${localImageMap[q.imagePath]}" alt="Question image preview" class="max-h-32 object-contain rounded-lg border border-slate-200"></div>` : ''}
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Question Type</label>
+                                <select class="type-select w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-white">
+                                    <option value="mcq" ${type === 'mcq' ? 'selected' : ''}>Multiple Choice</option>
+                                    <option value="text" ${type === 'text' ? 'selected' : ''}>Text Input</option>
+                                </select>
+                            </div>
+                            
+                            ${type === 'mcq' ? `
+                            <div class="options">
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Answer Options</label>
+                                <div class="space-y-2">
+                                    ${options.map((opt, i) => `
+                                        <div class="flex items-center gap-3">
+                                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-semibold text-slate-600 text-sm">
+                                                ${String.fromCharCode(65 + i)}
+                                            </div>
+                                            <input type="text" class="flex-1 p-3 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all" value="${opt.replace(/"/g, '&quot;')}" placeholder="Option ${i+1}">
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                ${options.length < 5 ? `<button type="button" class="add-option-btn flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-xl hover:bg-slate-200 transition-all text-sm font-medium mt-3" data-index="${index}"><span>+</span> Add Option</button>` : ''}
+                            </div>
+                            ` : ''}
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Correct Answer</label>
+                                <input type="text" placeholder="Answer" class="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all" value="${correctAnswer}">
+                            </div>
+                        </div>
+                    `;
+                    
+                    div.innerHTML = html;
+                    list.appendChild(div);
+                });
+
+                // Attach remove listeners
+                document.querySelectorAll('.remove-btn').forEach((btn, index) => {
+                    btn.addEventListener('click', () => {
+                        quizData.splice(index, 1);
+                        this.renderCreatorQuestions();
+                    });
+                });
+
+                // Attach type change listeners
+                document.querySelectorAll('.type-select').forEach((select, index) => {
+                    select.addEventListener('change', (e) => {
+                        quizData[index]['question-type'] = e.target.value;
+                        
+                        // If switching to MCQ, ensure there are default options
+                        if (e.target.value === 'mcq' && (!quizData[index].options || quizData[index].options.length === 0)) {
+                            quizData[index].options = ['Option 1', 'Option 2'];
+                        }
+                        
+                        this.renderCreatorQuestions(); 
+                    });
+                });
+
+                // Attach add option listeners
+                document.querySelectorAll('.add-option-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const idx = parseInt(e.target.dataset.index);
+                        quizData[idx].options.push(`Option ${quizData[idx].options.length + 1}`);
+                        this.renderCreatorQuestions();
+                    });
+                });
+
+                // Attach image input listeners
+                document.querySelectorAll('.question-image-input').forEach(input => {
+                    input.addEventListener('change', (e) => {
+                        const index = parseInt(e.target.dataset.index);
+                        const file = e.target.files[0];
+                        if (file) {
+                            // Clean up previous image if exists
+                            if (quizData[index].imagePath && localImageMap[quizData[index].imagePath]) {
+                                URL.revokeObjectURL(localImageMap[quizData[index].imagePath]);
+                                delete localImageMap[quizData[index].imagePath];
+                            }
+                            
+                            // Create new Blob URL
+                            const imageUrl = URL.createObjectURL(file);
+                            const imagePath = `question_${index}_image`;
+                            localImageMap[imagePath] = imageUrl;
+                            quizData[index].imagePath = imagePath;
+                        } else {
+                            // Remove image if no file selected
+                            if (quizData[index].imagePath && localImageMap[quizData[index].imagePath]) {
+                                URL.revokeObjectURL(localImageMap[quizData[index].imagePath]);
+                                delete localImageMap[quizData[index].imagePath];
+                            }
+                            quizData[index].imagePath = null;
+                        }
+                        this.renderCreatorQuestions();
+                    });
+                });
+            }
+
+            addQuestion() {
+                quizData.push({ content: '', "question-type": 'mcq', options: ['Option 1', 'Option 2'], answer: '' });
+                this.renderCreatorQuestions();
+            }
+
+            saveQuiz(e) {
+                e.preventDefault();
+                const forms = document.querySelectorAll('#questions-list > div');
+                for (let index = 0; index < forms.length; index++) {
+                    const form = forms[index];
+                    const content = form.querySelector('input[placeholder="Question content"]').value.trim();
+                    const type = form.querySelector('.type-select').value;
+                    const correctAnswer = form.querySelector('input[placeholder="Answer"]').value.trim();
+                    const rawOptions = type === 'mcq' ? Array.from(form.querySelectorAll('.options input')).map(inp => inp.value.trim()) : [];
+                    const options = rawOptions.filter(opt => opt); // Filter out blank options
+
+                    if (!content) {
+                        alert('Question content cannot be null');
+                        return;
+                    }
+                    if (!correctAnswer) {
+                        alert('Answer cannot be null');
+                        return;
+                    }
+                    if (type === 'mcq') {
+                        if (options.length <= 1) {
+                            alert('MCQ question needs more than 1 non-blank option');
+                            return;
+                        }
+                        if (!options.includes(correctAnswer)) {
+                            alert('Answer of MCQ must be in options');
+                            return;
+                        }
+                    }
+                }
+                quizData = [];
+                forms.forEach((form, index) => {
+                    const content = form.querySelector('input[placeholder="Question content"]').value;
+                    const type = form.querySelector('.type-select').value;
+                    const correctAnswer = form.querySelector('input[placeholder="Answer"]').value;
+                    const originalData = quizData[index] || {}; // Preserve original data including imagePath
+                    if (type === 'mcq') {
+                        const options = Array.from(form.querySelectorAll('.options input')).map(inp => inp.value.trim()).filter(opt => opt);
+                        quizData.push({ content, "question-type": type, options, answer: correctAnswer, imagePath: originalData.imagePath });
+                    } else {
+                        quizData.push({ content, "question-type": type, answer: correctAnswer, imagePath: originalData.imagePath });
+                    }
+                });
+                saveQuizToStorage(quizData);
+                this.downloadJSON();
+                
+                if (previousMode !== null) {
+                    // We were editing, return to previous state
+                    alert('Quiz updated and downloaded!');
+                    this.cancelEdit();
+                } else {
+                    // New quiz creation
+                    alert('Quiz saved and downloaded!');
+                    // Clean up temporary images before switching to play mode
+                    cleanupImageBlobs();
+                    currentMode = 'play';
+                    const mapped = quizData.map(q => new Question(q.content, q['question-type'], q.options || [], q.answer));
+                    quiz.questions = mapped;
+                    quiz.questionStatuses = mapped.map(() => ({ userAnswer: '', isAnswered: false, firstCheckResult: null, latestCheckResult: null, isLocked: false }));
+                    quiz.currentQuestionIndex = 0;
+                    quiz.score = 0;
+                    ui.render();
+                }
+            }
+
+            downloadJSON() {
+                const dataStr = JSON.stringify(quizData, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                const exportFileDefaultName = 'quiz.json';
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            }
+
+            cancelEdit() {
+                // Clean up any temporary images from create mode
+                cleanupImageBlobs();
+                
+                // Restore previous state
+                currentMode = previousMode;
+                if (previousQuizState) {
+                    quiz.questions = previousQuizState.questions;
+                    quiz.currentQuestionIndex = previousQuizState.currentQuestionIndex;
+                    quiz.score = previousQuizState.score;
+                    quiz.questionStatuses = previousQuizState.questionStatuses;
+                    quiz.timeLeft = previousQuizState.timeLeft;
+                    quiz.options = previousQuizState.options;
+                    if (quiz.timer) {
+                        clearInterval(quiz.timer);
+                        if (quiz.timeLeft) {
+                            quiz.startTimer(() => this.handleTimeUp());
+                        }
+                    }
+                }
+                previousMode = null;
+                previousQuizState = null;
+                this.render();
+                // Show panels if we were in quiz mode
+                if (currentMode === 'quiz') {
+                    document.getElementById('progress-nav').classList.remove('hidden');
+                    if (quiz.questionStatuses.every(s => s.isLocked)) {
+                        document.getElementById('results-panel').classList.remove('hidden');
+                    }
+                }
+            }
+
+            cancelCreate() {
+                // Clean up any temporary images from create mode
+                cleanupImageBlobs();
+                
+                // Return to start page
+                currentMode = 'play';
+                document.getElementById('quiz-app').classList.add('hidden');
+                document.getElementById('start-page').classList.remove('hidden');
+            }
+
+            loadQuizFromFile(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+                
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const loadedData = JSON.parse(e.target.result);
+                        const questions = Array.isArray(loadedData) ? loadedData : loadedData.questions || [];
+                        
+                        // If there are already questions, ask whether to replace or append
+                        if (quizData.length > 0) {
+                            const action = confirm(`You already have ${quizData.length} questions. Do you want to:\n\nOK = Replace with loaded quiz\nCancel = Append loaded questions`);
+                            if (!action) {
+                                // Append mode
+                                const newQuestions = questions.map(q => ({
+                                    content: q.content || '',
+                                    "question-type": q['question-type'] || 'mcq',
+                                    options: q.options || [],
+                                    answer: q.answer || ''
+                                }));
+                                quizData = [...quizData, ...newQuestions];
+                            } else {
+                                // Replace mode
+                                quizData = questions.map(q => ({
+                                    content: q.content || '',
+                                    "question-type": q['question-type'] || 'mcq',
+                                    options: q.options || [],
+                                    answer: q.answer || ''
+                                }));
+                            }
+                        } else {
+                            // No existing questions, just load
+                            quizData = questions.map(q => ({
+                                content: q.content || '',
+                                "question-type": q['question-type'] || 'mcq',
+                                options: q.options || [],
+                                answer: q.answer || ''
+                            }));
+                        }
+                        
+                        this.renderCreatorQuestions();
+                        // Reset file input so the same file can be selected again
+                        event.target.value = '';
+                        alert('Quiz loaded successfully! You can now edit it.');
+                    } catch (err) {
+                        alert('Invalid JSON file. Please select a valid quiz file.');
+                    }
+                };
+                reader.readAsText(file);
+            }
+
+            renderResults() {
+                this.quiz.stopTimer();
+                const scorePercentage = Math.round((this.quiz.score / this.quiz.questions.length) * 100);
+                
+                let html = `
+                    <div class="space-y-8">
+                        <div class="text-center">
+                            <div class="inline-flex items-center gap-2 px-6 py-3 bg-green-100 rounded-full text-lg font-bold text-green-800 mb-6">
+                                <span>🎉</span> Quiz Completed!
+                            </div>
+                            <h1 class="text-4xl font-bold text-slate-800 mb-4">Your Results</h1>
+                            <div class="text-center mb-8">
+                                <div class="text-6xl font-extrabold text-blue-600 mb-2">${this.quiz.score}/${this.quiz.questions.length}</div>
+                                <div class="text-xl text-slate-600">${scorePercentage}% Correct</div>
+                            </div>
+                        </div>
+                        
+                        <div class="max-w-2xl mx-auto">
+                            <div class="flex justify-center gap-3 mb-8">
+                                <button id="filter-all" class="px-6 py-3 bg-slate-600 text-white rounded-2xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-700 transition-all active:scale-95">All Questions</button>
+                                <button id="filter-incorrect" class="px-6 py-3 bg-red-600 text-white rounded-2xl font-bold shadow-lg shadow-red-200 hover:bg-red-700 transition-all active:scale-95">Incorrect Only</button>
+                                <button id="filter-correct" class="px-6 py-3 bg-green-600 text-white rounded-2xl font-bold shadow-lg shadow-green-200 hover:bg-green-700 transition-all active:scale-95">Correct Only</button>
+                            </div>
+                            
+                            <div id="review-list" class="space-y-4 max-h-96 overflow-y-auto">
+                                ${this.renderReviewList('all')}
+                            </div>
+                        </div>
+                `;
+                
+                    html += `
+                        <div class="flex justify-center pt-6">
+                            <button id="restart-btn" class="flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">
+                                Restart Quiz
+                            </button>
+                        </div>
+                    `;
+                
+                html += `</div>`;
+
+                this.container.innerHTML = html;
+
+                // Attach filter listeners
+                document.getElementById('filter-all').addEventListener('click', () => this.filterReview('all'));
+                document.getElementById('filter-incorrect').addEventListener('click', () => this.filterReview('incorrect'));
+                document.getElementById('filter-correct').addEventListener('click', () => this.filterReview('correct'));
+
+                if (this.quiz.options.allowRedo) {
+                    document.getElementById('restart-btn').addEventListener('click', () => {
+                        this.quiz.currentQuestionIndex = 0;
+                        this.quiz.score = 0;
+                        this.quiz.questionStatuses = this.quiz.questions.map(() => ({ userAnswer: '', isAnswered: false, firstCheckResult: null, latestCheckResult: null, isLocked: false }));
+                        this.quiz.timeLeft = this.quiz.options.timeLimit ? this.quiz.options.timeLimit * 60 : null;
+                        this.quiz.startTimer(() => this.handleTimeUp());
+                        this.render();
+                    });
+                }
+            }
+
+            renderResultsPanel() {
+                const scorePercentage = Math.round((this.quiz.score / this.quiz.questions.length) * 100);
+                
+                let html = `
+                    <div class="space-y-6">
+                        <div class="text-center">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full text-sm font-bold text-green-800 mb-4">
+                                <span>🎉</span> Quiz Completed!
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Your Results</h3>
+                            <div class="text-center mb-6">
+                                <div class="text-3xl font-extrabold text-blue-600 mb-1">${this.quiz.score}/${this.quiz.questions.length}</div>
+                                <div class="text-sm text-slate-600">${scorePercentage}% Correct</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex flex-col gap-2">
+                                <button id="filter-all" class="w-full px-4 py-2 bg-slate-600 text-white rounded-lg font-medium text-sm shadow-md hover:bg-slate-700 transition-all">All Questions</button>
+                                <button id="filter-incorrect" class="w-full px-4 py-2 bg-red-600 text-white rounded-lg font-medium text-sm shadow-md hover:bg-red-700 transition-all">Incorrect Only</button>
+                                <button id="filter-correct" class="w-full px-4 py-2 bg-green-600 text-white rounded-lg font-medium text-sm shadow-md hover:bg-green-700 transition-all">Correct Only</button>
+                            </div>
+                            
+                            <div id="review-list" class="space-y-3 max-h-80 overflow-y-auto">
+                                ${this.renderReviewList('all')}
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-slate-200">
+                            <button id="restart-btn" class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-medium text-sm shadow-md hover:bg-blue-700 transition-all">
+                                Restart Quiz
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('results-content').innerHTML = html;
+                document.getElementById('results-panel').classList.remove('hidden');
+
+                // Attach filter listeners
+                document.getElementById('filter-all').addEventListener('click', () => this.filterReview('all'));
+                document.getElementById('filter-incorrect').addEventListener('click', () => this.filterReview('incorrect'));
+                document.getElementById('filter-correct').addEventListener('click', () => this.filterReview('correct'));
+
+                document.getElementById('restart-btn').addEventListener('click', () => {
+                    this.quiz.currentQuestionIndex = 0;
+                    this.quiz.score = 0;
+                    this.quiz.questionStatuses = this.quiz.questions.map(() => ({ userAnswer: '', isAnswered: false, firstCheckResult: null, latestCheckResult: null, isLocked: false }));
+                    this.quiz.timeLeft = this.quiz.options.timeLimit ? this.quiz.options.timeLimit * 60 : null;
+                    if (this.quiz.timer) {
+                        clearInterval(this.quiz.timer);
+                        this.quiz.startTimer(() => this.handleTimeUp());
+                    }
+                    // Re-enable submit button
+                    const submitBtn = document.getElementById('submit-early-btn');
+                    if (submitBtn) {
+                        submitBtn.textContent = 'Submit Quiz';
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    }
+                    // Hide results panel
+                    document.getElementById('results-panel').classList.add('hidden');
+                    this.render();
+                });
+            }
+
+            renderReviewList(filter) {
+                let filtered = [];
+                if (filter === 'all') {
+                    filtered = this.quiz.questions.map((q, index) => ({ q, index }));
+                } else if (filter === 'incorrect') {
+                    filtered = this.quiz.questions.map((q, index) => ({ q, index })).filter(item => {
+                        const status = this.quiz.getQuestionStatus(item.index);
+                        return status.firstCheckResult === false;
+                    });
+                } else if (filter === 'correct') {
+                    filtered = this.quiz.questions.map((q, index) => ({ q, index })).filter(item => {
+                        const status = this.quiz.getQuestionStatus(item.index);
+                        return status.firstCheckResult === true;
+                    });
+                }
+                
+                return filtered.map(item => {
+                    const { q, index } = item;
+                    const status = this.quiz.getQuestionStatus(index);
+                    const userAnswer = status.isAnswered ? status.userAnswer : 'Not answered';
+                    const correctAnswer = q.answer;
+                    const isCorrect = status.firstCheckResult === true;
+                    
+                    const cardClass = isCorrect 
+                        ? 'bg-green-50 border-green-200' 
+                        : 'bg-red-50 border-red-200';
+                    
+                    const statusIcon = isCorrect ? '✅' : '❌';
+                    const statusText = isCorrect ? 'Correct' : 'Incorrect';
+                    const statusColor = isCorrect ? 'text-green-700' : 'text-red-700';
+                    
+                    return `
+                        <div class="p-6 rounded-2xl border-2 ${cardClass} shadow-sm">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-lg font-bold text-slate-800">Question ${index + 1}</h3>
+                                <div class="flex items-center gap-2 px-3 py-1 rounded-full ${isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}">
+                                    <span>${statusIcon}</span>
+                                    <span class="text-sm font-medium">${statusText}</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-slate-700 mb-4 font-medium">${q.content}</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-4 bg-white rounded-xl border border-slate-200">
+                                    <div class="text-sm font-semibold text-slate-600 mb-1">Your Answer</div>
+                                    <div class="text-slate-800 font-medium">${userAnswer}</div>
+                                </div>
+                                <div class="p-4 bg-white rounded-xl border border-slate-200">
+                                    <div class="text-sm font-semibold text-slate-600 mb-1">Correct Answer</div>
+                                    <div class="text-slate-800 font-medium">${correctAnswer}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            filterReview(filter) {
+                document.getElementById('review-list').innerHTML = this.renderReviewList(filter);
+            }
+          }
+
+        // Initialize
+        let ui;
+        let quiz;
+        let previousMode = null;
+        let previousQuizState = null;
+
+        // Event listeners
+        document.getElementById('play-btn').addEventListener('click', () => {
+            document.getElementById('play-modal').classList.remove('hidden');
+        });
+
+        document.getElementById('create-btn').addEventListener('click', () => {
+            currentMode = 'create';
+            quizData = [];
+            ui = new QuizUI(null, document.getElementById('quiz-container'), document.getElementById('question-list'));
+            document.getElementById('start-page').classList.add('hidden');
+            document.getElementById('quiz-app').classList.remove('hidden');
+            document.getElementById('progress-nav').classList.add('hidden');
+        });
+
+        document.getElementById('back-btn').addEventListener('click', () => {
+            document.getElementById('quiz-app').classList.add('hidden');
+            document.getElementById('start-page').classList.remove('hidden');
+            document.getElementById('progress-nav').classList.add('hidden');
+        });
+
+        document.getElementById('allow-check').addEventListener('change', (e) => {
+            const allowRedo = document.getElementById('allow-redo');
+            if (e.target.checked) {
+                allowRedo.disabled = false;
+            } else {
+                allowRedo.disabled = true;
+                allowRedo.checked = false;
+            }
+        });
+
+        document.getElementById('start-play-btn').addEventListener('click', () => {
+            const files = document.getElementById('quiz-file').files;
+            if (files.length === 0) {
+                alert('Please select files.');
+                return;
+            }
+
+            // Clear previous image map
+            Object.values(localImageMap).forEach(url => URL.revokeObjectURL(url));
+            localImageMap = {};
+
+            let jsonFile = null;
+            const imageFiles = [];
+
+            // Separate JSON and image files
+            for (let file of files) {
+                if (file.type === 'application/json' || file.name.endsWith('.json')) {
+                    jsonFile = file;
+                } else if (file.type.startsWith('image/')) {
+                    imageFiles.push(file);
+                }
+            }
+
+            if (!jsonFile) {
+                alert('Please select a .json quiz file.');
+                return;
+            }
+
+            // Process image files first
+            imageFiles.forEach(file => {
+                const blobUrl = URL.createObjectURL(file);
+                localImageMap[file.name] = blobUrl;
+            });
+
+            // Process JSON file
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    quizData = data;
+
+                    // Map image filenames to Blob URLs
+                    const mapped = quizData.map(q => {
+                        const imageUrl = q.image ? localImageMap[q.image] || null : null;
+                        return new Question(q.content, q['question-type'], q.options || [], q.answer, imageUrl);
+                    });
+
+                    const options = {
+                        shuffle: document.getElementById('shuffle-questions').checked,
+                        shuffleAnswers: document.getElementById('shuffle-answers').checked,
+                        allowCheck: document.getElementById('allow-check').checked,
+                        allowRedo: document.getElementById('allow-redo').checked,
+                        timeLimit: parseInt(document.getElementById('time-limit').value) || null
+                    };
+                    saveQuizToStorage(quizData);
+                    quiz = new Quiz(mapped, options);
+                    ui = new QuizUI(quiz, document.getElementById('quiz-container'), document.getElementById('question-list'));
+                    document.getElementById('play-modal').classList.add('hidden');
+                    document.getElementById('start-page').classList.add('hidden');
+                    document.getElementById('quiz-app').classList.remove('hidden');
+                    document.getElementById('progress-nav').classList.remove('hidden');
+                    ui.render();
+                } catch (err) {
+                    alert('Invalid JSON file: ' + err.message);
+                }
+            };
+            reader.readAsText(jsonFile);
+        });
+
+        document.getElementById('submit-early-btn').addEventListener('click', () => {
+            if (confirm('Are you sure you want to submit the quiz early? This will lock all questions and show your results.')) {
+                quiz.submitQuiz();
+                // Disable the submit button and show submitted state
+                document.getElementById('submit-early-btn').textContent = 'Quiz Submitted';
+                document.getElementById('submit-early-btn').disabled = true;
+                document.getElementById('submit-early-btn').classList.add('opacity-50', 'cursor-not-allowed');
+                // Show results panel
+                ui.renderResultsPanel();
+                // Re-render current question to show locked state
+                ui.render();
+            }
+        });
+
+        document.getElementById('edit-nav-btn').addEventListener('click', () => {
+            currentMode = 'create';
+            ui.render();
+            document.getElementById('progress-nav').classList.add('hidden');
+        });
+
+        document.getElementById('edit-quiz-btn').addEventListener('click', () => {
+            // Save current state
+            previousMode = currentMode;
+            previousQuizState = {
+                questions: quiz.questions.slice(),
+                currentQuestionIndex: quiz.currentQuestionIndex,
+                score: quiz.score,
+                questionStatuses: quiz.questionStatuses.map(s => ({...s})),
+                timeLeft: quiz.timeLeft,
+                options: {...quiz.options}
+            };
+            
+            // Switch to create mode with current quiz data
+            currentMode = 'create';
+            // Load current quiz data into create mode
+            loadQuizForEditing(quiz.questions);
+            ui.render();
+            document.getElementById('progress-nav').classList.add('hidden');
+            document.getElementById('results-panel').classList.add('hidden');
+        });
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            cleanupImageBlobs();
+        });
+    </script>
+</body>
+</html>

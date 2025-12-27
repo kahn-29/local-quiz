@@ -1,0 +1,472 @@
+[
+  {
+    "content": "In online video conferencing applications, which parameter is the most important to ensure optimal Quality of Service (QoS)?",
+    "question-type": "mcq",
+    "options": ["Reliability", "Software convenience", "Quality devices", "Data Delay"],
+    "answer": "Data Delay"
+  },
+  {
+    "content": "Which method is used to prevent unauthorized network intrusions and can filter out packets?",
+    "question-type": "mcq",
+    "options": ["Encryption", "Physical infrastructure protection", "Firewall", "Login/password"],
+    "answer": "Firewall"
+  },
+  {
+    "content": "Suppose a packet is transmitted from host A to host B through a switch. The transmission rate from A to the switch is R1, and from the switch to B is R2. What is the total time to transfer the entire packet of length L from A to B? (Ignore all switch delays and signal propagation time)",
+    "question-type": "mcq",
+    "options": ["L / (R1 + R2)", "L/R1 + L/R2", "(R1 + R2) / L", "R1/L + R2/L"],
+    "answer": "L/R1 + L/R2"
+  },
+  {
+    "content": "What is the advantage of circuit-switched networks over packet-switched networks?",
+    "question-type": "mcq",
+    "options": [
+      "No significant advantages",
+      "Ability to guarantee a certain amount of bandwidth for each connection",
+      "Can allow a larger number of users",
+      "High security capability"
+    ],
+    "answer": "Ability to guarantee a certain amount of bandwidth for each connection"
+  },
+  {
+    "content": "In a circuit-switched network, what is the advantage of TDM compared to FDM?",
+    "question-type": "mcq",
+    "options": [
+      "Does not require high hardware requirements compared to FDM",
+      "No advantage over FDM",
+      "Faster transmission speed",
+      "Guarantees lower delay"
+    ],
+    "answer": "Does not require high hardware requirements compared to FDM"
+  },
+  {
+    "content": "Host A sends a 4,000,000-byte file to host B. The path consists of 3 links with transmission rates R1=500 kbps, R2=2 Mbps, and R3=1 Mbps. How long does it take for the file to reach B? (No other traffic, ignore queuing and propagation delays)",
+    "question-type": "mcq",
+    "options": ["64 seconds", "20 seconds", "256 seconds", "16 seconds"],
+    "answer": "64 seconds"
+  },
+  {
+    "content": "What is the correct top-down order of layers in the Internet model?",
+    "question-type": "mcq",
+    "options": [
+      "Message, Segment, Datagram, Fragment, Physical",
+      "Application, Transport, Network, Data Link, Physical",
+      "Physical, Link, Network, Transport, Application",
+      "Physical, Fragment, Datagram, Segment, Message"
+    ],
+    "answer": "Application, Transport, Network, Data Link, Physical"
+  },
+  {
+    "content": "Which statement is FALSE regarding Peer-to-Peer (P2P) file-sharing applications?",
+    "question-type": "mcq",
+    "options": [
+      "Hosts in a P2P network do not have clear server or client roles",
+      "Hosts have similar roles, but some must run permanently",
+      "Hosts in a P2P network have both server and client processes",
+      "All of the above are false"
+    ],
+    "answer": "Hosts have similar roles, but some must run permanently"
+  },
+  {
+    "content": "TCP can combine with SSL to provide process-to-process security services. At which layer is SSL implemented?",
+    "question-type": "mcq",
+    "options": ["Application Layer", "Transport Layer", "Network Layer", "Data Link Layer"],
+    "answer": "Application Layer"
+  },
+  {
+    "content": "An HTTP Client wants to download a webpage but the IP address corresponding to the URL is not yet determined. Which protocol is used at the Transport layer in this case to determine the IP address?",
+    "question-type": "mcq",
+    "options": ["UDP", "TCP", "Either UDP or TCP", "DNS and TCP"],
+    "answer": "UDP"
+  },
+  {
+    "content": "What is the fundamental difference between a router and a link-layer switch?",
+    "question-type": "mcq",
+    "options": [
+      "Routers forward packets based on IP addresses; switches forward based on MAC addresses",
+      "Router tables are set by admins; switch tables are set by manufacturers",
+      "Routers map output ports to IP; switches have no map for MAC to output ports",
+      "Router and link-layer switch are the same"
+    ],
+    "answer": "Routers forward packets based on IP addresses; switches forward based on MAC addresses"
+  },
+  {
+    "content": "Host A connects to host B through 3 routers. How many network interfaces will an IP datagram pass through if fragmentation is ignored?",
+    "question-type": "mcq",
+    "options": ["8", "6", "4", "2"],
+    "answer": "8"
+  },
+  {
+    "content": "Which statement is FALSE about the IPv6 header?",
+    "question-type": "mcq",
+    "options": [
+      "The IPv6 header length varies depending on the packet size",
+      "The IPv6 header has fewer fields than the IPv4 header",
+      "The IPv6 header uses 128 bits for the source address",
+      "All of the above are true"
+    ],
+    "answer": "The IPv6 header length varies depending on the packet size"
+  },
+  {
+    "content": "Which statement is TRUE regarding routers within the same Autonomous System (AS)?",
+    "question-type": "mcq",
+    "options": [
+      "Routers use the same internal routing protocol (intra-AS)",
+      "Routers use the same external routing protocol (extra-AS)",
+      "Routers have the same cost to go outside the AS",
+      "All of the above are false"
+    ],
+    "answer": "Routers use the same internal routing protocol (intra-AS)"
+  },
+  {
+    "content": "Regarding the OSPF routing protocol, which statement is TRUE?",
+    "question-type": "mcq",
+    "options": [
+      "The router broadcasts routing information to all other routers within the same AS",
+      "The router only broadcasts routing information to its neighbors",
+      "The router broadcasts routing information to routers outside the AS",
+      "The router only sends information to routers newly joining the AS"
+    ],
+    "answer": "The router broadcasts routing information to all other routers within the same AS"
+  },
+  {
+    "content": "How many fragments are created when sending a 2600-byte datagram into a link with an MTU of 600 bytes?",
+    "question-type": "mcq",
+    "options": ["5", "4", "3", "2"],
+    "answer": "5"
+  },
+  {
+    "content": "What is the size of the MAC address space?",
+    "question-type": "mcq",
+    "options": ["2^48", "2^32", "2^128", "2^16"],
+    "answer": "2^48"
+  },
+  {
+    "content": "What is the maximum number of VLANs that can be configured on a switch supporting the 802.1Q protocol?",
+    "question-type": "mcq",
+    "options": ["2^12", "2^8", "2^16", "Indeterminate"],
+    "answer": "2^12"
+  },
+  {
+    "content": "Which command is used to configure RIP routing on a router?",
+    "question-type": "mcq",
+    "options": ["network 192.168.12.0", "network 192.168.12.1", "ip address 192.168.24.2 255.255.255.0", "no shutdown"],
+    "answer": "network 192.168.12.0"
+  },
+  {
+    "content": "Which protocol is used by Secure Socket Layer (SSL)?",
+    "question-type": "mcq",
+    "options": [
+      "Only Public-key algorithms",
+      "Both Public-key and Symmetric-key algorithms",
+      "Only Symmetric-key algorithms",
+      "Neither Public-key nor Symmetric-key algorithms"
+    ],
+    "answer": "Both Public-key and Symmetric-key algorithms"
+  },
+  {
+    "content": "In symmetric encryption, which of the following is true?",
+    "question-type": "mcq",
+    "options": [
+      "If key Ka is used for encryption, a different key Kb must be used for decryption",
+      "If key Kb is used for encryption, a different key Ka must be used for decryption",
+      "If key Ka is used for encryption, the same key Ka is used for decryption",
+      "Symmetric encryption does not use keys"
+    ],
+    "answer": "If key Ka is used for encryption, the same key Ka is used for decryption"
+  },
+  {
+    "content": "In the DNS resource records, which type helps resolve a hostname to an IP address?",
+    "question-type": "mcq",
+    "options": ["A", "NS", "MX", "CNAME"],
+    "answer": "A"
+  },
+  {
+    "content": "An student named An logs into the university email via a web browser to send a message to Binh. Binh usually reads mail on a phone application using the POP3 protocol to connect to the mail server. Which Transport layer protocol(s) are used in this situation?",
+    "question-type": "mcq",
+    "options": ["UDP", "TCP", "Both UDP and TCP", "Neither UDP nor TCP"],
+    "answer": "TCP"
+  },
+  {
+    "content": "How many sockets does a TCP server need to support N simultaneous connections from N different clients?",
+    "question-type": "mcq",
+    "options": ["1", "n", "n + 1", "Indeterminate"],
+    "answer": "n + 1"
+  },
+  {
+    "content": "DNS service is used when you first access a website via a URL. Suppose n DNS servers are queried with query times RTT1, RTT2...RTTn, and RTT0 is the Round Trip Time between the browser and the web server. How long will it take to get the content if the page only contains a small text of 20 characters?",
+    "question-type": "mcq",
+    "options": ["RTT0 + RTT1 + ... + RTTn", "2RTT0 + RTT1 + ... + RTTn", "RTT1 + RTT2 + ... + RTTn", "RTT0"],
+    "answer": "2RTT0 + RTT1 + ... + RTTn"
+  },
+  {
+    "content": "Choose the CORRECT statement:",
+    "question-type": "mcq",
+    "options": [
+      "When using a browser to access a page with text and 4 images, the browser sends only one request and receives 5 responses.",
+      "The body of an HTTP response from a server will always contain data.",
+      "Contents of two different objects on a webpage can be sent from the web server to the browser over the same TCP connection.",
+      "All of the above are false"
+    ],
+    "answer": "Contents of two different objects on a webpage can be sent from the web server to the browser over the same TCP connection."
+  },
+  {
+    "content": "Based on the provided diagram of Web Clients and Web Server B, what are the source/destination IP and port values for the packet returned from the server to Client A?",
+    "image_description": "The diagram shows Web Server B connected to two clients. Client A has IP 'A' and initiates a connection from source port 26145 to Server B (IP 'B') on port 80. Client C has two connections: one from port 7532 and another from port 26145, both to Server B on port 80.",
+    "question-type": "mcq",
+    "options": [
+      "Source port: 80, Source IP: B; Destination port: 26145, Destination IP: A",
+      "Source port: 26145, Source IP: A; Destination port: 80, Destination IP: B",
+      "Source port: 80, Source IP: A; Destination port: 26145, Destination IP: B",
+      "Source port: 80, Source IP: C; Destination port: 7532, Destination IP: B"
+    ],
+    "answer": "Source port: 80, Source IP: B; Destination port: 26145, Destination IP: A"
+  },
+  {
+    "content": "Suppose host A sends 2 consecutive TCP segments to host B. The first segment has SEQ = 120, and the second has SEQ = 140. How many bytes of data are in the first segment?",
+    "question-type": "mcq",
+    "options": ["120 bytes", "20 bytes", "140 bytes", "Indeterminate"],
+    "answer": "20 bytes"
+  },
+  {
+    "content": "Suppose host A sends 2 consecutive segments to host B over TCP. The first has SEQ = 100, the second has SEQ = 110. The first packet is lost, but the second arrives at B. What ACK value will host B return to host A upon receiving the second packet?",
+    "question-type": "mcq",
+    "options": ["100", "101", "110", "111"],
+    "answer": "100"
+  },
+  {
+    "content": "Choose the CORRECT statement:",
+    "question-type": "mcq",
+    "options": [
+      "If host B has no data to send to host A, no packets will be sent from B to A in a TCP connection.",
+      "The size of a TCP segment never changes during the connection.",
+      "The size of a TCP segment must not be larger than host B's receive buffer.",
+      "If the SEQ of segment X is m, the SEQ of the next segment must be m + 1."
+    ],
+    "answer": "The size of a TCP segment must not be larger than host B's receive buffer."
+  },
+  {
+    "content": "Host A and B exchange data via TCP. B has received all bytes from 0 to 126. A then sends 2 segments containing 80 bytes and 40 bytes respectively. The first segment has SEQ = 127, source port = 3033, and dest port = 80. What are the SEQ, source port, and dest port of the second segment sent from A to B?",
+    "question-type": "mcq",
+    "options": [
+      "SEQ: 207, source port: 3033, dest port: 80",
+      "SEQ: 207, source port: 80, dest port: 3033",
+      "SEQ: 247, source port: 3033, dest port: 80",
+      "SEQ: 247, source port: 80, dest port: 3033"
+    ],
+    "answer": "SEQ: 207, source port: 3033, dest port: 80"
+  },
+  {
+    "content": "Host A and B exchange data via TCP. B has received bytes 0 to 126. A sends 2 segments (80 bytes and 40 bytes). The first has SEQ = 127. If B receives the second segment before the first, what is the ACK value in the response to A?",
+    "question-type": "mcq",
+    "options": ["127", "207", "247", "167"],
+    "answer": "127"
+  },
+  {
+    "content": "Given SampleRTT values: 106 ms, 120 ms, 140 ms. What is the final EstimatedRTT if alpha = 0.125 and the initial EstimatedRTT was 100 ms?",
+    "question-type": "mcq",
+    "options": ["106.71 ms", "105.45 ms", "107.67 ms", "103.15 ms"],
+    "answer": "106.71 ms"
+  },
+  {
+    "content": "Given SampleRTT values: 106 ms, 120 ms. What is the final DevRTT if alpha = 0.125, beta = 0.25, and initial EstimatedRTT = 100 ms, initial DevRTT = 5 ms?",
+    "question-type": "mcq",
+    "options": ["8 ms", "5 ms", "0.12 ms", "10 ms"],
+    "answer": "8 ms"
+  },
+  {
+    "content": "Server A receives a request from client B via a UDP datagram and responds with a UDP datagram. If client B uses a spoofed IP 'Y' instead of its real IP 'X', where will the server send the response?",
+    "question-type": "mcq",
+    "options": ["IP Y", "Server cannot send because it detects spoofing", "IP X", "Server does not respond to UDP"],
+    "answer": "IP Y"
+  },
+  {
+    "content": "An IP datagram is sent from host A to host B through 3 intermediate routers. How many routing tables (forwarding tables) are used to transfer this packet?",
+    "question-type": "mcq",
+    "options": ["1", "2", "3", "4"],
+    "answer": "3"
+  },
+  {
+    "content": "A datagram network uses 8-bit addresses. The router uses 'longest prefix matching' with the following table: [00 -> Int 0], [010 -> Int 1], [011 -> Int 2], [10 -> Int 2], [11 -> Int 3]. How many possible addresses will go through interface 2?",
+    "question-type": "mcq",
+    "options": ["32", "64", "96", "128"],
+    "answer": "96"
+  },
+  {
+    "content": "In a datagram network (Figure in Q32), set up the forwarding table for router A so that all packets from H1 to H3 go through interface 3, while packets from H2 to H3 go through interface 4.",
+    "image_description": "Network diagram: H1 and H2 are connected to Router A. H1 is on interface 1, H2 on interface 2. Router A has interfaces 3 and 4 leading towards H3. Interface 3 connects to Router B, interface 4 connects to Router C. Both Routers B and C then connect to Router D, which connects to H3.",
+    "question-type": "mcq",
+    "options": [
+      "Cannot be set up to satisfy the condition",
+      "Table with Dest: H3, Interface: 3",
+      "Table with Dest: H2, Interface: 2",
+      "Table with Dest: H1, Interface: 1"
+    ],
+    "answer": "Cannot be set up to satisfy the condition"
+  },
+  {
+    "content": "Using the same network as Q32, but assuming it is a virtual circuit (VC) network. Set up the forwarding table for router A so H1-H3 traffic uses interface 3 and H2-H3 traffic uses interface 4.",
+    "question-type": "mcq",
+    "options": [
+      "Cannot be set up",
+      "Table: [In Int: 1, In VC: 12, Out Int: 3, Out VC: 22], [In Int: 2, In VC: 23, Out Int: 4, Out VC: 18]",
+      "Table: [In Int: 3, In VC: 12, Out Int: 1, Out VC: 22], [In Int: 4, In VC: 23, Out Int: 2, Out VC: 18]",
+      "Table: [In Int: 3, In VC: 12, Out Int: 3, Out VC: 22], [In Int: 3, In VC: 23, Out Int: 4, Out VC: 18]"
+    ],
+    "answer": "Table: [In Int: 1, In VC: 12, Out Int: 3, Out VC: 22], [In Int: 2, In VC: 23, Out Int: 4, Out VC: 18]"
+  },
+  {
+    "content": "A datagram network uses 32-bit addresses. A router has 4 interfaces (0-3). Bảng định tuyến: [11100000 00000000... to ...00111111... -> Int 0], [11100000 01000000... to ...01000000 11111111... -> Int 1], [Otherwise -> Int 3]. Where is the packet with address 11100001 01000000 11000011 00111100 forwarded?",
+    "question-type": "mcq",
+    "options": ["0", "1", "2", "3"],
+    "answer": "3"
+  },
+  {
+    "content": "Which subnet address matches the prefix 223.1.17/24 and can support 90 interfaces?",
+    "question-type": "mcq",
+    "options": ["192.168.1.192/25", "192.168.1.128/25", "223.1.17.128/25", "223.1.17.192/28"],
+    "answer": "223.1.17.128/25"
+  },
+  {
+    "content": "For a 32-bit address network, which a.b.c.d/x format correctly describes the address range for interface 0 in the table from Q34?",
+    "question-type": "mcq",
+    "options": ["224.0/10", "224.64/24", "224/8", "225.1.128/9"],
+    "answer": "224/8"
+  },
+  {
+    "content": "Given subnet prefix 128.119.40.128/26, which IP address belongs to this subnet?",
+    "question-type": "mcq",
+    "options": ["128.119.40.182", "128.119.40.192", "128.119.40.202", "128.119.40.222"],
+    "answer": "128.119.40.182"
+  },
+  {
+    "content": "What is the size of the LAST fragment (including header) created when sending a 2400-byte datagram over a link with MTU 700 bytes?",
+    "question-type": "mcq",
+    "options": ["360", "700", "680", "340"],
+    "answer": "340"
+  },
+  {
+    "content": "What is the offset of the LAST fragment created when sending a 2400-byte datagram over a link with MTU 700 bytes?",
+    "question-type": "mcq",
+    "options": ["255", "254", "240", "360"],
+    "answer": "255"
+  },
+  {
+    "content": "An IP datagram (including 20-byte header) is 1500 bytes. How many datagrams are created to send a 5,000,000-byte file?",
+    "question-type": "mcq",
+    "options": ["3425", "3334", "3379", "3340"],
+    "answer": "3379"
+  },
+  {
+    "content": "Using Dijkstra's algorithm for the provided network, what is the shortest path from z to u?",
+    "image_description": "Network graph with nodes and edge costs: (z,x)=8, (z,y)=12, (x,y)=6, (x,v)=3, (x,w)=6, (y,v)=8, (y,t)=7, (v,w)=4, (v,t)=4, (v,u)=3, (w,u)=3, (t,u)=2.",
+    "question-type": "mcq",
+    "options": ["z -> x -> v -> u", "z -> y -> v -> u", "z -> x -> w -> u", "z -> y -> t -> u"],
+    "answer": "z -> x -> v -> u"
+  },
+  {
+    "content": "In the provided AS network diagram, how does router 3c learn the path to x?",
+    "image_description": "Diagram of 4 Autonomous Systems (AS1, AS2, AS3, AS4). x is a destination in AS4. AS3 and AS2 use OSPF internally; AS1 and AS4 use RIP internally. eBGP and iBGP are used between ASs. There is no direct link between AS4 and AS2.",
+    "question-type": "mcq",
+    "options": ["OSPF", "eBGP", "iBGP", "RIP"],
+    "answer": "eBGP"
+  },
+  {
+    "content": "In the same AS network diagram, how does router 3a learn the path to x?",
+    "question-type": "mcq",
+    "options": ["OSPF", "eBGP", "iBGP", "RIP"],
+    "answer": "iBGP"
+  },
+  {
+    "content": "In an Ethernet network using CSMA/CD, what is the probability that a node chooses factor K=4 after the 5th collision?",
+    "question-type": "mcq",
+    "options": ["1/32", "1/5", "1/4", "Indeterminate"],
+    "answer": "1/32"
+  },
+  {
+    "content": "In an Ethernet network using CSMA/CD at 10 Mbps, if a node chooses K=4 after the 5th collision, what is the waiting time?",
+    "question-type": "mcq",
+    "options": ["204.8 microseconds", "120.4 microseconds", "40.8 microseconds", "200.4 microseconds"],
+    "answer": "204.8"
+  },
+  {
+    "content": "Which command is used to configure OSPF routing on a router?",
+    "question-type": "mcq",
+    "options": [
+      "ip address 192.168.1.1 255.255.255.0",
+      "network 192.168.123.1 0.0.0.0 area 0",
+      "network 192.168.0.0 255.255.255.0",
+      "default-router 192.168.2.254"
+    ],
+    "answer": "network 192.168.123.1 0.0.0.0 area 0"
+  },
+  {
+    "content": "Which command is used in DHCP configuration on a router?",
+    "question-type": "mcq",
+    "options": [
+      "ip address 192.168.1.1 255.255.255.0",
+      "network 192.168.0.0 255.255.255.0",
+      "vlan 10",
+      "no shutdown"
+    ],
+    "answer": "network 192.168.0.0 255.255.255.0"
+  },
+  {
+    "content": "Based on the provided network diagram, how many subnets are in this network?",
+    "image_description": "The diagram shows a central router connected to: 1. External internet, 2. Web server, 3. Mail server, and 3 regional switches (Electrical, Computer Science, Computer Engineering). Each switch connects multiple computers. All links between central router and servers/switches are labeled with speeds (1 Gbps or 100 Mbps).",
+    "question-type": "mcq",
+    "options": ["2", "3", "4", "5"],
+    "answer": "5"
+  },
+  {
+    "content": "After executing 'sh ip route', which line indicates the router has OSPF configured?",
+    "question-type": "mcq",
+    "options": ["Line 1: 192.168.2.0/24 [110/2] via...", "Line 2: 192.168.3.0/24 is directly connected...", "Line 3: 192.168.23.0/29 is subnetted...", "Line 4: 192.168.123.0/24 is directly connected..."],
+    "answer": "Line 1: 192.168.2.0/24 [110/2] via..."
+  },
+  {
+    "content": "Which command is used to set the hostname for a Router in Packet Tracer?",
+    "question-type": "mcq",
+    "options": [
+      "Router(config)#name R1",
+      "Router(config)#hostname R1",
+      "Router#hostname R1",
+      "Router#name R1"
+    ],
+    "answer": "Router(config)#hostname R1"
+  },
+  {
+    "content": "Host 1 is trying to connect to Host 2. However, the interface of Router C is down. Select the correct statement:",
+    "image_description": "Path: Host 1 -> Router A -> Router B -> Router C -> Host 2. The link between Router C and Host 2 is shown as broken/inactive.",
+    "question-type": "mcq",
+    "options": [
+      "Router C sends an ICMP message to Host 1 stating Host 2 is not responding",
+      "Router C sends an ICMP message to Router B stating Host 2 is not responding",
+      "Router C sends an ICMP message to both Router A and B",
+      "All of the above are false"
+    ],
+    "answer": "Router C sends an ICMP message to Host 1 stating Host 2 is not responding"
+  },
+  {
+    "content": "Pinging google.com results in 'Request timed out' for all 4 packets (100% loss). What can be concluded?",
+    "question-type": "mcq",
+    "options": [
+      "The domain google.com does not exist",
+      "No response from the server at google.com",
+      "No response from the server hosting the domain",
+      "Cannot connect to the server"
+    ],
+    "answer": "No response from the server at google.com"
+  },
+  {
+    "content": "What is the function of the Default Gateway in a Routing Table?",
+    "question-type": "mcq",
+    "options": [
+      "Specifies the next hop IP if the router/host doesn't know the path to the destination",
+      "Assigns a default subnet for the LAN",
+      "Determines the source address for all outgoing packets",
+      "It is the NAT address of the firewall"
+    ],
+    "answer": "Specifies the next hop IP if the router/host doesn't know the path to the destination"
+  }
+]
