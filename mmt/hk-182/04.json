@@ -288,7 +288,8 @@
     "answer": "3"
   },
   {
-    "content": "A datagram network uses 8-bit addresses. The router uses 'longest prefix matching' with the following table: [00 -> Int 0], [010 -> Int 1], [011 -> Int 2], [10 -> Int 2], [11 -> Int 3]. How many possible addresses will go through interface 2?",
+    "content": "A datagram network uses 8-bit addresses. The router uses 'longest prefix matching' with the following table. How many possible addresses will go through interface 2?",
+    "image":"question-31.png",
     "question-type": "mcq",
     "options": ["32", "64", "96", "128"],
     "answer": "96"
@@ -345,28 +346,24 @@
   },
   {
     "content": "What is the size of the LAST fragment (including header) created when sending a 2400-byte datagram over a link with MTU 700 bytes?",
-    "question-type": "mcq",
-    "options": ["360", "700", "680", "340"],
-    "answer": "340"
+    "question-type": "text",
+    "answer": "360"
   },
   {
     "content": "What is the offset of the LAST fragment created when sending a 2400-byte datagram over a link with MTU 700 bytes?",
-    "question-type": "mcq",
-    "options": ["255", "254", "240", "360"],
+    "question-type": "text",
     "answer": "255"
   },
   {
     "content": "An IP datagram (including 20-byte header) is 1500 bytes. How many datagrams are created to send a 5,000,000-byte file?",
-    "question-type": "mcq",
-    "options": ["3425", "3334", "3379", "3340"],
-    "answer": "3379"
+    "question-type": "text",
+    "answer": "3425"
   },
   {
     "content": "Using Dijkstra's algorithm for the provided network, what is the shortest path from z to u?",
     "image": "question-42.png",
-    "question-type": "mcq",
-    "options": ["z -> x -> v -> u", "z -> y -> v -> u", "z -> x -> w -> u", "z -> y -> t -> u"],
-    "answer": "z -> x -> v -> u"
+    "question-type": "text",
+    "answer": "z,x,v,u"
   },
   {
     "content": "In the provided AS network diagram, how does router 3c learn the path to x?",
@@ -383,15 +380,13 @@
     "answer": "iBGP"
   },
   {
-    "content": "In an Ethernet network using CSMA/CD, what is the probability that a node chooses factor K=4 after the 5th collision?",
-    "question-type": "mcq",
-    "options": ["1/32", "1/5", "1/4", "Indeterminate"],
+    "content": "In an Ethernet network using CSMA/CD, what is the probability that a node chooses factor K=4 after the 5th collision? Write answer informat a/b.",
+    "question-type": "text",
     "answer": "1/32"
   },
   {
-    "content": "In an Ethernet network using CSMA/CD at 10 Mbps, if a node chooses K=4 after the 5th collision, what is the waiting time?",
-    "question-type": "mcq",
-    "options": ["204.8 microseconds", "120.4 microseconds", "40.8 microseconds", "200.4 microseconds"],
+    "content": "In an Ethernet network using CSMA/CD at 10 Mbps, if a node chooses K=4 after the 5th collision, what is the waiting time in microsecond?",
+    "question-type": "text",
     "answer": "204.8"
   },
   {
@@ -419,9 +414,8 @@
   {
     "content": "Based on the provided network diagram, how many subnets are in this network?",
     "image": "question-52.png",
-    "question-type": "mcq",
-    "options": ["2", "3", "4", "5"],
-    "answer": "5"
+    "question-type": "text",
+    "answer": "2"
   },
   {
     "content": "After executing 'sh ip route', which line indicates the router has OSPF configured?",

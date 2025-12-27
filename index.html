@@ -215,6 +215,7 @@
             submitQuiz() {
                 // Stop the timer
                 this.stopTimer();
+                this.submitted = true;
                 // Calculate score based on firstCheckResult
                 this.score = 0;
                 this.questionStatuses.forEach((status, index) => {
