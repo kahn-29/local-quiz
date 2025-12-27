@@ -938,7 +938,7 @@
                 previousQuizState = null;
                 this.render();
                 // Show panels if we were in quiz mode
-                if (currentMode === 'quiz') {
+                if (currentMode === 'play') {
                     document.getElementById('progress-nav').classList.remove('hidden');
                     if (quiz.questionStatuses.every(s => s.isLocked)) {
                         document.getElementById('results-panel').classList.remove('hidden');
@@ -1039,8 +1039,13 @@
 
                 // Always attach restart listener
                 document.getElementById('restart-btn').addEventListener('click', () => {
+                    document.getElementById('results-panel').classList.add('hidden');
+                    document.getElementById('submit-early-btn').textContent = 'Submit Quiz';
+                    document.getElementById('submit-early-btn').disabled = false;
+                    document.getElementById('submit-early-btn').classList.remove('opacity-50', 'cursor-not-allowed');
                     this.quiz.currentQuestionIndex = 0;
                     this.quiz.score = 0;
+                    this.quiz.submitted = false;
                     this.quiz.questionStatuses = this.quiz.questions.map(() => ({ userAnswer: '', isAnswered: false, firstCheckResult: null, latestCheckResult: null, isLocked: false }));
                     this.quiz.timeLeft = this.quiz.options.timeLimit ? this.quiz.options.timeLimit * 60 : null;
                     if (this.timerInterval) {
@@ -1174,10 +1179,6 @@
                                 <div class="p-4 bg-white rounded-xl border border-slate-200">
                                     <div class="text-sm font-semibold text-slate-600 mb-1">Your Answer</div>
                                     <div class="text-slate-800 font-medium">${userAnswer}</div>
-                                </div>
-                                <div class="p-4 bg-white rounded-xl border border-slate-200">
-                                    <div class="text-sm font-semibold text-slate-600 mb-1">Correct Answer</div>
-                                    <div class="text-slate-800 font-medium">${correctAnswer}</div>
                                 </div>
                             </div>
                         </div>
