@@ -4,189 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kahn Quiz - Local First</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: system-ui, sans-serif; }
+        body { font-family: 'Inter', sans-serif; }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
         .option-card:hover { border-color: #3b82f6; background-color: #eff6ff; }
         .option-card.selected { border-color: #3b82f6; background-color: #dbeafe; ring: 2px; ring-color: #3b82f6; }
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        /* Tailwind CSS */
-        .bg-slate-50 { background-color: #f8fafc; }
-        .text-slate-900 { color: #0f172a; }
-        .min-h-screen { min-height: 100vh; }
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .items-center { align-items: center; }
-        .justify-center { justify-content: center; }
-        .p-6 { padding: 1.5rem; }
-        .max-w-md { max-width: 28rem; }
-        .w-full { width: 100%; }
-        .text-center { text-align: center; }
-        .space-y-8 > * + * { margin-top: 2rem; }
-        .space-y-2 > * + * { margin-top: 0.5rem; }
-        .text-5xl { font-size: 3rem; line-height: 1; }
-        .font-extrabold { font-weight: 800; }
-        .tracking-tight { letter-spacing: -0.025em; }
-        .text-blue-600 { color: #2563eb; }
-        .text-slate-500 { color: #64748b; }
-        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-        .grid { display: grid; }
-        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-        .gap-4 { gap: 1rem; }
-        .bg-blue-600 { background-color: #2563eb; }
-        .text-white { color: #ffffff; }
-        .px-8 { padding-left: 2rem; padding-right: 2rem; }
-        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-        .rounded-2xl { border-radius: 1rem; }
-        .font-bold { font-weight: 700; }
-        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-        .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
-        .shadow-blue-200 { --tw-shadow-color: #bfdbfe; --tw-shadow: var(--tw-shadow-colored); }
-        .hover\:bg-blue-700:hover { background-color: #1d4ed8; }
-        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-        .active\:scale-95:active { transform: scale(0.95); }
-        .bg-white { background-color: #ffffff; }
-        .text-slate-700 { color: #374151; }
-        .border-2 { border-width: 2px; }
-        .border-slate-200 { --tw-border-opacity: 1; border-color: rgb(203 213 225 / var(--tw-border-opacity)); }
-        .hover\:bg-slate-50:hover { background-color: #f8fafc; }
-        .fixed { position: fixed; }
-        .inset-0 { top: 0px; right: 0px; bottom: 0px; left: 0px; }
-        .z-50 { z-index: 50; }
-        .hidden { display: none; }
-        .bg-slate-900\/50 { background-color: rgb(15 23 42 / 0.5); }
-        .backdrop-blur-sm { backdrop-filter: blur(4px); }
-        .rounded-3xl { border-radius: 1.5rem; }
-        .shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
-        .max-w-lg { max-width: 32rem; }
-        .space-y-6 > * + * { margin-top: 1.5rem; }
-        .transform { transform: var(--tw-transform); }
-        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-        .text-slate-800 { color: #1e293b; }
-        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-        .text-slate-600 { color: #475569; }
-        .bg-blue-50 { background-color: #eff6ff; }
-        .rounded-xl { border-radius: 0.75rem; }
-        .border { border-width: 1px; }
-        .border-blue-100 { --tw-border-opacity: 1; border-color: rgb(219 234 254 / var(--tw-border-opacity)); }
-        .block { display: block; }
-        .font-semibold { font-weight: 600; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .text-slate-500 { color: #64748b; }
-        .file\:mr-4::file-selector-button { margin-right: 1rem; }
-        .file\:py-2::file-selector-button { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-        .file\:px-4::file-selector-button { padding-left: 1rem; padding-right: 1rem; }
-        .file\:rounded-full::file-selector-button { border-radius: 9999px; }
-        .file\:border-0::file-selector-button { border-width: 0px; }
-        .file\:text-sm::file-selector-button { font-size: 0.875rem; line-height: 1.25rem; }
-        .file\:font-semibold::file-selector-button { font-weight: 600; }
-        .file\:bg-blue-600::file-selector-button { background-color: #2563eb; }
-        .file\:text-white::file-selector-button { color: #ffffff; }
-        .hover\:file\:bg-blue-700:hover::file-selector-button { background-color: #1d4ed8; }
-        .cursor-pointer { cursor: pointer; }
-        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .p-3 { padding: 0.75rem; }
-        .w-4 { width: 1rem; }
-        .h-4 { height: 1rem; }
-        .rounded { border-radius: 0.25rem; }
-        .ml-3 { margin-left: 0.75rem; }
-        .font-medium { font-weight: 500; }
-        .mb-1 { margin-bottom: 0.25rem; }
-        .bg-slate-50 { background-color: #f8fafc; }
-        .focus\:ring-2:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
-        .focus\:ring-blue-500:focus { --tw-ring-opacity: 1; --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity)); }
-        .outline-none { outline: 2px solid transparent; outline-offset: 2px; }
-        .gap-3 { gap: 0.75rem; }
-        .pt-4 { padding-top: 1rem; }
-        .flex-1 { flex: 1 1 0%; }
-        .shadow-blue-100 { --tw-shadow-color: #dbeafe; --tw-shadow: var(--tw-shadow-colored); }
-        .bg-slate-100 { background-color: #f1f5f9; }
-        .hover\:bg-slate-200:hover { background-color: #e2e8f0; }
-        .lg\:flex-row { flex-direction: row; }
-        .lg\:w-80 { width: 20rem; }
-        .border-r { border-right-width: 1px; }
-        .justify-between { justify-content: space-between; }
-        .mb-8 { margin-bottom: 2rem; }
-        .text-slate-400 { color: #94a3b8; }
-        .uppercase { text-transform: uppercase; }
-        .tracking-widest { letter-spacing: 0.25em; }
-        .text-xs { font-size: 0.75rem; line-height: 1rem; }
-        .bg-red-50 { background-color: #fef2f2; }
-        .text-red-600 { color: #dc2626; }
-        .rounded-full { border-radius: 9999px; }
-        .font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Inconsolata, "Roboto Mono", "Liberation Mono", Menlo, Consolas, "Courier New", monospace; }
-        .grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-        .overflow-y-auto { overflow-y: auto; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mt-auto { margin-top: auto; }
-        .space-y-3 > * + * { margin-top: 0.75rem; }
-        .bg-slate-900 { background-color: #0f172a; }
-        .hover\:bg-slate-800:hover { background-color: #1e293b; }
-        .text-slate-500 { color: #64748b; }
-        .hover\:bg-slate-100:hover { background-color: #f1f5f9; }
-        .italic { font-style: italic; }
-        .md\:p-8 { padding: 2rem; }
-        .lg\:p-12 { padding: 3rem; }
-        .max-w-3xl { max-width: 48rem; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        .w-12 { width: 3rem; }
-        .h-12 { height: 3rem; }
-        .hover\:scale-105:hover { transform: scale(1.05); }
-        .animate-in { animation: in 0.5s ease-in-out; }
-        .fade-in { opacity: 1; }
-        .duration-500 { transition-duration: 500ms; }
-        .inline-flex { display: inline-flex; }
-        .leading-tight { line-height: 1.25; }
-        .max-w-2xl { max-width: 42rem; }
-        .flex-shrink-0 { flex-shrink: 0; }
-        .disabled\:opacity-30:disabled { opacity: 0.3; }
-        .disabled\:grayscale:disabled { filter: grayscale(100%); }
-        .bg-slate-800 { background-color: #1e293b; }
-        .hover\:bg-slate-700:hover { background-color: #334155; }
-        .shadow-slate-200 { --tw-shadow-color: #e2e8f0; --tw-shadow: var(--tw-shadow-colored); }
-        .text-green-600 { color: #16a34a; }
-        .shadow-green-200 { --tw-shadow-color: #bbf7d0; --tw-shadow: var(--tw-shadow-colored); }
-        .hover\:bg-green-700:hover { background-color: #15803d; }
-        .flex-start { align-items: flex-start; }
-        .bg-red-100 { background-color: #fee2e2; }
-        .text-red-700 { color: #b91c1c; }
-        .rounded-lg { border-radius: 0.5rem; }
-        .hover\:bg-red-200:hover { background-color: #fecaca; }
-        .focus\:border-blue-500:focus { --tw-border-opacity: 1; border-color: rgb(59 130 246 / var(--tw-border-opacity)); }
-        .focus\:ring-4:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
-        .focus\:ring-blue-100:focus { --tw-ring-opacity: 1; --tw-ring-color: rgb(219 234 254 / var(--tw-ring-opacity)); }
-        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-        .bg-green-100 { background-color: #dcfce7; }
-        .text-green-800 { color: #166534; }
-        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .text-6xl { font-size: 3.75rem; line-height: 1; }
-        .bg-slate-600 { background-color: #475569; }
-        .hover\:bg-slate-700:hover { background-color: #334155; }
-        .bg-red-600 { background-color: #dc2626; }
-        .hover\:bg-red-700:hover { background-color: #b91c1c; }
-        .bg-green-600 { background-color: #16a34a; }
-        .hover\:bg-green-700:hover { background-color: #15803d; }
-        .max-h-96 { max-height: 24rem; }
-        .pt-6 { padding-top: 1.5rem; }
-        .shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
-        .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .p-4 { padding: 1rem; }
-        .bg-amber-100 { background-color: #fef3c7; }
-        .border-amber-300 { --tw-border-opacity: 1; border-color: rgb(252 211 77 / var(--tw-border-opacity)); }
-        .text-amber-800 { color: #92400e; }
-        .bg-green-100 { background-color: #dcfce7; }
-        .border-green-300 { --tw-border-opacity: 1; border-color: rgb(74 222 128 / var(--tw-border-opacity)); }
-        .text-green-800 { color: #166534; }
-        .bg-red-100 { background-color: #fee2e2; }
-        .border-red-300 { --tw-border-opacity: 1; border-color: rgb(252 165 165 / var(--tw-border-opacity)); }
-        .text-red-800 { color: #991b1b; }
-        .ring-2 { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
-        .ring-blue-500 { --tw-ring-opacity: 1; --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity)); }
-        .ring-offset-2 { --tw-ring-offset-width: 2px; }
         .option-card { }
         .cursor-pointer { cursor: pointer; }
         .hover\:scale-\[102\%\]:hover { transform: scale(1.02); }
@@ -419,6 +246,18 @@
                 // Calculate score based on firstCheckResult
                 this.score = 0;
                 this.questionStatuses.forEach((status, index) => {
+                    if (status.firstCheckResult === null && status.userAnswer) {
+                        // Check the answer if not already checked
+                        const question = this.questions[index];
+                        let isCorrect = false;
+                        if (question.type === 'multiple-choice') {
+                            isCorrect = status.userAnswer === question.answer;
+                        } else if (question.type === 'text-input') {
+                            isCorrect = status.userAnswer.toLowerCase().trim() === question.answer.toLowerCase().trim();
+                        }
+                        status.firstCheckResult = isCorrect;
+                        status.latestCheckResult = isCorrect;
+                    }
                     if (status.firstCheckResult !== null && status.firstCheckResult) {
                         this.score++;
                     }
@@ -513,7 +352,7 @@
                 clearInterval(this.timerInterval);
                 alert('Time is up!');
                 this.quiz.submitQuiz();
-                this.renderResults();
+                this.renderResultsPanel();
             }
 
             stopTimer() {
@@ -527,6 +366,8 @@
 
             render() {
                 if (currentMode === 'play') {
+                    // Hide results panel when starting/playing quiz
+                    document.getElementById('results-panel').classList.add('hidden');
                     this.renderNav();
                     this.updateTimer();
                     if (this.quiz.isFinished()) {
@@ -1226,16 +1067,19 @@
                 document.getElementById('filter-incorrect').addEventListener('click', () => this.filterReview('incorrect'));
                 document.getElementById('filter-correct').addEventListener('click', () => this.filterReview('correct'));
 
-                if (this.quiz.options.allowRedo) {
-                    document.getElementById('restart-btn').addEventListener('click', () => {
-                        this.quiz.currentQuestionIndex = 0;
-                        this.quiz.score = 0;
-                        this.quiz.questionStatuses = this.quiz.questions.map(() => ({ userAnswer: '', isAnswered: false, firstCheckResult: null, latestCheckResult: null, isLocked: false }));
-                        this.quiz.timeLeft = this.quiz.options.timeLimit ? this.quiz.options.timeLimit * 60 : null;
-                        this.quiz.startTimer(() => this.handleTimeUp());
-                        this.render();
-                    });
-                }
+                // Always attach restart listener
+                document.getElementById('restart-btn').addEventListener('click', () => {
+                    this.quiz.currentQuestionIndex = 0;
+                    this.quiz.score = 0;
+                    this.quiz.questionStatuses = this.quiz.questions.map(() => ({ userAnswer: '', isAnswered: false, firstCheckResult: null, latestCheckResult: null, isLocked: false }));
+                    this.quiz.timeLeft = this.quiz.options.timeLimit ? this.quiz.options.timeLimit * 60 : null;
+                    if (this.timerInterval) {
+                        clearInterval(this.timerInterval);
+                    }
+                    this.timerInterval = setInterval(() => this.updateTimer(), 1000);
+                    this.quiz.startTimer(() => this.handleTimeUp());
+                    this.render();
+                });
             }
 
             renderResultsPanel() {
@@ -1289,8 +1133,12 @@
                     this.quiz.timeLeft = this.quiz.options.timeLimit ? this.quiz.options.timeLimit * 60 : null;
                     if (this.quiz.timer) {
                         clearInterval(this.quiz.timer);
-                        this.quiz.startTimer(() => this.handleTimeUp());
                     }
+                    if (this.timerInterval) {
+                        clearInterval(this.timerInterval);
+                    }
+                    this.timerInterval = setInterval(() => this.updateTimer(), 1000);
+                    this.quiz.startTimer(() => this.handleTimeUp());
                     // Re-enable submit button
                     const submitBtn = document.getElementById('submit-early-btn');
                     if (submitBtn) {
@@ -1365,7 +1213,7 @@
             filterReview(filter) {
                 document.getElementById('review-list').innerHTML = this.renderReviewList(filter);
             }
-          }
+        }
 
         // Initialize
         let ui;
