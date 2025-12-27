@@ -549,7 +549,7 @@
     "answer": "internet exchange point"
   },
   {
-    "content": "[Context: A diagram shows HostA connected to RouterA via interface Fa0/0. RouterA connects to an HTTPS Server via interface Fa0/1.] Host A wants to send a request to a Web server HTTPS. Which of the following could be the source address when the Server receives the data frame?",
+    "content": "Host A wants to send a request to a Web server HTTPS. Which of the following could be the source address when the Server receives the data frame?",
     "question-type": "mcq",
     "options": [
       "MAC address of the switch connected to host A",

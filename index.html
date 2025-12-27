@@ -236,6 +236,13 @@
                     // Lock all questions after submit
                     status.isLocked = true;
                 });
+                // For unanswered questions, mark as incorrect
+                this.questionStatuses.forEach((status, index) => {
+                    if (!status.isAnswered) {
+                        status.firstCheckResult = false;
+                        status.latestCheckResult = false;
+                    }
+                });
             }
 
             getQuestionStatus(index) {
@@ -1107,6 +1114,14 @@
                     document.getElementById('results-panel').classList.add('hidden');
                     this.render();
                 });
+
+                document.getElementById('edit-nav-btn').addEventListener('click', () => {
+                    currentMode = 'create';
+                    loadQuizForEditing(quiz.questions);
+                    ui.render();
+                    document.getElementById('progress-nav').classList.add('hidden');
+                    document.getElementById('results-panel').classList.add('hidden');
+                });
             }
 
             renderReviewList(filter) {
@@ -1293,18 +1308,10 @@
                 document.getElementById('submit-early-btn').disabled = true;
                 document.getElementById('submit-early-btn').classList.add('opacity-50', 'cursor-not-allowed');
                 // Show results panel
-                ui.renderResultsPanel();
+                ui.renderResults();
                 // Re-render current question to show locked state
                 ui.render();
             }
-        });
-
-        document.getElementById('edit-nav-btn').addEventListener('click', () => {
-            currentMode = 'create';
-            loadQuizForEditing(quiz.questions);
-            ui.render();
-            document.getElementById('progress-nav').classList.add('hidden');
-            document.getElementById('results-panel').classList.add('hidden');
         });
 
         document.getElementById('edit-quiz-btn').addEventListener('click', () => {

@@ -6,6 +6,31 @@
     "answer": "SMTP"
   },
   {
+    "content": "What is class A address first octet? Write your answer in format start-end",
+    "question-type":"text",
+    "answer": "0-127"
+  },
+  {
+    "content": "What is class B address first octet? Write your answer in format start-end",
+    "question-type":"text",
+    "answer": "128-191"
+  },
+  {
+    "content": "What is class C address first octet? Write your answer in format start-end",
+    "question-type":"text",
+    "answer": "192-223"
+  },
+  {
+    "content": "What is class D address first octet? Write your answer in format start-end",
+    "question-type":"text",
+    "answer": "224-239"
+  },
+  {
+    "content": "What is class E address first octet? Write your answer in format start-end",
+    "question-type":"text",
+    "answer": "240-255"
+  },
+  {
     "content": "Why are applications using HTTP, POP3, and SMTP at the Application layer more suitable for TCP at the Transport layer compared to UDP?",
     "question-type": "mcq",
     "options": [
