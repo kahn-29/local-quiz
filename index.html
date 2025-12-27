@@ -310,12 +310,12 @@
     <script>
         // Core Data Structures
         class Question {
-            constructor(content, questionType, options, correctAnswer, imagePath = null) {
+            constructor(content, questionType, options, correctAnswer, image = null) {
                 this.content = content;
                 this.type = questionType === 'mcq' ? 'multiple-choice' : 'text-input';
                 this.options = options; // Array of strings for multiple-choice
                 this.answer = correctAnswer;
-                this.imagePath = imagePath; // Placeholder for future image support
+                this.image = image; // Placeholder for future image support
             }
         }
 
@@ -613,8 +613,8 @@
                             <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-sm font-medium text-slate-600 mb-6">
                                 <span>Question ${this.quiz.currentQuestionIndex + 1} of ${this.quiz.questions.length}</span>
                             </div>
-                            ${question.imagePath && localImageMap[question.imagePath] ? `<img src="${localImageMap[question.imagePath]}" alt="Question image" class="max-h-80 object-contain mx-auto mb-6 rounded-lg shadow-md">` : ''}
                             <h1 class="text-3xl font-bold text-slate-800 leading-tight">${question.content}</h1>
+                            ${question.image && localImageMap[question.image] ? `<img src="${localImageMap[question.image]}" alt="Question image" class="h-96 object-contain mx-auto mt-6 mb-6 rounded-lg shadow-md">` : ''}
                         </div>
                 `;
 
@@ -905,7 +905,7 @@
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Question Image (Optional)</label>
                                 <input type="file" accept="image/*" class="question-image-input block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer" data-index="${index}">
-                                ${q.imagePath && localImageMap[q.imagePath] ? `<div class="mt-2"><img src="${localImageMap[q.imagePath]}" alt="Question image preview" class="max-h-32 object-contain rounded-lg border border-slate-200"></div>` : ''}
+                                ${q.image && localImageMap[q.image] ? `<div class="mt-2"><img src="${localImageMap[q.image]}" alt="Question image preview" class="max-h-32 object-contain rounded-lg border border-slate-200"></div>` : ''}
                             </div>
                             
                             <div>
@@ -982,23 +982,23 @@
                         const file = e.target.files[0];
                         if (file) {
                             // Clean up previous image if exists
-                            if (quizData[index].imagePath && localImageMap[quizData[index].imagePath]) {
-                                URL.revokeObjectURL(localImageMap[quizData[index].imagePath]);
-                                delete localImageMap[quizData[index].imagePath];
+                            if (quizData[index].image && localImageMap[quizData[index].image]) {
+                                URL.revokeObjectURL(localImageMap[quizData[index].image]);
+                                delete localImageMap[quizData[index].image];
                             }
                             
                             // Create new Blob URL
                             const imageUrl = URL.createObjectURL(file);
-                            const imagePath = `question_${index}_image`;
-                            localImageMap[imagePath] = imageUrl;
-                            quizData[index].imagePath = imagePath;
+                            const image = `question_${index}_image`;
+                            localImageMap[image] = imageUrl;
+                            quizData[index].image = image;
                         } else {
                             // Remove image if no file selected
-                            if (quizData[index].imagePath && localImageMap[quizData[index].imagePath]) {
-                                URL.revokeObjectURL(localImageMap[quizData[index].imagePath]);
-                                delete localImageMap[quizData[index].imagePath];
+                            if (quizData[index].image && localImageMap[quizData[index].image]) {
+                                URL.revokeObjectURL(localImageMap[quizData[index].image]);
+                                delete localImageMap[quizData[index].image];
                             }
-                            quizData[index].imagePath = null;
+                            quizData[index].image = null;
                         }
                         this.renderCreatorQuestions();
                     });
@@ -1045,12 +1045,12 @@
                     const content = form.querySelector('input[placeholder="Question content"]').value;
                     const type = form.querySelector('.type-select').value;
                     const correctAnswer = form.querySelector('input[placeholder="Answer"]').value;
-                    const originalData = quizData[index] || {}; // Preserve original data including imagePath
+                    const originalData = quizData[index] || {}; // Preserve original data including image
                     if (type === 'mcq') {
                         const options = Array.from(form.querySelectorAll('.options input')).map(inp => inp.value.trim()).filter(opt => opt);
-                        quizData.push({ content, "question-type": type, options, answer: correctAnswer, imagePath: originalData.imagePath });
+                        quizData.push({ content, "question-type": type, options, answer: correctAnswer, image: originalData.image });
                     } else {
-                        quizData.push({ content, "question-type": type, answer: correctAnswer, imagePath: originalData.imagePath });
+                        quizData.push({ content, "question-type": type, answer: correctAnswer, image: originalData.image });
                     }
                 });
                 saveQuizToStorage(quizData);
@@ -1446,8 +1446,16 @@
 
                     // Map image filenames to Blob URLs
                     const mapped = quizData.map(q => {
-                        const imageUrl = q.image ? localImageMap[q.image] || null : null;
-                        return new Question(q.content, q['question-type'], q.options || [], q.answer, imageUrl);
+                        const fileName = q.image || null;
+                        const blobUrl = fileName ? localImageMap[fileName] || null : null;
+    
+                        // DEBUG: Check if the image was found
+                        if (fileName && !blobUrl) {
+                            console.warn(`Image file "${fileName}" was not found in your selection.`);
+                        } else if (blobUrl) {
+                            console.log(`Successfully loaded image: ${fileName}`);
+                        }
+                        return new Question(q.content, q['question-type'], q.options || [], q.answer, fileName);
                     });
 
                     const options = {

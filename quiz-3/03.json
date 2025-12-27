@@ -557,10 +557,11 @@
       "MAC address of the router A at interface Fa0/0",
       "MAC address of the router A at interface Fa0/1"
     ],
-    "answer": "MAC address of the router A at interface Fa0/1"
+    "answer": "MAC address of the router A at interface Fa0/1",
+    "image": "question-62.png"
   },
   {
-    "content": "[Context: The diagram shows three TCP connections: 1. Host C (source port 7532) to Server B (dest port 80). 2. Host C (source port 26145) to Server B (dest port 80). 3. Host A (source port 26145) to Server B (dest port 80).] What are the source/destination port values and the source/destination IP addresses in the network-layer datagrams flowing from the server back to client A's process?",
+    "content": "Consider the figure below. What are the source/destination port values and the source/destination IP addresses in the network-layer datagrams (carrying the transport-layer segments) flowing from the server back to the clients' processes?",
     "question-type": "mcq",
     "options": [
       "Source port: 80, IP Source: B; Destination port: 26145, Destination IP: A",
@@ -568,17 +569,20 @@
       "Source port 80, IP Source: A; Destination port: 26145, Destination IP: B",
       "Source port 80, IP source C; Destination port: 7532, Destination IP: B"
     ],
-    "answer": "Source port: 80, IP Source: B; Destination port: 26145, Destination IP: A"
+    "answer": "Source port: 80, IP Source: B; Destination port: 26145, Destination IP: A",
+    "image": "question-63.png"
   },
   {
-    "content": "[Context: A network graph shows nodes z, x, y, v, w, u, t with the following link costs: z-x=8, z-y=12, x-y=6, x-v=3, x-w=6, y-v=8, y-t=7, v-t=4, v-w=4, v-u=3, w-u=3, t-u=2.] What is the shortest path from z to u using Dijkstra's algorithm? Type answer seperate by comma.",
+    "content": "Consider the following network. With the indicated link costs, what is the shortest path from z to u is found using Dijkstra's shortest-path algorithm?",
     "question-type": "text",
-    "answer": "z,x,v,u"
+    "answer": "z,x,v,u",
+    "image": "question-64.png"
   },
   {
-    "content": "[Context: The diagram shows 4 Autonomous Systems (AS1-AS4). Router 4a in AS4 is connected to prefix x. AS4 is connected to AS3 (router 4c to 3c) and AS2. AS3 (router 3a) is connected to AS1. AS1 is connected to AS2.] Router 3c learns about prefix x from which routing protocol?",
+    "content": "Consider the network shown below. Suppose AS3 and AS2 are running OSPF for their intra-AS routing protocol. Suppose AS1 and AS4 are running RIP for their intra-AS routing protocol. Suppose eBGP and iBGP are used for the inter-AS routing protocol. Initially suppose there is no physical link between AS2 and AS4. Router 3c learns about prefix x from which routing protocol: OSPF, RIP, eBGP, or iBGP?",
     "question-type": "mcq",
     "options": ["OSPF", "eBGP", "iBGP", "RIP"],
-    "answer": "eBGP"
+    "answer": "eBGP",
+    "image": "question-65.png"
   }
 ]
