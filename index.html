@@ -614,7 +614,7 @@
                                 <span>Question ${this.quiz.currentQuestionIndex + 1} of ${this.quiz.questions.length}</span>
                             </div>
                             <h1 class="text-3xl font-bold text-slate-800 leading-tight">${question.content}</h1>
-                            ${question.image && localImageMap[question.image] ? `<img src="${localImageMap[question.image]}" alt="Question image" class="h-96 object-contain mx-auto mt-6 mb-6 rounded-lg shadow-md">` : ''}
+                            ${question.image && localImageMap[question.image] ? `<img src="${localImageMap[question.image]}" alt="Question image" class="max-w-[600px] max-h-[400px] object-contain mx-auto mt-6 mb-6 rounded-lg shadow-md">` : ''}
                         </div>
                 `;
 

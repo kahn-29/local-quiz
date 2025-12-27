@@ -41,6 +41,7 @@
   },
   {
     "content": "Host A sends a 4,000,000-byte file to host B. The path consists of 3 links with transmission rates R1=500 kbps, R2=2 Mbps, and R3=1 Mbps. How long does it take in seconds for the file to reach B? (No other traffic, ignore queuing and propagation delays)",
+    "image":"question-06.png",
     "question-type": "text",
     "answer": "64"
   },
@@ -91,6 +92,7 @@
   },
   {
     "content": "Host A connects to host B through 3 routers. How many network interfaces will an IP datagram pass through if fragmentation is ignored?",
+    "image":"question-06.png",
     "question-type": "mcq",
     "options": ["8", "6", "4", "2"],
     "answer": "8"
@@ -316,7 +318,8 @@
     "answer": "Table: [In Int: 1, In VC: 12, Out Int: 3, Out VC: 22], [In Int: 2, In VC: 23, Out Int: 4, Out VC: 18]"
   },
   {
-    "content": "A datagram network uses 32-bit addresses. A router has 4 interfaces (0-3). Bảng định tuyến: [11100000 00000000... to ...00111111... -> Int 0], [11100000 01000000... to ...01000000 11111111... -> Int 1], [Otherwise -> Int 3]. Where is the packet with address 11100001 01000000 11000011 00111100 forwarded?",
+    "content": "A datagram network uses 32 bits for addressing. Assuming that the router has 4 interfaces (4 links) numbered from 0 to 3, packets are forwarded to the interfaces according to the following routing table. Where is the packet with address 11100001 01000000 11000011 00111100 forwarded?",
+    "image":"question-34.png",
     "question-type": "mcq",
     "options": ["0", "1", "2", "3"],
     "answer": "3"
@@ -328,7 +331,8 @@
     "answer": "223.1.17.128/25"
   },
   {
-    "content": "For a 32-bit address network, which a.b.c.d/x format correctly describes the address range for interface 0 in the table from Q34?",
+    "content": "For a 32-bit address network, which a.b.c.d/x format correctly describes the address range for interface 0?",
+    "image":"question-34.png",
     "question-type": "mcq",
     "options": ["224.0/10", "224.64/24", "224/8", "225.1.128/9"],
     "answer": "224/8"
