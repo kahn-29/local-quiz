@@ -1,0 +1,663 @@
+[
+  {
+    "content": "Which of the following statements is CORRECT regarding the TCP Tahoe congestion handling mechanism?",
+    "question-type": "mcq",
+    "options": [
+      "When an anomaly occurs, set the cwnd size to 1.",
+      "When an anomaly occurs, reduce the cwnd size by half.",
+      "After congestion, recover cwnd exponentially.",
+      "After congestion, recover cwnd to the ssthresh threshold."
+    ],
+    "answer": "When an anomaly occurs, set the cwnd size to 1."
+  },
+  {
+    "content": "Select a distinct difference between the Slotted ALOHA mechanism and Token passing.",
+    "question-type": "mcq",
+    "options": [
+      "The mechanism is implemented fully distributed without a common coordinating node.",
+      "When a node transmits data, that node occupies the entire transmission line.",
+      "When there are M nodes needing to transmit data, each node occupies approximately a 1/M ratio of the transmission line.",
+      "All statements A, B, and C are incorrect."
+    ],
+    "answer": "When there are M nodes needing to transmit data, each node occupies approximately a 1/M ratio of the transmission line."
+  },
+  {
+    "content": "An ISP uses NAT for a local network with prefix 192.168.1.0/24 and assigns the router the address 24.34.223.245. Two applications on a local host connect to a web service at 128.119.40.86:80. Which of the following could be an entry in the NAT mapping table?",
+    "question-type": "mcq",
+    "options": [
+      "(192.168.1.4, 4001) (192.168.1.3, 3545)",
+      "(128.119.40.86:3320) (24.34.223.245:4002)",
+      "(24.34.223.245:4002) (192.168.1.3:3545)",
+      "(128.119.40.86:80) (192.168.1.1:3346)"
+    ],
+    "answer": "(24.34.223.245:4002) (192.168.1.3:3545)"
+  },
+  {
+    "content": "Which protocol is NOT based on the client-server architecture?",
+    "question-type": "mcq",
+    "options": [
+      "Bittorrent",
+      "HTTP",
+      "SMTP",
+      "DNS"
+    ],
+    "answer": "Bittorrent"
+  },
+  {
+    "content": "In which use case would a programmer choose UDP over TCP?",
+    "question-type": "mcq",
+    "options": [
+      "Electronic payment application",
+      "Online video meeting application",
+      "File sharing application",
+      "DASH streaming application"
+    ],
+    "answer": "Online video meeting application"
+  },
+  {
+    "content": "In a system with three ASs (AS1, AS2, AS3) using OSPF internally and BGP (eBGP/iBGP) between them, how does a router in AS1 learn the path to a router in AS3?",
+    "question-type": "mcq",
+    "options": [
+      "eBGP",
+      "iBGP",
+      "OSPF",
+      "Direct connection"
+    ],
+    "answer": "eBGP",
+    "image": "a.png"
+  },
+  {
+    "content": "In the TCP packet format, select the correct mapping between the data field and the corresponding transport layer feature provided.",
+    "question-type": "mcq",
+    "options": [
+      "FIN flag - Congestion control",
+      "CWR flag - Reliable data transfer",
+      "Receive window - Flow control",
+      "Sequence number - Connection establishment"
+    ],
+    "answer": "Receive window - Flow control"
+  },
+  {
+    "content": "Suppose two TCP segments are sent from host A to host B with sequence numbers 90 and 110 respectively. What is the size of the first packet?",
+    "question-type": "mcq",
+    "options": [
+      "20 bytes",
+      "21 bytes",
+      "110 bytes",
+      "90 bytes"
+    ],
+    "answer": "20 bytes"
+  },
+  {
+    "content": "Multiplexing and demultiplexing in a connectionless protocol are determined based on which information?",
+    "question-type": "mcq",
+    "options": [
+      "Source IP address and source port",
+      "Source port",
+      "Destination IP address and destination port",
+      "Destination port"
+    ],
+    "answer": "Destination IP address and destination port"
+  },
+  {
+    "content": "Calculate the link delay between two points with: packet length 12Kbits, bandwidth 10Mbps, signal wire length 2km, and propagation speed 3e8 m/s.",
+    "question-type": "mcq",
+    "options": [
+      "12 e-4 seconds",
+      "1.39e-5 seconds",
+      "0.66e-5 seconds",
+      "All answers A, B, and C are WRONG."
+    ],
+    "answer": "All answers A, B, and C are WRONG."
+  },
+  {
+    "content": "Service providers often advertise packages such as 100Mbps. What does this information describe?",
+    "question-type": "mcq",
+    "options": [
+      "Transmission rate",
+      "Propagation rate",
+      "Signal speed in the physical medium",
+      "Data movement speed between two end devices"
+    ],
+    "answer": "Transmission rate"
+  },
+  {
+    "content": "Which component differentiates transmission delay from propagation delay?",
+    "question-type": "mcq",
+    "options": [
+      "Packet length",
+      "Queuing processing",
+      "Computational processing",
+      "Error checking and correction"
+    ],
+    "answer": "Packet length"
+  },
+  {
+    "content": "Which device is primarily responsible for forwarding data packets between different networks?",
+    "question-type": "mcq",
+    "options": [
+      "Host",
+      "Router",
+      "Switch",
+      "Name server"
+    ],
+    "answer": "Router"
+  },
+  {
+    "content": "To define a point-to-point communication protocol, which of the following minimum information must be clearly specified?",
+    "question-type": "mcq",
+    "options": [
+      "Packet format",
+      "Order of packet exchange",
+      "Actions to be taken when sending/receiving packets",
+      "All of the above (A, B, and C)"
+    ],
+    "answer": "All of the above (A, B, and C)"
+  },
+  {
+    "content": "Which statement BEST describes the difference between the network edge and the network core?",
+    "question-type": "mcq",
+    "options": [
+      "The edge includes wireless components, while the core includes wired components.",
+      "The edge refers to central servers and data centers, while the core includes local devices.",
+      "The edge includes devices connecting end-users, while the core refers to high-speed infrastructure connecting different networks.",
+      "The edge is primarily concerned with security, while the core is concerned with transmission performance."
+    ],
+    "answer": "The edge includes devices connecting end-users, while the core refers to high-speed infrastructure connecting different networks."
+  },
+  {
+    "content": "What is a strength of packet switching compared to circuit switching?",
+    "question-type": "mcq",
+    "options": [
+      "High resource utilization efficiency",
+      "Guaranteed bandwidth for each connection",
+      "Low transmission latency",
+      "Suitable for continuous and real-time communication needs"
+    ],
+    "answer": "High resource utilization efficiency"
+  },
+  {
+    "content": "Given a packet switch connecting 30 end devices. The activity ratio is 20%. What is the probability that more than 4 end devices are active simultaneously?",
+    "question-type": "mcq",
+    "options": [
+      "0.001",
+      "0.744",
+      "0.133",
+      "0.127"
+    ],
+    "answer": "0.744"
+  },
+  {
+    "content": "In the OSI model, what is the relationship of layer (N) to the layer above it (N+1)?",
+    "question-type": "mcq",
+    "options": [
+      "Layer N provides services to layer N+1",
+      "Layer N+1 adds a header to information received from layer N",
+      "Layer N utilizes services provided by layer N+1",
+      "Layer N has no impact on layer N+1"
+    ],
+    "answer": "Layer N provides services to layer N+1"
+  },
+  {
+    "content": "What is the main function of Transport Layer protocols?",
+    "question-type": "mcq",
+    "options": [
+      "Control data transmission between two processes on the network",
+      "Control message content and behavior of each side",
+      "Control communication between two computers on the network",
+      "Control data transmission between two computers on the same medium"
+    ],
+    "answer": "Control data transmission between two processes on the network"
+  },
+  {
+    "content": "What happens when computer A sends a broadcast (ARP request) for the MAC address of computer B on the same network?",
+    "question-type": "mcq",
+    "options": [
+      "DNS server answers A with B's MAC address",
+      "All computers receive the request and all will reply to A",
+      "All computers receive the request but only B answers A",
+      "Nearest Router answers A or forwards the request"
+    ],
+    "answer": "All computers receive the request but only B answers A"
+  },
+  {
+    "content": "When a TCP process sends a SYNACK segment with Acknowledgement Number = 100, what does it mean?",
+    "question-type": "mcq",
+    "options": [
+      "The data packet it sends starts with the 100th byte",
+      "The first byte in the data stream it sends has sequence number 100",
+      "It will send from byte 100, skipping previous bytes",
+      "It expects to receive data starting with sequence number 100"
+    ],
+    "answer": "It expects to receive data starting with sequence number 100"
+  },
+  {
+    "content": "The process that allows a machine to automatically request an IP address from a server when connecting to the network is:",
+    "question-type": "mcq",
+    "options": [
+      "DHCP discover -> DHCP offer -> DHCP request -> DHCP ack",
+      "DHCP request -> DHCP ack -> DHCP discover -> DHCP offer",
+      "DHCP discover -> DHCP ack -> DHCP request -> DHCP offer",
+      "DHCP request -> DHCP offer -> DHCP discover -> DHCP ack"
+    ],
+    "answer": "DHCP discover -> DHCP offer -> DHCP request -> DHCP ack"
+  },
+  {
+    "content": "Which routing algorithm does the OSPF protocol use?",
+    "question-type": "mcq",
+    "options": [
+      "Flooding",
+      "Distance vector",
+      "Link state",
+      "Bellman-Ford"
+    ],
+    "answer": "Link state"
+  },
+  {
+    "content": "A user accesses http://www.hcmut.edu.vn:3000. What can be said about the TCP port used by the Web Server?",
+    "question-type": "mcq",
+    "options": [
+      "Uses default port",
+      "Does not use default port",
+      "Uses standard port",
+      "Uses Web server's private port"
+    ],
+    "answer": "Does not use default port"
+  },
+  {
+    "content": "Suppose an application generates a 60-byte message placed in a TCP segment and then an IP datagram (no options). What percentage of the IP datagram contains actual application data?",
+    "question-type": "mcq",
+    "options": [
+      "20%",
+      "40%",
+      "60%",
+      "80%"
+    ],
+    "answer": "60%"
+  },
+  {
+    "content": "In TCP/IP, reliable data transmission is implemented by:",
+    "question-type": "mcq",
+    "options": [
+      "Using a Timer and ACK packets to retransmit lost packets.",
+      "Matching receive window with free buffer space.",
+      "Handshaking and negotiation to create a reliable channel.",
+      "Slow start and congestion avoidance mechanisms."
+    ],
+    "answer": "Using a Timer and ACK packets to retransmit lost packets."
+  },
+  {
+    "content": "Which flag values will a TCP packet from a host requesting a connection have?",
+    "question-type": "mcq",
+    "options": [
+      "RST=1, SYN=1",
+      "ACK=1, SYN=1",
+      "ACK=0, SYN=1",
+      "FIN=1, SYN=0"
+    ],
+    "answer": "ACK=0, SYN=1"
+  },
+  {
+    "content": "In the DNS database, Resource Records (RR) are stored in which format?",
+    "question-type": "mcq",
+    "options": [
+      "(name, value, type, ttl)",
+      "(value, name, ttl, type)",
+      "(value, ttl, name, type)",
+      "(name, type, ttl, value)"
+    ],
+    "answer": "(name, value, type, ttl)"
+  },
+  {
+    "content": "Which statement is true regarding the characteristics of a broadcast link network?",
+    "question-type": "mcq",
+    "options": [
+      "All nodes share a common physical transmission medium",
+      "Connects each pair of nodes in a specific geometry",
+      "Intermediate nodes store and forward information",
+      "No possibility of information collision"
+    ],
+    "answer": "All nodes share a common physical transmission medium"
+  },
+  {
+    "content": "What is an important characteristic of the client/server network architecture?",
+    "question-type": "mcq",
+    "options": [
+      "Client requests services and server responds.",
+      "Server is always on and has a fixed IP.",
+      "Client has intermittent connection and dynamic IP.",
+      "All of the above (A, B, and C)."
+    ],
+    "answer": "All of the above (A, B, and C)."
+  },
+  {
+    "content": "On the Internet, connecting independent LAN, WAN, and MAN networks uses which minimum basic function?",
+    "question-type": "mcq",
+    "options": [
+      "Error control",
+      "Routing",
+      "Link control",
+      "Flow control"
+    ],
+    "answer": "Routing"
+  },
+  {
+    "content": "How does demultiplexing in a connection-oriented transport protocol handle packets?",
+    "question-type": "mcq",
+    "options": [
+      "Packets with different source IP/ports go to the same socket if destination is same.",
+      "Packets with different source IP/ports are directed to different sockets.",
+      "Packets with different destination IP/ports go to the same socket if source is same.",
+      "All of the above are correct."
+    ],
+    "answer": "Packets with different source IP/ports are directed to different sockets."
+  },
+  {
+    "content": "Which guarantee can be provided by the transport layer without support from the underlying network protocol?",
+    "question-type": "mcq",
+    "options": [
+      "Timing guarantee",
+      "Minimum bandwidth guarantee",
+      "Maximum delay guarantee",
+      "Reliable data delivery guarantee"
+    ],
+    "answer": "Reliable data delivery guarantee"
+  },
+  {
+    "content": "In TCP/IP, bandwidth guarantee is implemented by:",
+    "question-type": "mcq",
+    "options": [
+      "Sender starting slow then speeding up.",
+      "Window size and bandwidth-delay product aggregation.",
+      "Allocating each connection an equal portion of bandwidth.",
+      "It is not supported by the underlying IP service model."
+    ],
+    "answer": "It is not supported by the underlying IP service model."
+  },
+  {
+    "content": "Computer networks used within a company or school usually belong to which type?",
+    "question-type": "mcq",
+    "options": [
+      "LAN",
+      "MAN",
+      "WAN",
+      "All are wrong"
+    ],
+    "answer": "LAN"
+  },
+  {
+    "content": "When data is moved from a higher layer to a lower layer in the TCP/IP model:",
+    "question-type": "mcq",
+    "options": [
+      "The packet is supplemented with a new header",
+      "The packet remains unchanged",
+      "A header is removed",
+      "All are correct"
+    ],
+    "answer": "The packet is supplemented with a new header"
+  },
+  {
+    "content": "ICMP messages are sent within packets of which protocol?",
+    "question-type": "mcq",
+    "options": [
+      "TCP",
+      "UDP",
+      "IP",
+      "FTP"
+    ],
+    "answer": "IP"
+  },
+  {
+    "content": "The 'tracert' command is typically used to:",
+    "question-type": "mcq",
+    "options": [
+      "Find the path to another machine",
+      "Ensure a connection is active",
+      "Add or remove paths in routing table",
+      "All are correct"
+    ],
+    "answer": "Find the path to another machine"
+  },
+  {
+    "content": "In public key cryptography for digital signatures, which key is used to create the signature?",
+    "question-type": "mcq",
+    "options": [
+      "Public key",
+      "Private key",
+      "Both keys",
+      "No key"
+    ],
+    "answer": "Private key"
+  },
+  {
+    "content": "At which layer of the TCP/IP model does the ICMP protocol operate?",
+    "question-type": "mcq",
+    "options": [
+      "Application",
+      "Transport",
+      "Network",
+      "Data Link"
+    ],
+    "answer": "Network"
+  },
+  {
+    "content": "Which protocol is used by routers to notify each other about Network layer errors?",
+    "question-type": "mcq",
+    "options": [
+      "ARP",
+      "ICMP",
+      "RARP",
+      "TCP"
+    ],
+    "answer": "ICMP"
+  },
+  {
+    "content": "The Traceroute application uses which protocols to find the path to a destination?",
+    "question-type": "mcq",
+    "options": [
+      "IP and TCP",
+      "ICMP and UDP",
+      "TCP and ICMP",
+      "UDP and IP"
+    ],
+    "answer": "ICMP and UDP"
+  },
+  {
+    "content": "Which field in a TCP segment is used for flow control?",
+    "question-type": "mcq",
+    "options": [
+      "Sequence Number",
+      "Acknowledgement Number",
+      "Checksum",
+      "Receive Window"
+    ],
+    "answer": "Receive Window"
+  },
+  {
+    "content": "A 3000-byte packet transferred to a network with an MTU of 1500 bytes will be fragmented into how many packets?",
+    "question-type": "mcq",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "content": "In which case is the SYN field in a TCP packet used?",
+    "question-type": "mcq",
+    "options": [
+      "Connection establishment",
+      "Sending numbered data",
+      "Closing a connection",
+      "All of the above"
+    ],
+    "answer": "Connection establishment"
+  },
+  {
+    "content": "Given a TCP segment and a UDP segment of the same size, the UDP payload is at least how much larger than the TCP payload?",
+    "question-type": "mcq",
+    "options": [
+      "4 bytes",
+      "8 bytes",
+      "12 bytes",
+      "16 bytes"
+    ],
+    "answer": "12 bytes"
+  },
+  {
+    "content": "How does Ethernet manage the use of the physical transmission channel?",
+    "question-type": "mcq",
+    "options": [
+      "Time division",
+      "Frequency division",
+      "Detect contention and delay resending",
+      "Detect contention and reorder nodes"
+    ],
+    "answer": "Detect contention and delay resending"
+  },
+  {
+    "content": "In TCP, after at least how many packets are exchanged can the sender begin sending data?",
+    "question-type": "mcq",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "2"
+  },
+  {
+    "content": "In TCP, the timeout value is usually chosen to be:",
+    "question-type": "mcq",
+    "options": [
+      "Smaller than RTT",
+      "Equal to RTT",
+      "Larger than RTT",
+      "Many times larger than RTT"
+    ],
+    "answer": "Larger than RTT"
+  },
+  {
+    "content": "Which address is used by a Switch to determine the output port?",
+    "question-type": "mcq",
+    "options": [
+      "Source MAC",
+      "Destination MAC",
+      "Network address",
+      "Subnetwork address"
+    ],
+    "answer": "Destination MAC"
+  },
+  {
+    "content": "Which LAN technology uses CSMA/CD?",
+    "question-type": "mcq",
+    "options": [
+      "Ethernet",
+      "Token Ring",
+      "Bluetooth",
+      "MPLS"
+    ],
+    "answer": "Ethernet"
+  },
+  {
+    "content": "Which field does NOT exist in an IEEE 802.3 Ethernet Frame header?",
+    "question-type": "mcq",
+    "options": [
+      "Preamble",
+      "Receiver MAC address",
+      "Frame sequence number",
+      "Frame type"
+    ],
+    "answer": "Frame sequence number"
+  },
+  {
+    "content": "Select the CORRECT statement about the ARP protocol.",
+    "question-type": "mcq",
+    "options": [
+      "Determines MAC address from IP address",
+      "Determines IP address from MAC address",
+      "Determines IP from domain name",
+      "Search for IP by broadcasting"
+    ],
+    "answer": "Determines MAC address from IP address"
+  },
+  {
+    "content": "Why is Multi-Threading used in client-server programming?",
+    "question-type": "mcq",
+    "options": [
+      "Client served by multiple servers simultaneously",
+      "Client served by multiple servers",
+      "Server serves multiple clients",
+      "Server serves multiple clients simultaneously"
+    ],
+    "answer": "Server serves multiple clients simultaneously"
+  },
+  {
+    "content": "What is the goal of a firewall?",
+    "question-type": "mcq",
+    "options": [
+      "Protect network from external threats",
+      "Prevent data leaving network",
+      "Monitor network traffic",
+      "All are wrong"
+    ],
+    "answer": "Protect network from external threats"
+  },
+  {
+    "content": "How does Distance Vector (DV) routing differ from Link State (LS) routing?",
+    "question-type": "mcq",
+    "options": [
+      "DV router has global knowledge.",
+      "DV calculates path from LS routers.",
+      "Path calculated based on neighbors' info.",
+      "Uses Shortest Path First algorithm."
+    ],
+    "answer": "Path calculated based on neighbors' info."
+  },
+  {
+    "content": "In TCP/IP, delay guarantee is implemented by:",
+    "question-type": "mcq",
+    "options": [
+      "Sender waiting for one RTT.",
+      "Quick retransmission on timeout.",
+      "Early retransmission before timeout.",
+      "Bound by underlying IP service model."
+    ],
+    "answer": "Bound by underlying IP service model."
+  },
+  {
+    "content": "If a destination address is not in the MAC table, what will a switch do?",
+    "question-type": "mcq",
+    "options": [
+      "Forward to first available port",
+      "Flood all ports except incoming",
+      "Ask sender for address",
+      "Discard frame"
+    ],
+    "answer": "Flood all ports except incoming"
+  },
+  {
+    "content": "Bob sends a secret message to Alice using public-key cryptography. Bob must use:",
+    "question-type": "mcq",
+    "options": [
+      "Alice's public key",
+      "Alice's private key",
+      "Bob's public key",
+      "Bob's private key"
+    ],
+    "answer": "Alice's public key"
+  },
+  {
+    "content": "Using CIDR, which Next Hop is chosen for destination IP 196.109.49.46? Table: 196.80.0.0/12->D; 196.94.16.0/20->C; 196.96.0.0/12->B; 196.104.0.0/14->A.",
+    "question-type": "mcq",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "A"
+  }
+]

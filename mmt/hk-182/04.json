@@ -92,9 +92,8 @@
   },
   {
     "content": "Host A connects to host B through 3 routers. How many network interfaces will an IP datagram pass through if fragmentation is ignored?",
-    "image":"question-06.png",
-    "question-type": "mcq",
-    "options": ["8", "6", "4", "2"],
+    "image":"question-26.png",
+    "question-type": "text",
     "answer": "8"
   },
   {
@@ -231,8 +230,7 @@
   },
   {
     "content": "Suppose host A sends 2 consecutive segments to host B over TCP. The first has SEQ = 100, the second has SEQ = 110. The first packet is lost, but the second arrives at B. What ACK value will host B return to host A upon receiving the second packet?",
-    "question-type": "mcq",
-    "options": ["100", "101", "110", "111"],
+    "question-type": "text",
     "answer": "100"
   },
   {
@@ -259,8 +257,7 @@
   },
   {
     "content": "Host A and B exchange data via TCP. B has received bytes 0 to 126. A sends 2 segments (80 bytes and 40 bytes). The first has SEQ = 127. If B receives the second segment before the first, what is the ACK value in the response to A?",
-    "question-type": "mcq",
-    "options": ["127", "207", "247", "167"],
+    "question-type": "text",
     "answer": "127"
   },
   {
@@ -283,8 +280,8 @@
   },
   {
     "content": "An IP datagram is sent from host A to host B through 3 intermediate routers. How many routing tables (forwarding tables) are used to transfer this packet?",
-    "question-type": "mcq",
-    "options": ["1", "2", "3", "4"],
+    "image":"question-26.png",
+    "question-type": "text",
     "answer": "3"
   },
   {
@@ -336,7 +333,7 @@
     "image":"question-34.png",
     "question-type": "mcq",
     "options": ["224.0/10", "224.64/24", "224/8", "225.1.128/9"],
-    "answer": "224/8"
+    "answer": "224.0/10"
   },
   {
     "content": "Given subnet prefix 128.119.40.128/26, which IP address belongs to this subnet?",
